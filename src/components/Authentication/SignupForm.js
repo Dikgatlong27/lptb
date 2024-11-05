@@ -23,27 +23,27 @@ const SignupForm = () => {
   };
 
   return (
-    <div>
-      <h2>Sign Up</h2>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Enter Your Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+    <div className="signup-container">
+  <h2>Sign Up</h2>
+  {error && <p>{error}</p>}
+  <form onSubmit={handleSubmit}>
+    <input
+      type="email"
+      placeholder="Enter Your Email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      required
+    />
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
   );
 };
 

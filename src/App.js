@@ -1,5 +1,5 @@
-import { Navbar, Footer }  from './components';
-import { Home, About, Services, WebDev, Contact, Login, SignUp, PrivateRoute, Dashboard } from './pages';
+import { Navbar, Footer, UserProfile }  from './components';
+import { Home, About, Services, WebDev, Contact, Login, SignUp, PrivateRoute, Dashboard, Projects, Invoices } from './pages';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -24,7 +24,24 @@ function App() {
             <Dashboard />
           </PrivateRoute>} 
         />
+
+        <Route path='/profile' element={
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>} 
+        />
         
+        <Route path='/projects' element={
+          <PrivateRoute>
+            <Projects />
+          </PrivateRoute>} 
+        />
+
+        <Route path='/invoices' element={
+          <PrivateRoute>
+            <Invoices />
+          </PrivateRoute>} 
+        />
       </Routes>
       <Footer />
     </div>

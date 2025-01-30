@@ -5,7 +5,7 @@ import "./AbtLPTB.css"
 const AbtLPTB = () => {
     return (
         <div>
-            About
+            About Us
         </div>
     )
 }

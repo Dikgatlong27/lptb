@@ -12,11 +12,11 @@ const Navbar = () => {
     return (
         <nav className='navbar'>
             <div className="nav-larger">
-                <div className='logo'>
-                    <Link to='/' className='nav-logo'>
-                        <h1>LPTB</h1>
-                    </Link>
-                </div>
+                
+                <Link to='/' className='nav-logo'>
+                    <img src="logoflat.svg" className='logo' alt="" srcset="" />
+                </Link>
+                
                 
                 <ul className='nav-links'>
                     <li><Link className='links' to='/'>Home</Link></li>
@@ -39,11 +39,11 @@ const Navbar = () => {
                 {toggleMenu && (
                     <div className='navlinks-small_overlay slide-bottom'>
                         <AiFillCloseSquare className='hamburger-close' onClick={() => setToggleMenu(false)} />
-                        <div className='logo-small'>
-                            <Link onClick={() => setToggleMenu(false)} to='/'>
-                                <h1>LPTB</h1>
-                            </Link>
-                        </div>
+                    
+                        <Link onClick={() => setToggleMenu(false)} to='/'>
+                            <img src="logoflat.svg" className='logo-small' alt="" srcset="" />
+                        </Link>
+                        
                         
 
                         <ul className='nav-links_small'>

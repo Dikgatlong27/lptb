@@ -15,11 +15,9 @@ const Footer = () => {
   return (
     <div className='footer'>
         <div className="footer-content">
-            <div className='footer-logo'>
-                <Link to='/' className='footer-h3'>
-                    <h3>LPTB</h3>
+                <Link to='/' className='footer-logo'>
+                    <img src="logo.svg" className='logosvg' alt="" srcset="" />
                 </Link>
-            </div>
 
             <div className='footer-links'>
                 <p><Link className='links' to='/about'>About</Link></p>

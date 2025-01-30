@@ -1,10 +1,15 @@
 import React from 'react'
+import { Hero, AbtLPTB, Svc, Why, Clients, CTA } from '../../components'
 
 const Home = () => {
   return (
     <div>
-        <h1>HOME PAGE</h1>
-        <h3>Welcome To lptb solutions</h3>
+        <Hero />
+        <AbtLPTB />
+        <Svc />
+        <Why />
+        <Clients />
+        <CTA />
     </div>
   )
 }

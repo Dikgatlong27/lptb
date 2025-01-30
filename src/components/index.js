@@ -4,6 +4,15 @@ import SignupForm from "./Authentication/SignupForm";
 import LoginForm from "./Authentication/LoginForm";
 import UserProfile from "./Authentication/UserProfile";
 
+// Pages Layout Components **HOMEPAGE**
+
+import Hero from "./HomePage/Hero";
+import AbtLPTB from "./HomePage/AbtLPTB";
+import Svc from "./HomePage/Svc";
+import Why from "./HomePage/Why";
+import Clients from "./HomePage/Clients"
+import CTA from "./HomePage/CTA"
+
 
 
 
@@ -12,5 +21,14 @@ export {
     Footer,
     SignupForm,
     LoginForm,
-    UserProfile
+    UserProfile,
+
+    // Pages Layout Components **HOMEPAGE**
+
+    Hero,
+    AbtLPTB,
+    Svc,
+    Why,
+    Clients,
+    CTA
 }

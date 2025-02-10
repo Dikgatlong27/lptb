@@ -20,7 +20,7 @@
 }
 
 .links {
-    color: #aaa;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -42,7 +42,7 @@
     width: 100%;
     text-align: center;
     font-size: 1rem;
-    transition: 0.5s ease;
+    transition: 1s ease;
 
     display: flex;
     flex-direction: column;
@@ -85,8 +85,9 @@
     right: 0;
     top: 0;
     font-size: 2.5rem;
-    margin-top: 1.5rem;
-    margin-right: 1.5rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    color: #2086ca;
 }
 
 
@@ -106,6 +107,6 @@
     }
 
     .account-small .links {
-        color: #7fffd4;
+        color: #2086ca;
     }
 }

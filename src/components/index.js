@@ -9,7 +9,7 @@ import UserProfile from "./Authentication/UserProfile";
 import Hero from "./HomePage/Hero";
 import AbtLPTB from "./HomePage/AbtLPTB";
 import Svc from "./HomePage/Svc";
-import Why from "./HomePage/Why";
+import WhyChooseUs from "./HomePage/WhyChooseUs";
 import Clients from "./HomePage/Clients"
 import CTA from "./HomePage/CTA"
 
@@ -28,7 +28,7 @@ export {
     Hero,
     AbtLPTB,
     Svc,
-    Why,
+    WhyChooseUs,
     Clients,
     CTA
 }

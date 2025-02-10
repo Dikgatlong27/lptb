@@ -1,0 +1,91 @@
+.about-section {
+    background-color: #0d1117; /* Dark background */
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .about-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4f9cff; /* Blue accent */
+    margin-bottom: 20px;
+  }
+  
+  .about-text,
+  .about-subtext {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #d1d5db; /* Light gray text */
+    margin-bottom: 15px;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: #ffffff; /* White text for emphasis */
+  }
+  
+  .about-btn-container {
+    margin-top: 20px;
+  }
+  
+  .about-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: white;
+    background-color: #4f9cff; /* Blue button */
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .about-btn:hover {
+    background-color: #3a82e4; /* Darker blue on hover */
+  }
+  
+  
+@media screen and (max-width: 768px) {
+  .about-title {
+    font-size: 2.7rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .about-text, .about-subtext {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .about-btn-container .about-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+ 
+  .about-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about-text, .about-subtext {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-btn-container .about-btn {
+    padding: 0.7rem 1.3rem;
+    font-size: .8rem;
+  }
+
+  .about-btn-container .btn-outline {
+    border: 1px solid #ffffff;
+  }
+}

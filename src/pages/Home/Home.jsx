@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero, AbtLPTB, Svc, Why, Clients, CTA } from '../../components'
+import { Hero, AbtLPTB, Svc, WhyChooseUs, Clients, CTA } from '../../components'
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
         <Hero />
         <AbtLPTB />
         <Svc />
-        <Why />
+        <WhyChooseUs />
         <Clients />
         <CTA />
     </div>

@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import "./Hero.css"
 
 const Hero = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <section className="hero">
+  return (
+    <section className="hero">
       <div className="hero-content">
         <h1>Your Partner in Web & Mobile Development Excellence</h1>
         <p>Custom software solutions tailored to your business needs.</p>
@@ -17,7 +17,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-    )
+  )
 }
 
 export default Hero

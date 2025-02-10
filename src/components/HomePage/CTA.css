@@ -1,0 +1,61 @@
+.contact-cta {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .contact-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contact-cta-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .contact-cta-subtext {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #f1f1f1;
+  }
+  
+  .contact-cta-button {
+    background: white;
+    color: #007bff;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact-cta-button:hover {
+    background: #f1f1f1;
+    color: #0056b3;
+  }
+
+  @media screen and (max-width: 425px) {
+    .contact-cta-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-cta-subtext {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-cta-button {
+      padding: 0.7rem 1.3rem;
+      font-size: .8rem;
+    }
+  
+    .btn-outline {
+      border: 1px solid #000;
+    }
+  }

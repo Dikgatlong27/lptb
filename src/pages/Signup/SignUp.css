@@ -1,5 +1,7 @@
 /* App.css or Signup.css */
-
+#signup {
+  height: 70vh;
+}
   
 .signup-container {
     background-color: #ffffff;
@@ -9,8 +11,7 @@
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin: auto;
-    margin-top: 2rem;
+    margin: 3rem auto;
   }
   
   .signup-container h2 {

@@ -49,7 +49,7 @@ const Footer = () => {
            
         </div>
 
-        <p style={{marginTop: '10px', fontSize: '11px'}}>LPTB Solution (Pty) Ltd. &copy; 2024 All Rights Reserved</p>
+        <p style={{marginTop: '10px', fontSize: '11px'}}>LPTB Solution (Pty) Ltd. &copy; 2025 All Rights Reserved</p>
 
     </div>
   )

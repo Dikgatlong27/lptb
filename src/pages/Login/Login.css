@@ -1,18 +1,35 @@
 
-  #login {
-    height: 70vh;
-  }
-  
   .login-container {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
     max-width: 400px;
     text-align: center;
     margin: 3rem auto;
   }
+
+  /* Info Section for Welcome Message */
+.login-info {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.login-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.login-info p {
+  font-size: 1rem;
+    color: #333434;
+    margin-top: 5px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
   
   .login-container h2 {
     font-size: 24px;
@@ -54,9 +71,28 @@
   .login-container button:hover {
     background-color: #2980b9;
   }
+/* Footer with links */
+.login-footer {
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 0.9rem;
+}
+
+.login-footer p {
+  color: #373737;
+}
+
+.login-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
   
-  .login-container p {
-    color: #e74c3c;
-    font-size: 14px;
+  @media screen and (max-width: 728px) {
+    #login {
+      padding-top: 3rem;
+    }
   }
-  

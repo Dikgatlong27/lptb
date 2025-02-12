@@ -16,10 +16,11 @@ const SignupForm = () => {
     setError("");
 
     try {
-      await signup(name, email, password);
+      await signup( email, password);
       navigate("/dashboard"); // Redirect on success
     } catch (err) {
-      setError("Failed to create an account");
+      setError(err.message);
+      console.error('signup error', err)
     }
   };
 

@@ -1,3 +1,99 @@
-#contact {
-    height: 80vh;
-}
+/* General Styling for Contact Us Page */
+.contact-us-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .contact-us-section {
+    background-color: #f8f9fa;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .contact-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contact-us-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0d1117;
+    margin-bottom: 15px;
+  }
+  
+  .contact-us-subtext {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 40px;
+  }
+  
+  .contact-us-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .form-label {
+    font-size: 1rem;
+    color: #0d1117;
+    margin-bottom: 5px;
+  }
+  
+  .form-input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-input:focus {
+    border-color: #28a745;
+    outline: none;
+  }
+  
+  .form-submit-btn {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-submit-btn:hover {
+    background-color: #026ee2;
+  }
+  
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 425px) {
+    .contact-us-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .contact-us-subtext {
+      font-size: 1rem;
+    }
+  
+    .form-input {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  
+    .form-submit-btn {
+      font-size: 1rem;
+      padding: 10px 15px;
+    }
+  }
+  

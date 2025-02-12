@@ -22,7 +22,7 @@ const Navbar = () => {
                     <li><Link className='links' to='/'>Home</Link></li>
                     <li><Link className='links' to='/about'>About</Link></li>
                     <li><Link className='links' to='/services'>Services</Link></li>
-                    <li><Link className='links' to='/webdev'>Web Dev</Link></li>
+                    <li><Link className='links' to='/webdev'>Dev</Link></li>
                     <li><Link className='links' to='/contact'>Contact</Link></li>
                 </ul>
 
@@ -50,7 +50,7 @@ const Navbar = () => {
                             <li onClick={() => setToggleMenu(false)}><Link className='links' to='/'>Home</Link></li>
                             <li onClick={() => setToggleMenu(false)}><Link className='links' to='/about'>About</Link></li>
                             <li onClick={() => setToggleMenu(false)}><Link className='links' to='/services'>Services</Link></li>
-                            <li onClick={() => setToggleMenu(false)}><Link className='links' to='/webdev'>Web Dev</Link></li>
+                            <li onClick={() => setToggleMenu(false)}><Link className='links' to='/webdev'>Dev</Link></li>
                             <li onClick={() => setToggleMenu(false)}><Link className='links' to='/contact'>Contact</Link></li>
                         </ul>
 

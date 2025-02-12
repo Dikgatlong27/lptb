@@ -1,3 +1,54 @@
-#about {
-    height: 80vh;
-}
+.about-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .about-container  h2 {
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .about-container  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .about-container  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-container  ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .about-container  ul li::before {
+    content: "✔";
+    color: #007bff;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+  }
+  
+  .founder-section,
+  .vision-section,
+  .team-section {
+    background: #f8f9fa;
+    box-shadow: 0 0 1px 0 #007bff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  @media screen and (max-width: 728px) {
+    .about-container {
+      margin-top: 3rem;
+    }
+  }

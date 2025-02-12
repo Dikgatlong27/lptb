@@ -4,6 +4,8 @@
     align-items: center;
     background: #000;
     padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
 }
 
 .logo {
@@ -78,6 +80,14 @@
     font-size: 2rem;
     margin-top: 2rem;
     margin-right: 2rem;
+    color: #2aa9fd;
+    background-color: #073350dd;
+    border: #2086ca 1px solid;
+    box-shadow: 0 0 5px 1px #218ad0;
+    /* -webkit-box-shadow: -1px 2px 24px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 24px 4px rgba(0,0,0,0.75); */
+    border-radius: 3px;
+    
 }
 
 .hamburger-close {

@@ -12,7 +12,7 @@ const CTA = () => {
           Whether you need a website, mobile app, or custom software solution, LPTB Solutions is here to help.  
           Get in touch with us today and let’s bring your vision to life!
         </p>
-        <button className="contact-cta-button btn-outline" onClick={() => navigate("/contact")}>
+        <button className="contact-cta-button btn-outline slide-bottom" onClick={() => navigate("/contact")}>
           Contact Us
         </button>
       </div>

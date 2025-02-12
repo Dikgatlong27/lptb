@@ -12,8 +12,8 @@ const Hero = () => {
         <h1>Your Partner in Web & Mobile Development Excellence</h1>
         <p>Custom software solutions tailored to your business needs.</p>
         <div className="hero-buttons">
-          <button onClick={() => navigate("/services")}>Our Services</button>
-          <button className="btn-outline" onClick={() => navigate("/contact")}>Contact Us</button>
+          <button className='slide-bottom' onClick={() => navigate("/services")}>Our Services</button>
+          <button className="btn-outline slide-bottom" onClick={() => navigate("/contact")}>Contact Us</button>
         </div>
       </div>
     </section>

@@ -18,7 +18,7 @@ const AbtLPTB = () => {
           enterprise, we're here to drive innovation.
         </p>
         <div className="about-btn-container">
-          <a href="/contact" className="about-btn btn-outline">Get in Touch</a>
+          <a href="/contact" className="about-btn btn-outline slide-bottom">Get in Touch</a>
         </div>
       </div>
     </section>

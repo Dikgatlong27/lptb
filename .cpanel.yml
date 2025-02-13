@@ -1,6 +1,8 @@
+---
 deployment:
   tasks:
-    - export NODE_VERSION=18
-    - /opt/cpanel/ea-nodejs18/bin/npm install
-    - /opt/cpanel/ea-nodejs18/bin/npm run build
-    - rsync -av --delete dist/ ~/public_html/
+    - export DEPLOYPATH=/home/lptbsoj8j7a8/public_html/
+    - rm -rf $DEPLOYPATH*
+    - npm install
+    - npm run build
+    - cp -R build/* $DEPLOYPATH

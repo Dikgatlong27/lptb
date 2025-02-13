@@ -1,19 +1,18 @@
 
   .services-section {
-    background-color: #f8f9fa;
     padding: 80px 20px;
     text-align: center;
+    width: 100%;
+  }
+
+  .service-tittle-top {
+    margin-top: 4rem;
   }
 
   .services-lists {
     padding: 80px 20px;
-    margin: 2rem 0 0 0;
     background: url('/public/svs-bg-large.jpg') center/cover no-repeat;
-  }
-  
-  .services-container {
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
   }
   
   .services-title {
@@ -71,8 +70,8 @@
   }
 
   @media screen and (max-width: 728px) {
-    .services-container {
-      margin-top: 2rem;
+    .service-tittle-top {
+      margin-top: 0;
     }
   }
   
@@ -80,6 +79,7 @@
     .services-lists {
         background: url('/public/svs-bg-small.jpg') center/cover no-repeat;
       }
+      
     .services-title {
       font-size: 2rem;
       margin-bottom: 0.5rem;

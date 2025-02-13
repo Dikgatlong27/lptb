@@ -3,11 +3,11 @@ import './Services.css'; // Add your styles here
 
 const Services = () => {
   return (
-    <div className="services-container">
+    <div className="service-container">
        <section className="services-section">
 
       <div className="services-container">
-        <h2 className="services-title">Our Services</h2>
+        <h2 className="services-title service-tittle-top">Our Services</h2>
         <p className="services-subtext">We offer custom web and mobile development solutions to bring your ideas to life, along with comprehensive business and digital transformation strategies.</p>
 
         <div className="services-grid">

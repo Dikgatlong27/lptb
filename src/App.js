@@ -1,13 +1,25 @@
+import React from 'react';
 import { Navbar, Footer, UserProfile }  from './components';
 import { Home, About, Services, WebDev, Contact, Login, SignUp, PrivateRoute, Dashboard, Projects, Invoices } from './pages';
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import './App.css';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}/>

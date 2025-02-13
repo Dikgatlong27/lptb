@@ -25,17 +25,17 @@ const Login = () => {
         <ForgotPasswordForm />
       ) : (
 
-       <>    
-      <LoginForm />
-      
-      <div className="login-footer">
-        <p>
-          <button onClick={toggleForgotPassword}>Forgot Password?</button>
-        </p>
-        <p>New here? <Link to="/signup">Create an account</Link></p>
-      </div>
-</> 
-    )}
+      <>    
+        <LoginForm />
+        
+        <div className="login-footer">
+          <p>
+            <button onClick={toggleForgotPassword}>Forgot Password?</button>
+          </p>
+          <p>New here? <Link to="/signup">Create an account</Link></p>
+        </div>
+        </> 
+      )}
       
     </div>
   )

@@ -1,11 +1,11 @@
 /* General Styling for Contact Us Page */
 .contact-us-page {
     font-family: 'Arial', sans-serif;
-    color: #333;
+    color: #000;
   }
   
   .contact-us-section {
-    background-color: #f8f9fa;
+    background: url('/public/svs-bg-large.jpg') center/cover no-repeat;
     padding: 80px 20px;
     text-align: center;
   }
@@ -16,15 +16,16 @@
   }
   
   .contact-us-title {
+    margin-top:4rem;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #0d1117;
+    color: #000000;
     margin-bottom: 15px;
   }
   
   .contact-us-subtext {
     font-size: 1.2rem;
-    color: #6c757d;
+    color: #020202;
     margin-bottom: 40px;
   }
   
@@ -76,6 +77,14 @@
   }
   
   /* Mobile Responsiveness */
+  @media screen and (max-width: 728px) {
+    .contact-us-title {
+      margin-top: 0;
+    }
+  }
+
+
+
   @media screen and (max-width: 425px) {
     .contact-us-title {
       font-size: 2rem;

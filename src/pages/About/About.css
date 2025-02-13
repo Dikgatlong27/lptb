@@ -1,7 +1,7 @@
 .about-container {
     max-width: 900px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 8rem 2rem 4rem 2rem;
     font-family: Arial, sans-serif;
     color: #333;
   }
@@ -50,5 +50,6 @@
   @media screen and (max-width: 728px) {
     .about-container {
       margin-top: 3rem;
+      padding-top: 4rem;
     }
   }

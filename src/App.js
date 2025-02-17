@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Footer, UserProfile }  from './components';
-import { Home, About, Services, WebDev, Contact, Login, SignUp, PrivateRoute, Dashboard, Projects, Invoices } from './pages';
+import { Home, About, Services, WebDev, Contact, Quotation, Login, SignUp, PrivateRoute, Dashboard, Projects, Invoices } from './pages';
 
 import { Routes, Route, useLocation } from 'react-router-dom';
 
@@ -26,6 +26,7 @@ function App() {
         <Route path='/about' element={<About />}/>
         <Route path='/services' element={<Services />}/>
         <Route path='/webdev' element={<WebDev />}/>
+        <Route path='/quotation' element={<Quotation />} />
         <Route path='/contact' element={<Contact />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/signup' element={<SignUp />}/>

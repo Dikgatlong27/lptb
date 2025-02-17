@@ -1,0 +1,71 @@
+.quotation-container {
+    max-width: 1200px;
+    margin: 8rem auto 40px auto;
+    padding: 4rem 2rem;
+    background: #c4c4c4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.146);
+    border-radius: 8px;
+  }
+  
+ .quotation-container h2 {
+    text-align: center;
+    color: #007bff;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .additional {
+    margin: 2rem auto 0 auto;
+    color: #007bff;
+    font-size: 19px;
+  }
+
+  .feature-options {
+    display: flex;
+    justify-content: center;
+    
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .feature-options h3 {
+    color: #000;
+  }
+
+  .feartures {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #007bff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.149);
+  }
+  
+  .feature-options label {
+    font-weight: normal;
+    cursor: pointer;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+
+  .biz-details {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .quotation-container {
+        width: 90%;
+        margin-top: 6rem;
+        border-radius: 5px;
+      }
+  }

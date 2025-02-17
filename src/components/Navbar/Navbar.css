@@ -26,11 +26,6 @@ nav {
     align-items: center;
 }
 
-.links {
-    color: #fff;
-    text-decoration: none;
-}
-
 .nav-links li, .account a {
     cursor: pointer;
     margin-left: 2rem;

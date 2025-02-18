@@ -8,6 +8,12 @@
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
+
+  .go-to-quotes-page {
+    position: fixed;
+    top: 8rem;
+    left: 2rem;
+  }
   
   .dashboard-buttons {
     margin-top: 2rem;
@@ -115,5 +121,12 @@
     max-width: 800px;
     margin: 4rem 2rem;
     text-align: center;
+  }
+
+  .go-to-quotes-page {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    padding: 10px 20px;
   }
 }

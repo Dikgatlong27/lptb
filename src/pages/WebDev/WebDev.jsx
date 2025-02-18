@@ -95,8 +95,8 @@ const WebDev = () => {
 
       <div className="contact-section">
         <h2>📩 Ready to Build Your Dream Project?</h2>
-        <p>Contact us today and let's bring your vision to life!</p>
-        <button className="contact-button"><Link className="links" to='/quotation'>Get a Free Quote</Link></button>
+        <p>Sign up today or login to build a quote, and let's bring your vision to life!</p>
+        <button className="contact-button"><Link className="links" to='/login'>Get a Free Quote</Link></button>
       </div>
     </div>
   );

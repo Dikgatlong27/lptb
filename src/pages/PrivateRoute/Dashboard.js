@@ -31,10 +31,14 @@ const Dashboard = () => {
       <p>Welcome, {currentUser.email}</p>
       <div className="dashboard-buttons">
         <button onClick={goToProfile}>View Profile</button>
+        
         <button onClick={goToProjects}>My Projects</button>
         <button onClick={goToInvoices}>Quotes</button>
         <button onClick={handleLogout}>Log Out</button>
       </div>
+      <button className="go-to-quotes-page" onClick={() => navigate("/quotation")}>
+      Build Quote
+      </button>
     </div>
   );
 };

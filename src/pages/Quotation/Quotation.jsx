@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import { db } from "../../Firebase";
+import { collection, addDoc } from "firebase/firestore"
 
 import "./Quotation.css";
 
@@ -15,6 +16,7 @@ const Quotation = () => {
   const [contact, setContact] = useState("");
   const [description, setDescription] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleFeatureChange = (feature) => {
     setFeatures((prev) =>
@@ -24,7 +26,7 @@ const Quotation = () => {
     );
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
@@ -40,12 +42,22 @@ const Quotation = () => {
       contact,
       description,
       userId: currentUser.uid,
+      email: currentUser.email,
       date: new Date().toISOString(),
     };
 
-    console.log("Quote Submitted:", quote);
-    alert("Your quote has been submitted and saved to your profile!");
-    navigate("/dashboard");
+    try {
+      setLoading(true);
+      await addDoc(collection(db, "quotes"), quote);
+       alert("Your quote has been submitted and saved to your profile!");
+       navigate("/dashboard");
+    } catch (err) {
+      setError("Error submitting quote. Please try again.");
+      console.log("Firestore Error:", err);
+    } finally {
+      setLoading(false);
+    }
+
   };
 
   return (
@@ -210,7 +222,7 @@ const Quotation = () => {
           <label className="form-label">Project Description:</label>
           <textarea className="form-input" value={description} onChange={(e) => setDescription(e.target.value)} required></textarea>
 
-          <button className="form-submit-btn" type="submit">Submit Quote</button>
+          <button className="form-submit-btn" type="submit" disabled={loading}>{loading ? "Submitting..." : "Submit Quote"}</button>
         </div>
       </form>
       

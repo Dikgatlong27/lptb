@@ -29,11 +29,10 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <h1>Dashboard</h1>
       <p>Welcome, {currentUser.email}</p>
-      <h3>Our Team is Busy working on the Dashboard features, Stay Tuned!</h3>
       <div className="dashboard-buttons">
         <button onClick={goToProfile}>View Profile</button>
         <button onClick={goToProjects}>My Projects</button>
-        <button onClick={goToInvoices}>Invoices</button>
+        <button onClick={goToInvoices}>Quotes</button>
         <button onClick={handleLogout}>Log Out</button>
       </div>
     </div>

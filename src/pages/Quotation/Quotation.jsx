@@ -49,8 +49,12 @@ const Quotation = () => {
     try {
       setLoading(true);
       await addDoc(collection(db, "quotes"), quote);
+
+      console.log("Quote Submitted:", quote);
        alert("Your quote has been submitted and saved to your profile!");
-       navigate("/dashboard");
+
+       
+       navigate("/invoices");
     } catch (err) {
       setError("Error submitting quote. Please try again.");
       console.log("Firestore Error:", err);

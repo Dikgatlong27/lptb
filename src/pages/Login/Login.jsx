@@ -29,12 +29,10 @@ const Login = () => {
         <LoginForm />
         
         <div className="login-footer">
-          <p>
-            <button onClick={toggleForgotPassword}>Forgot Password?</button>
-          </p>
+          <p>Forgot Password? <Link onClick={toggleForgotPassword}>Reset</Link></p>
           <p>New here? <Link to="/signup">Create an account</Link></p>
         </div>
-        </> 
+      </> 
       )}
       
     </div>

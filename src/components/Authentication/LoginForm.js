@@ -24,27 +24,26 @@ const LoginForm = () => {
 
   return (
     <div className="login-container">
-  <h2>Login</h2>
-  {error && <p>{error}</p>}
-  <form onSubmit={handleSubmit} name="loginForm">
-    <input
-      type="email"
-      placeholder="Email"
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-      required
-    />
-    <input
-      type="password"
-      placeholder="Password"
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      required
-    />
-    <button type="submit">Log In</button>
-  </form>
-</div>
-
+      <h2>Login</h2>
+      {error && <p>{error}</p>}
+      <form onSubmit={handleSubmit} name="loginForm">
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Log In</button>
+      </form>
+    </div>
   );
 };
 

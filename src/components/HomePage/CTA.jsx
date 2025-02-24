@@ -2,10 +2,10 @@ import './CTA.css'
 import { useNavigate } from 'react-router-dom'
 
 const CTA = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <section className="contact-cta">
+  return (
+    <section className="contact-cta">
       <div className="contact-cta-container">
         <h2 className="contact-cta-title">Let's Build Something Amazing!</h2>
         <p className="contact-cta-subtext">
@@ -17,7 +17,7 @@ const CTA = () => {
         </button>
       </div>
     </section>
-    )
+  )
 }
 
 export default CTA

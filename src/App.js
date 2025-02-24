@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Footer, UserProfile }  from './components';
+import { Navbar, Footer, UserProfile, Chat }  from './components';
 import { Home, About, Services, WebDev, Contact, Quotation, Login, SignUp, PrivateRoute, Dashboard, Projects, Invoices } from './pages';
 
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -56,6 +56,7 @@ function App() {
           </PrivateRoute>} 
         />
       </Routes>
+      <Chat />
       <Footer />
     </div>
   );

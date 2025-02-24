@@ -1,87 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .links {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .form-label {
-    font-size: 1rem;
-    color: #0d1117;
-    margin-bottom: 5px;
-  }
+  font-size: 1rem;
+  color: #0d1117;
+  margin-bottom: 5px;
+}
   
-  .form-input {
-    padding: 12px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .form-input:focus {
-    border-color: #28a745;
-    outline: none;
-  }
-  
-  .form-submit-btn {
-    margin-top: 2rem;
-    padding: 12px 20px;
-    font-size: 1.1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .form-submit-btn:hover {
-    background-color: #026ee2;
-  }
+.form-input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+.form-submit-btn {
+  margin-top: 2rem;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit-btn:hover {
+  background-color: #026ee2;
+}
 
 
 
 
-
-
-  
 
 .slide-bottom {
-    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
   
 @keyframes slide-bottom {
-    0% {
-        -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
-    }
-    100% {
-        -webkit-transform: translateY(0);
-            transform: translateY(0);
-    }
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
-
-
 
 @media screen and (max-width: 425px) {
    
-    .form-input {
-      font-size: 0.9rem;
-      padding: 10px;
-    }
-  
-    .form-submit-btn {
-      font-size: 1rem;
-      padding: 10px 15px;
-    }
+  .form-input {
+    font-size: 0.9rem;
+    padding: 10px;
   }
+
+  .form-submit-btn {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}

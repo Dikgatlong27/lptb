@@ -1,12 +1,14 @@
 #signup {
   padding-top: 6rem;
+  padding-bottom: 2rem;
+  background: url('../../assets/2363.jpg') center/cover no-repeat fixed;
 }
 
 .signup-container {
-    background-color: #ffffff;
+    background-color: #ffffff5f;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -17,7 +19,7 @@
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 20px;
-    color: #007bff;
+    color: #000;
   }
   
   .signup-info h2 {
@@ -49,7 +51,9 @@
   .signup-container input[type="email"],
   .signup-container input[type="password"] {
     padding: 0.75rem;
-    border: 1px solid #dddddd;
+    border: 1px solid #dddddd50;
+    background-color: #00000095;
+    color: #ffffff;
     border-radius: 4px;
     font-size: 16px;
   }
@@ -83,6 +87,6 @@
   
   @media screen and (max-width: 728px) {
     #signup {
-      padding-top: 3rem;
+      padding: 3rem 2rem;
     }
   }

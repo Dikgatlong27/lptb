@@ -79,6 +79,32 @@ button:disabled, .btn:disabled {
     flex-direction: column;
 }
 
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.chat-icon {
+    font-size: 32px;
+}
+
+.chat-container:hover {
+    transform: scale(1.1);
+    background-color: #1ebe5d;
+}
+  
+
 @media screen and (max-width: 768px) {
     .flex-row {
         flex: 0 0 100%;

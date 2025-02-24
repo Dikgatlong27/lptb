@@ -5,10 +5,6 @@ import { TiSocialFacebook, TiSocialLinkedin  } from "react-icons/ti";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 
-
-
-
-
 import './Footer.css'
 
 const Footer = () => {
@@ -46,11 +42,9 @@ const Footer = () => {
                     </a>   
                 </div>
             </div>
-           
         </div>
 
         <p style={{marginTop: '10px', fontSize: '11px'}}>LPTB Solution (Pty) Ltd. &copy; 2025 All Rights Reserved</p>
-
     </div>
   )
 }

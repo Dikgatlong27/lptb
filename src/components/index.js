@@ -5,6 +5,10 @@ import LoginForm from "./Authentication/LoginForm";
 import UserProfile from "./Authentication/UserProfile";
 import ForgotPasswordForm from "./Authentication/ForgotPasswordForm";
 
+// UI
+
+import Chat from "./UI/Chat";
+
 // Pages Layout Components **HOMEPAGE**
 
 import Hero from "./HomePage/Hero";
@@ -24,6 +28,10 @@ export {
     LoginForm,
     UserProfile,
     ForgotPasswordForm,
+
+    // UI
+
+    Chat,
 
     // Pages Layout Components **HOMEPAGE**
 

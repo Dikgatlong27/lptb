@@ -1,64 +1,60 @@
-/* General Styling for Contact Us Page */
 .contact-us-page {
-    font-family: 'Arial', sans-serif;
-    color: #000;
-  }
-  
-  .contact-us-section {
-    background: url('/public/svs-bg-large.jpg') center/cover no-repeat;
-    padding: 80px 20px;
-    text-align: center;
-  }
-  
+  color: #000;
+}
+
+.contact-us-section {
+  background: url('/public/svs-bg-large.jpg') center/cover no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-us-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-us-title {
+  margin-top:4rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.contact-us-subtext {
+  font-size: 1.2rem;
+  color: #020202;
+  margin-bottom: 40px;
+}
+
+.contact-us-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+@media screen and (max-width: 728px) {
   .contact-us-container {
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 0 2rem;
   }
-  
   .contact-us-title {
-    margin-top:4rem;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 15px;
+    margin-top: 0;
   }
-  
+}
+
+@media screen and (max-width: 425px) {
+  .contact-us-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
   .contact-us-subtext {
-    font-size: 1.2rem;
-    color: #020202;
-    margin-bottom: 40px;
+    font-size: 1rem;
   }
-  
-  .contact-us-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-  
-  
-  /* Mobile Responsiveness */
-  @media screen and (max-width: 728px) {
-    .contact-us-title {
-      margin-top: 0;
-    }
-  }
-
-
-
-  @media screen and (max-width: 425px) {
-    .contact-us-title {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-  
-    .contact-us-subtext {
-      font-size: 1rem;
-    }
-  }
-  
+}

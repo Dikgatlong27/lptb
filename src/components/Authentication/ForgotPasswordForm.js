@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { sendPasswordResetEmail } from 'firebase/auth/cordova' 
 import { auth } from '../../Firebase'
 
-
-
 const ForgotPasswordForm = () => {
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
@@ -28,7 +26,6 @@ const ForgotPasswordForm = () => {
 
     };
 
-
   return (
     <div className='forgot-password-form'>
         {success ? (
@@ -52,8 +49,6 @@ const ForgotPasswordForm = () => {
                 </form>
                 </div>
             )}
-
-        
     </div>
   )
 }

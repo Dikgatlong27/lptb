@@ -1,4 +1,3 @@
-// src/Signup.js
 import React, { useState } from "react";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -26,33 +25,33 @@ const SignupForm = () => {
 
   return (
     <div className="signup-container">
-  <h2>Sign Up</h2>
-  {error && <p>{error}</p>}
-  <form onSubmit={handleSubmit}>
-    <input
-      type="name"
-      placeholder="Enter Your Full Names"
-      value={name}
-      onChange={(e) => setName(e.target.value)}
-      required
-    />
-    <input
-      type="email"
-      placeholder="Enter Your Email"
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-      required
-    />
-    <input
-      type="password"
-      placeholder="Password"
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      required
-    />
-    <button type="submit">Sign Up</button>
-  </form>
-</div>
+      <h2>Sign Up</h2>
+      {error && <p>{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="name"
+          placeholder="Enter Your Full Names"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <input
+          type="email"
+          placeholder="Enter Your Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
   );
 };
 

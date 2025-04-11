@@ -1,7 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './Services.css'; // Add your styles here
 
 const Services = () => {
+  const navigate = useNavigate()
+
   return (
     <div className="service-container">
        <section className="services-section">
@@ -82,7 +86,7 @@ const Services = () => {
         </div> 
         
         
-        <button className="services-cta-btn">Empower your business with smart technology!</button>
+        <button className="services-cta-btn" onClick={() => navigate('/webdev')}>Empower your business with smart technology!</button>
        </div>
       </section>
     </div>

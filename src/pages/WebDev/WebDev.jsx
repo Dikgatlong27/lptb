@@ -18,7 +18,7 @@ const WebDev = () => {
           <h2>🥉 Bronze Package (R2,500)</h2>
           <p><strong>Perfect for Startups</strong></p>
           <ul>
-            <li>1-Page Website (Landing Page)</li>
+            <li>3-5 Page Website (Home, About, Services, Contact, etc.)</li>
             <li>Mobile Responsive Design</li>
             <li>Basic Branding (Logo & Colors)</li>
             <li>Contact Form</li>

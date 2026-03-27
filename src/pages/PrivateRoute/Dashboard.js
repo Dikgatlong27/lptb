@@ -1,7 +1,7 @@
 // src/Dashboard.js
-import React from "react";
-import { useAuth } from "../../AuthContext";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useAuth } from '../../AuthContext';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css'; // Assuming you will create a CSS file for styling
 
 const Dashboard = () => {
@@ -10,19 +10,19 @@ const Dashboard = () => {
 
   const handleLogout = async () => {
     await logout();
-    navigate("/login");
+    navigate('/login');
   };
 
-  const goToProfile = () => {
-    navigate("/profile");
-  };
+  // const goToProfile = () => {
+  //   navigate('/profile');
+  // };
 
   const goToProjects = () => {
-    navigate("/projects");
+    navigate('/projects');
   };
 
   const goToInvoices = () => {
-    navigate("/invoices");
+    navigate('/invoices');
   };
 
   return (
@@ -30,14 +30,17 @@ const Dashboard = () => {
       <h1>Dashboard</h1>
       <p>Welcome, {currentUser.email}</p>
       <div className="dashboard-buttons">
-        <button onClick={goToProfile}>View Profile</button>
-        
+        {/* <button onClick={goToProfile}>View Profile</button> */}
+
         <button onClick={goToProjects}>My Projects</button>
         <button onClick={goToInvoices}>Quotes</button>
         <button onClick={handleLogout}>Log Out</button>
       </div>
-      <button className="go-to-quotes-page" onClick={() => navigate("/quotation")}>
-      Build Quote
+      <button
+        className="go-to-quotes-page"
+        onClick={() => navigate('/quotation')}
+      >
+        Build Quote
       </button>
     </div>
   );

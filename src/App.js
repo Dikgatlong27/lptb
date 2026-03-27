@@ -1,6 +1,19 @@
 import React from 'react';
-import { Navbar, Footer, UserProfile, Chat }  from './components';
-import { Home, About, Services, WebDev, Contact, Quotation, Login, SignUp, PrivateRoute, Dashboard, Projects, Invoices } from './pages';
+import { Navbar, Footer, UserProfile, Chat } from './components';
+import {
+  Home,
+  About,
+  Services,
+  Dev,
+  Contact,
+  Quotation,
+  Login,
+  SignUp,
+  PrivateRoute,
+  Dashboard,
+  Projects,
+  Invoices,
+} from './pages';
 
 import { Routes, Route, useLocation } from 'react-router-dom';
 
@@ -22,38 +35,49 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/services' element={<Services />}/>
-        <Route path='/webdev' element={<WebDev />}/>
-        <Route path='/quotation' element={<Quotation />} />
-        <Route path='/contact' element={<Contact />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/signup' element={<SignUp />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/dev" element={<Dev />} />
+        <Route path="/quotation" element={<Quotation />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
 
-        
-        <Route path='/dashboard' element={
-          <PrivateRoute>
-            <Dashboard />
-          </PrivateRoute>} 
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
         />
 
-        <Route path='/profile' element={
-          <PrivateRoute>
-            <UserProfile />
-          </PrivateRoute>} 
-        />
-        
-        <Route path='/projects' element={
-          <PrivateRoute>
-            <Projects />
-          </PrivateRoute>} 
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <UserProfile />
+            </PrivateRoute>
+          }
         />
 
-        <Route path='/invoices' element={
-          <PrivateRoute>
-            <Invoices />
-          </PrivateRoute>} 
+        <Route
+          path="/projects"
+          element={
+            <PrivateRoute>
+              <Projects />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/invoices"
+          element={
+            <PrivateRoute>
+              <Invoices />
+            </PrivateRoute>
+          }
         />
       </Routes>
       <Chat />

@@ -16,8 +16,8 @@ const Login = () => {
   return (
     <div id='login'>
       <div className="login-info">
-        <h2>Welcome Back!</h2>
-        <p>Log in to manage your projects, collaborate with our team, and stay updated on your software solutions.</p>
+        <h2>Welcome!</h2>
+        <p>Log in to manage your projects & get quote</p>
       </div>
 
       {/* If Forgot Password is toggled, show the ForgotPasswordForm */}

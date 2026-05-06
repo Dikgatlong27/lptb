@@ -1,57 +1,58 @@
 .about-page {
-  background: url('../../assets/2363.jpg') center/cover no-repeat fixed;
+  padding: clamp(8rem, 13vw, 11rem) clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(245, 247, 251, 0.96)),
+    url('../../assets/2363.jpg') center/cover no-repeat;
 }
 
-.about-container {
-  max-width: 900px;
-  margin: auto;
-  padding: 8rem 2rem 4rem 2rem;
-  color: #333;
-}
-
-.about-container  h2 {
-  font-size: 28px;
-  color: #007bff;
-  margin-bottom: 10px;
-}
-
-.about-container  p {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.about-container  ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about-container  ul li {
-  font-size: 18px;
-  margin-bottom: 10px;
-  padding-left: 20px;
-  position: relative;
-}
-
-.about-container  ul li::before {
-  content: "✔";
-  color: #007bff;
-  position: absolute;
-  left: 0;
-  font-size: 20px;
+.about-page .about-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
 }
 
 .founder-section,
 .vision-section,
 .team-section {
-  background: #f8f9fac0;
-  box-shadow: 0 0 1px 0 #007bff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: var(--shadow-sm);
 }
-  
-@media screen and (max-width: 728px) {
-  .about-container {
-    padding-top: 6rem;
-  }
-} 
+
+.founder-section h2,
+.vision-section h2,
+.team-section h2 {
+  color: var(--color-ink);
+  margin-bottom: 1rem;
+}
+
+.about-page p,
+.about-page li {
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
+.about-page ul {
+  display: grid;
+  gap: 0.85rem;
+  padding-left: 0;
+}
+
+.about-page li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.about-page li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}

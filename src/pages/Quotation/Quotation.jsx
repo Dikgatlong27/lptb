@@ -141,7 +141,7 @@ const Quotation = () => {
               <input className="form-input" type="checkbox" onChange={() => handleFeatureChange("Inventory Management")} /> Inventory Management
             </label>
             <label className="form-label">
-              <input className="form-input" type="checkbox" onChange={() => handleFeatureChange("Wishlist Functionality")} /> IWishlist Functionality
+              <input className="form-input" type="checkbox" onChange={() => handleFeatureChange("Wishlist Functionality")} /> Wishlist Functionality
             </label>
             <label className="form-label">
               <input className="form-input" type="checkbox" onChange={() => handleFeatureChange("Multi-Vendor Marketplace")} /> Multi-Vendor Marketplace
@@ -158,9 +158,6 @@ const Quotation = () => {
             </label>
             <label className="form-label">
               <input className="form-input" type="checkbox" onChange={() => handleFeatureChange("Social Media Integration")} /> Social Media Integration
-            </label>
-            <label className="form-label">
-              <input className="form-input" type="checkbox" onChange={() => handleFeatureChange("Social Media Integration")} /> Google My Business Setup
             </label>
             <label className="form-label">
               <input className="form-input" type="checkbox" onChange={() => handleFeatureChange("Google My Business Setup")} /> Google My Business Setup
@@ -215,7 +212,7 @@ const Quotation = () => {
           </div>
         </div>
 
-  <     div className="biz-details">
+        <div className="biz-details">
           <h3 className="additional">Business Details</h3>
           <label className="form-label">Business Name:</label>
           <input className="form-input" type="text" value={businessName} onChange={(e) => setBusinessName(e.target.value)} required />

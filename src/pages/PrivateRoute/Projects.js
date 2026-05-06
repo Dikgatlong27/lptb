@@ -1,12 +1,16 @@
 // src/pages/Projects.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Dashboard.css';
 
 const Projects = () => {
+  const navigate = useNavigate();
+
   return (
-    <div style={{height: '70vh'}}>
-      <h2 style={{marginTop: '4rem'}}>My Projects</h2>
+    <div className="projects-container">
+      <h2>My Projects</h2>
       <p>Your list of projects will go here.</p>
-      {/* Display a list or grid of user projects */}
+      <button onClick={() => navigate('/dashboard')}>Back to Dashboard</button>
     </div>
   );
 };

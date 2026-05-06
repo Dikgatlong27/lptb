@@ -12,7 +12,7 @@ const Footer = () => {
     <div className='footer'>
         <div className="footer-content">
                 <Link to='/' className='footer-logo'>
-                    <img src="logo.svg" className='logosvg' alt="" srcset="" />
+                    <img src="logo.svg" className='logosvg' alt="LPTB Solutions" />
                 </Link>
 
             <div className='footer-links'>

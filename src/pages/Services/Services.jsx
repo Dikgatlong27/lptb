@@ -1,93 +1,95 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaPaintBrush, FaRobot } from 'react-icons/fa';
+import { FiBarChart2, FiCloud, FiDatabase, FiGlobe, FiLayers, FiLock } from 'react-icons/fi';
 
-import './Services.css'; // Add your styles here
+import './Services.css';
+
+const coreServices = [
+  {
+    icon: <FiGlobe />,
+    title: 'Custom Software Development',
+    description: 'Build modern, scalable web apps and cross-platform mobile apps tailored to your needs.',
+  },
+  {
+    icon: <FaPaintBrush />,
+    title: 'Branding & UI/UX Design',
+    description: 'Craft strong brand systems, polished interfaces, and prototypes that feel easy to use.',
+  },
+  {
+    icon: <FiBarChart2 />,
+    title: 'SEO & Digital Marketing',
+    description: 'Improve visibility with practical SEO, analytics setup, and conversion-focused content.',
+  },
+  {
+    icon: <FiCloud />,
+    title: 'Cloud Solutions',
+    description: 'Deploy secure cloud infrastructure that scales with your applications and data.',
+  },
+  {
+    icon: <FaRobot />,
+    title: 'AI & Automation',
+    description: 'Use automation and AI-assisted workflows to reduce manual work and improve operations.',
+  },
+];
+
+const enterpriseServices = [
+  {
+    icon: <FiDatabase />,
+    title: 'ERP',
+    description: 'Enterprise Resource Planning solutions for finance, HR, inventory, and operations.',
+  },
+  {
+    icon: <FiLayers />,
+    title: 'CRM',
+    description: 'Custom CRM solutions to improve sales, customer relationships, and support management.',
+  },
+  {
+    icon: <FiLock />,
+    title: 'Management Systems',
+    description: 'Custom systems for project management, logistics, bookings, and internal operations.',
+  },
+];
 
 const Services = () => {
   const navigate = useNavigate()
 
   return (
     <div className="service-container">
-       <section className="services-section">
+      <section className="services-section service-hero">
+        <div className="services-container">
+          <h2 className="services-title service-tittle-top">Our Services</h2>
+          <p className="services-subtext">Custom web, mobile, product design, and business technology solutions built for growth.</p>
 
-      <div className="services-container">
-        <h2 className="services-title service-tittle-top">Our Services</h2>
-        <p className="services-subtext">We offer custom web and mobile development solutions to bring your ideas to life, along with comprehensive business and digital transformation strategies.</p>
-
-        <div className="services-grid">
-          <div className="service-card">
-            <div className="service-icon">🌐</div>
-            <h3 className="service-title">Custom Software Development</h3>
-            <p className="service-description">
-              Build modern, scalable web apps and cross-platform mobile apps tailored to your needs.
-            </p>
+          <div className="services-grid">
+            {coreServices.map((service) => (
+              <div className="service-card" key={service.title}>
+                <div className="service-icon" aria-hidden="true">{service.icon}</div>
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+              </div>
+            ))}
           </div>
-          
-          <div className="service-card">
-            <div className="service-icon">🎨</div>
-            <h3 className="service-title">Branding & UI/UX Design</h3>
-            <p className="service-description">
-              We craft stunning logos, intuitive UI/UX designs, and prototypes to represent your brand.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <div className="service-icon">📈</div>
-            <h3 className="service-title">SEO & Digital Marketing</h3>
-            <p className="service-description">
-              Enhance your online presence with SEO optimization and digital marketing strategies.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <div className="service-icon">🔒</div>
-            <h3 className="service-title">Cloud Solutions</h3>
-            <p className="service-description">
-              Scalable and secure cloud solutions to manage your data and deploy applications seamlessly.
-            </p>
-          </div>
-          
-          <div className="service-card">
-            <div className="service-icon">🤖</div>
-            <h3 className="service-title">AI & Automation</h3>
-            <p className="service-description">
-              Leverage AI-driven solutions, automation, and predictive analytics to improve efficiency.
-            </p>
-          </div>
-
-         
         </div>
-      </div>
-    </section>
+      </section>
 
       <section className="services-lists services-section">
         <div className="services-container">
+          <h2 className='services-title'>Enterprise & Advanced Tech</h2>
+          <p className="services-subtext">Streamline business operations with systems that connect teams, data, and customers.</p>
 
-        <h2 className='services-title'>Enterprise & Advanced Tech</h2>
-        <p className="services-subtext">Leverage advanced technologies to streamline your business operations.</p>
-
-        <div className="services-grid">
-          <div className="service-card">
-            <h3>ERP</h3>
-            <p>Enterprise Resource Planning solutions for handling finance, HR, inventory, and operations.</p>
+          <div className="services-grid">
+            {enterpriseServices.map((service) => (
+              <div className="service-card" key={service.title}>
+                <div className="service-icon" aria-hidden="true">{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="service-card">
-            <h3>CRM</h3>
-            <p>Custom CRM solutions to improve sales, customer relationships, and support management.</p>
-          </div>
-
-          <div className="service-card">
-            <h3>Management Systems</h3>
-            <p>Custom-built systems for business operations like project management and logistics.</p>
-          </div>
-
-
-        </div> 
-        
-        
-        <button className="services-cta-btn" onClick={() => navigate('/webdev')}>Empower your business with smart technology!</button>
-       </div>
+          <button className="services-cta-btn" onClick={() => navigate('/dev')}>Explore packages</button>
+        </div>
       </section>
     </div>
   );

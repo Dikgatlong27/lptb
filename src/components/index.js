@@ -17,6 +17,7 @@ import Svc from "./HomePage/Svc";
 import WhyChooseUs from "./HomePage/WhyChooseUs";
 import Clients from "./HomePage/Clients";
 import CTA from "./HomePage/CTA";
+import YaBathoFeature from "./HomePage/YaBathoFeature";
 
 
 
@@ -40,5 +41,6 @@ export {
     Svc,
     WhyChooseUs,
     Clients,
+    YaBathoFeature,
     CTA
 }

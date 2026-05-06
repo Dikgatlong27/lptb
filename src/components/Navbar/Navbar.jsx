@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiFillCloseSquare } from "react-icons/ai"
+import { FiMenu, FiX } from 'react-icons/fi'
 
 import { Link } from 'react-router-dom'
 
@@ -14,7 +13,7 @@ const Navbar = () => {
             <div className="nav-larger">
                 
                 <Link to='/' className='nav-logo'>
-                    <img src="logoflat.svg" className='logo' alt="" srcset="" />
+                    <img src="logoflat.svg" className='logo' alt="LPTB Solutions" />
                 </Link>
                 
                 
@@ -33,15 +32,22 @@ const Navbar = () => {
             </div>
 
             <div className="nav-links_small-screens">
-                <GiHamburgerMenu className='hamburger-menu' onClick={() => setToggleMenu(true)} />
+                <Link to='/' className='mobile-logo'>
+                    <img src="logoflat.svg" className='logo' alt="LPTB Solutions" />
+                </Link>
+                <button className='hamburger-menu' onClick={() => setToggleMenu(true)} aria-label="Open navigation">
+                    <FiMenu />
+                </button>
 
 
                 {toggleMenu && (
                     <div className='navlinks-small_overlay slide-bottom'>
-                        <AiFillCloseSquare className='hamburger-close' onClick={() => setToggleMenu(false)} />
+                        <button className='hamburger-close' onClick={() => setToggleMenu(false)} aria-label="Close navigation">
+                            <FiX />
+                        </button>
                     
                         <Link onClick={() => setToggleMenu(false)} to='/'>
-                            <img src="logoflat.svg" className='logo-small' alt="" srcset="" />
+                            <img src="logoflat.svg" className='logo-small' alt="LPTB Solutions" />
                         </Link>
                         
                         

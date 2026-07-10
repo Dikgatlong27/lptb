@@ -618,6 +618,7 @@ const Quotation = () => {
       packageStartingPrice: selectedPackage.basePrice,
 
       selectedFeatureIds: selectedFeatures,
+
       features: selectedFeatureDetails.map((feature) => ({
         id: feature.id,
         name: feature.name,
@@ -693,24 +694,13 @@ const Quotation = () => {
 
         <form className="quotation-layout" onSubmit={handleSubmit}>
           <div className="quotation-form-column">
-            {error && (
-              <div className="quotation-message quotation-error">
-                {error}
-              </div>
-            )}
-
-            {success && (
-              <div className="quotation-message quotation-success">
-                {success}
-              </div>
-            )}
-
             <section className="quotation-form-section">
               <div className="quotation-section-heading">
                 <span>1</span>
 
                 <div>
                   <h2>Select your package</h2>
+
                   <p>
                     Choose the package closest to the project you need.
                   </p>
@@ -760,6 +750,7 @@ const Quotation = () => {
 
                 <div>
                   <h2>Add project features</h2>
+
                   <p>
                     Select all the additional functions relevant to your
                     project.
@@ -828,6 +819,7 @@ const Quotation = () => {
 
                 <div>
                   <h2>Tell us about the business</h2>
+
                   <p>
                     Provide the basic information needed to understand
                     your organisation.
@@ -909,6 +901,7 @@ const Quotation = () => {
 
                 <div>
                   <h2>Project requirements</h2>
+
                   <p>
                     Help us understand the type, budget, and expected
                     delivery period.
@@ -1001,31 +994,51 @@ const Quotation = () => {
               </div>
             </section>
 
-            <div className="quotation-form-actions">
-              <button
-                type="button"
-                className="quotation-save-button"
-                onClick={handleSaveDraft}
-              >
-                <FiSave aria-hidden="true" />
-                Save Draft
-              </button>
+            <div className="quotation-bottom-area">
+              {error && (
+                <div
+                  className="quotation-message quotation-error quotation-bottom-message"
+                  role="alert"
+                >
+                  {error}
+                </div>
+              )}
 
-              <button
-                type="submit"
-                className="quotation-submit-button"
-                disabled={submitting}
-              >
-                {submitting
-                  ? "Submitting Quote..."
-                  : currentUser
-                    ? "Submit Quote"
-                    : "Log In and Submit Quote"}
+              {success && (
+                <div
+                  className="quotation-message quotation-success quotation-bottom-message"
+                  role="status"
+                >
+                  {success}
+                </div>
+              )}
 
-                {!submitting && (
-                  <FiChevronRight aria-hidden="true" />
-                )}
-              </button>
+              <div className="quotation-form-actions">
+                <button
+                  type="button"
+                  className="quotation-save-button"
+                  onClick={handleSaveDraft}
+                >
+                  <FiSave aria-hidden="true" />
+                  Save Draft
+                </button>
+
+                <button
+                  type="submit"
+                  className="quotation-submit-button"
+                  disabled={submitting}
+                >
+                  {submitting
+                    ? "Submitting Quote..."
+                    : currentUser
+                      ? "Submit Quote"
+                      : "Log In and Submit Quote"}
+
+                  {!submitting && (
+                    <FiChevronRight aria-hidden="true" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -1049,6 +1062,7 @@ const Quotation = () => {
 
                   <div className="quotation-summary-row">
                     <span>Package starting price</span>
+
                     <strong>
                       {formatCurrency(selectedPackage.basePrice)}
                     </strong>
@@ -1075,6 +1089,7 @@ const Quotation = () => {
                     {selectedFeatureDetails.map((feature) => (
                       <li key={feature.id}>
                         <span>{feature.name}</span>
+
                         <strong>
                           {formatCurrency(feature.price)}
                         </strong>

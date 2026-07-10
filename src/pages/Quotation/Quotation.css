@@ -76,7 +76,6 @@
 }
 
 .quotation-message {
-  margin-bottom: 1rem;
   padding: 1rem 1.1rem;
   border-radius: var(--radius-sm);
   font-weight: 700;
@@ -368,6 +367,27 @@
   margin-top: 0.4rem;
   color: var(--color-muted);
   font-size: 0.76rem;
+}
+
+.quotation-bottom-area {
+  margin-top: 1rem;
+}
+
+.quotation-bottom-message {
+  margin-bottom: 1rem;
+  animation: quotation-message-appear 0.25s ease;
+}
+
+@keyframes quotation-message-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .quotation-form-actions {

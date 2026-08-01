@@ -16,8 +16,8 @@ const testimonials = [
   },
   {
     name: "Nkululeko Maphanga",
-    position: "CEO & Founder, The Chairman Fortaleza de Sol & Fortress Restaurant",
-    feedback: "The LPTB Solutions team built professional web platforms for both of my restaurants, enhancing our online presence and customer engagement. Their ability to deliver high-quality, tailored solutions has been invaluable to our business growth.",
+    position: "Founder & Group Leader, The Chairman Group | C-Digital | Fortress Restaurant",
+    feedback: "LPTB Solutions supported The Chairman Group's digital presence with a professional platform that reflects its governance-led focus on structured growth, leadership, hospitality, technology, and strategic partnerships. Their work continues to support our broader digital transformation journey through C-Digital and our operating divisions.",
     image: "nkuli.svg",
   },
 ];

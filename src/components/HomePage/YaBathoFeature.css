@@ -43,6 +43,37 @@
   margin-top: 2rem;
 }
 
+.yabatho-device-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.yabatho-device-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 42px;
+  padding: 0.7rem 0.95rem;
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.yabatho-device-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(244, 185, 66, 0.34);
+  transform: translateY(-2px);
+}
+
 .yabatho-primary,
 .yabatho-secondary {
   display: inline-flex;
@@ -169,8 +200,13 @@
     flex-direction: column;
   }
 
+  .yabatho-device-links {
+    flex-direction: column;
+  }
+
   .yabatho-primary,
-  .yabatho-secondary {
+  .yabatho-secondary,
+  .yabatho-device-link {
     width: 100%;
   }
 

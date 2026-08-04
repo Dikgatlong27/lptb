@@ -1,6 +1,6 @@
 import React from 'react'
-import { FaMotorcycle, FaStore } from 'react-icons/fa'
-import { FiExternalLink, FiMonitor, FiUsers } from 'react-icons/fi'
+import { FaAndroid, FaMotorcycle, FaStore } from 'react-icons/fa'
+import { FiExternalLink, FiMonitor, FiSmartphone, FiUsers } from 'react-icons/fi'
 
 import './YaBathoFeature.css'
 
@@ -27,33 +27,57 @@ const platformPoints = [
   },
 ]
 
+const yabathoAppUrl = 'https://app.yabathoplatform.co.za/'
+
 const YaBathoFeature = () => {
   return (
     <section className="yabatho-section">
       <div className="yabatho-container">
         <div className="yabatho-copy">
-          <p className="yabatho-kicker">New Development</p>
-          <h2>YaBatho Delivery Platform is launching soon.</h2>
+          <p className="yabatho-kicker">Live Platform</p>
+          <h2>YaBatho Delivery Platform is now live.</h2>
           <p>
-            LPTB Solutions is helping build YaBatho, a people-first delivery ecosystem made for
-            local customers, restaurants, riders, and administrators. The platform is being
+            LPTB Solutions helped build YaBatho, a people-first delivery ecosystem made for
+            local customers, restaurants, riders, and administrators. The platform was
             developed in partnership with C-Digital, a division of The Chairman Group.
           </p>
           <p>
             YaBatho is shaped around local growth: helping restaurants go digital, improving order
-            handling, and giving communities a clearer delivery experience.
+            handling, and giving communities a clearer delivery experience that is ready for real
+            customers and operating partners.
           </p>
 
           <div className="yabatho-actions">
             <a
-              href="https://yabathoplatform.co.za/coming-soon"
+              href={yabathoAppUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="yabatho-primary"
             >
-              Visit YaBatho <FiExternalLink aria-hidden="true" />
+              Open YaBatho App <FiExternalLink aria-hidden="true" />
             </a>
             <a href="/contact" className="yabatho-secondary">Partner with us</a>
+          </div>
+
+          <div className="yabatho-device-links" aria-label="YaBatho app links by device">
+            <a
+              href={yabathoAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="yabatho-device-link"
+            >
+              <FaAndroid aria-hidden="true" />
+              Android users
+            </a>
+            <a
+              href={yabathoAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="yabatho-device-link"
+            >
+              <FiSmartphone aria-hidden="true" />
+              iOS, desktop & other OS
+            </a>
           </div>
         </div>
 

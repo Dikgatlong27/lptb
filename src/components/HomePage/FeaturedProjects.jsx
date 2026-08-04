@@ -13,7 +13,7 @@ const projects = [
     name: "YaBatho Delivery Platform",
     category: "Multi-App Delivery Ecosystem",
     description:
-      "A connected food delivery platform comprising customer, restaurant, rider, and administration applications. LPTB Solutions leads front-end development, product implementation, integrations, and ongoing platform improvement in partnership with C-Digital, a division of The Chairman Group.",
+      "A live connected food delivery platform comprising customer, restaurant, rider, and administration applications. LPTB Solutions supports front-end development, product implementation, integrations, and ongoing platform improvement in partnership with C-Digital, a division of The Chairman Group.",
     features: [
       "Customer ordering app",
       "Restaurant management app",
@@ -23,7 +23,7 @@ const projects = [
       "Real-time order tracking",
     ],
     icon: <FiLayers />,
-    website: "https://yabathoplatform.co.za/coming-soon",
+    website: "https://yabathoplatform.co.za/",
   },
   {
     name: "LVSIFT Digital Platform",

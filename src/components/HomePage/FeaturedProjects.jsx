@@ -13,7 +13,7 @@ const projects = [
     name: "YaBatho Delivery Platform",
     category: "Multi-App Delivery Ecosystem",
     description:
-      "A live connected food delivery platform comprising customer, restaurant, rider, and administration applications. LPTB Solutions supports front-end development, product implementation, integrations, and ongoing platform improvement in partnership with C-Digital, a division of The Chairman Group.",
+      "A live food delivery platform with customer, restaurant, rider, and administration applications. LPTB Solutions supports product implementation, front-end delivery, integrations, and ongoing improvements in partnership with C-Digital, a division of The Chairman Group.",
     features: [
       "Customer ordering app",
       "Restaurant management app",
@@ -29,14 +29,14 @@ const projects = [
     name: "LVSIFT Digital Platform",
     category: "Education and Future Technologies",
     description:
-      "A modern digital platform developed for the Lourens Van Staden Institute for Future Technologies. The platform establishes a professional digital presence and prepares the institute for programme access, authentication, registrations, and future integrations.",
+      "A growing education technology platform for the Lourens Van Staden Institute for Future Technologies. LVSIFT is moving beyond a public website into a structured digital system for programme discovery, learner registrations, secure access, and future administration tools.",
     features: [
-      "Modern institutional website",
-      "Responsive user experience",
-      "User authentication foundation",
-      "Programme access preparation",
-      "Scalable integration architecture",
-      "Digital registration readiness",
+      "Institutional website and platform foundation",
+      "Programme discovery and access flow",
+      "Learner registration journey",
+      "Secure authentication structure",
+      "Administration tools roadmap",
+      "Future integration readiness",
     ],
     icon: <FiCode />,
   },
@@ -44,7 +44,7 @@ const projects = [
     name: "The Chairman Group",
     category: "Hospitality and Business Technology",
     description:
-      "LPTB Solutions supports The Chairman Group with websites, digital platforms, operational systems, and ongoing technical services across its growing business portfolio.",
+      "LPTB Solutions works with The Chairman Group on websites, digital platforms, operational systems, and technical services across its growing business portfolio.",
     features: [
       "The Chairman Fortaleza de Sol website",
       "Fortress Restaurant website",
@@ -65,13 +65,12 @@ const FeaturedProjects = () => {
           <p className="featured-projects-kicker">Selected Projects</p>
 
           <h2>
-            Digital platforms built for real businesses and growing communities.
+            Real projects for businesses, partners, and growing communities.
           </h2>
 
           <p>
-            Our work extends beyond basic websites. We develop connected
-            platforms, business systems, mobile applications, and digital
-            infrastructure designed around real operational needs.
+            Our work ranges from business websites to connected platforms like
+            YaBatho and digital systems for growing business groups.
           </p>
         </div>
 

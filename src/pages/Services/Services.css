@@ -5,8 +5,10 @@
 .service-hero {
   padding-top: clamp(8rem, 13vw, 11rem);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(245, 247, 251, 0.98)),
-    url('/public/svs-bg-large.jpg') center/cover no-repeat;
+    linear-gradient(90deg, rgba(15, 139, 141, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(15, 139, 141, 0.07) 50%, rgba(245, 247, 251, 0.98)),
+    #f7f9fb;
+  background-size: 72px 72px, auto, auto;
 }
 
 .services-lists {

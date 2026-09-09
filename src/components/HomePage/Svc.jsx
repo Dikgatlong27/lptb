@@ -7,31 +7,31 @@ const servicesData = [
   {
     title: "Web Development",
     description:
-      "We build modern, responsive, and high-performance websites tailored to your business needs.",
+      "Practical, responsive websites for small businesses, founders, and organisations that need a credible online home.",
     icon: <FiGlobe />,
   },
   {
     title: "Mobile App Development",
     description:
-      "Transform your ideas into scalable and user-friendly mobile applications for iOS and Android.",
+      "Mobile and PWA experiences planned carefully, built in phases, and improved as the product proves itself.",
     icon: <FaMobileAlt />,
   },
   {
     title: "E-Commerce Solutions",
     description:
-      "Developing seamless e-commerce platforms with secure payment gateways and intuitive UI/UX.",
+      "Online stores, booking flows, payment integrations, and customer journeys for businesses starting to sell online.",
     icon: <FaShoppingCart />,
   },
   {
     title: "Custom Software Development",
     description:
-      "From SaaS platforms to internal enterprise solutions, we build robust custom applications.",
+      "Custom dashboards, portals, delivery tools, and internal systems built around the way your business actually works.",
     icon: <FiSettings />,
   },
   {
     title: "UI/UX Design",
     description:
-      "We create engaging and visually stunning designs that enhance user experiences.",
+      "Clear interfaces, page structures, and product flows that help businesses look organised and easy to trust.",
     icon: <FaPaintBrush />,
   },
 ];
@@ -42,7 +42,7 @@ const Svc = () => {
       <div className="services-container">
         <h2 className="services-title">Our Services</h2>
         <p className="services-subtext">
-          Empowering businesses with practical web, mobile, and product design solutions.
+          Practical web, mobile, and product design support with clear communication from start to launch.
         </p>
         <div className="services-grid">
           {servicesData.map((service, index) => (

@@ -17,7 +17,7 @@ const Login = () => {
     <div id='login'>
       <div className="login-info">
         <h2>Welcome!</h2>
-        <p>Log in to manage your projects & get quote</p>
+        <p>Log in to manage your quote requests and continue your project conversation.</p>
       </div>
 
       {/* If Forgot Password is toggled, show the ForgotPasswordForm */}

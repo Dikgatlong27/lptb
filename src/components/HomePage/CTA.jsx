@@ -7,10 +7,10 @@ const CTA = () => {
   return (
     <section className="contact-cta">
       <div className="contact-cta-container">
-        <h2 className="contact-cta-title">Let's Build Something Amazing!</h2>
+        <h2 className="contact-cta-title">Let's Build Something Useful.</h2>
         <p className="contact-cta-subtext">
-          Whether you need a website, mobile app, or custom software solution, LPTB Solutions is here to help.  
-          Get in touch with us today and let’s bring your vision to life!
+          If you need a website, app, or custom system, speak directly with LPTB Solutions about
+          scope, budget, timelines, and the best first step.
         </p>
         <button className="contact-cta-button btn-outline slide-bottom" onClick={() => navigate("/contact")}>
           Contact Us

@@ -15,7 +15,8 @@ const Contact = () => {
         <div className="contact-us-container">
           <h2 className="contact-us-title">Get in Touch</h2>
           <p className="contact-us-subtext">
-            We'd love to hear from you! Whether you have a question, a project in mind, or just want to say hello, feel free to reach out.
+            Speak directly with LPTB Solutions about your website, app, platform, or partnership idea.
+            We will be clear about what can be done now, what needs a phased approach, and where the right technical support is needed.
           </p>
 
           <form className="contact-us-form" onSubmit={handleSubmit}>

@@ -38,13 +38,14 @@ const YaBathoFeature = () => {
           <h2>YaBatho Delivery Platform is now live.</h2>
           <p>
             LPTB Solutions helped build YaBatho, a people-first delivery ecosystem made for
-            local customers, restaurants, riders, and administrators. The platform was
-            developed in partnership with C-Digital, a division of The Chairman Group.
+            local customers, restaurants, riders, and administrators. The project reflects our
+            hands-on development approach, combining product direction, front-end delivery,
+            backend support, and ongoing platform improvements.
           </p>
           <p>
-            YaBatho is shaped around local growth: helping restaurants go digital, improving order
-            handling, and giving communities a clearer delivery experience that is ready for real
-            customers and operating partners.
+            The platform was developed in partnership with C-Digital, a division of The Chairman
+            Group, and is shaped around local growth: helping restaurants go digital, improving
+            order handling, and giving communities a clearer delivery experience.
           </p>
 
           <div className="yabatho-actions">

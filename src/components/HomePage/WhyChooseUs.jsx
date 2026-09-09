@@ -5,28 +5,28 @@ import "./WhyChooseUs.css";
 
 const reasons = [
   {
-    title: "Expert Developers",
-    description: "Our team consists of experienced developers skilled in modern technologies.",
+    title: "Founder-Led Delivery",
+    description: "Projects are guided directly by Tebogo, keeping communication, planning, and delivery clear.",
     icon: <FiCpu />,
   },
   {
-    title: "Current Technologies",
-    description: "We use proven frameworks and tools like React, Node.js, Flutter, and more.",
+    title: "Trusted Development Support",
+    description: "Backend and full-stack collaborators support larger or more technical builds when needed.",
     icon: <FaRocket />,
   },
   {
-    title: "Custom Solutions",
-    description: "Tailored web and mobile solutions that align with your business needs.",
+    title: "Clear Scope",
+    description: "We help clients choose the right first phase, timeline, and technical approach for their budget.",
     icon: <FiSettings />,
   },
   {
-    title: "Scalability & Performance",
-    description: "We build scalable, high-performance applications for long-term growth.",
+    title: "Real Project Experience",
+    description: "Our experience is growing through live platforms like YaBatho, client websites, and business systems.",
     icon: <FiTrendingUp />,
   },
   {
-    title: "Client-Centric Approach",
-    description: "We prioritize your vision and deliver solutions shaped around real outcomes.",
+    title: "Partnership Mindset",
+    description: "Partnerships with groups like The Chairman Group help us grow responsibly while serving real business needs.",
     icon: <FiUsers />,
   },
 ];
@@ -35,9 +35,9 @@ const WhyChooseUs = () => {
   return (
     <section className="why-choose-section">
       <div className="why-choose-container">
-        <h2 className="why-choose-title">Why Choose LPTB Solutions?</h2>
+        <h2 className="why-choose-title">Why Work With LPTB Solutions?</h2>
         <p className="why-choose-subtext">
-          We combine delivery discipline, product thinking, and technical care to build work that lasts.
+          We stay close to the work, communicate clearly, and build practical solutions that can grow over time.
         </p>
         <div className="why-choose-grid">
           {reasons.map((reason, index) => (

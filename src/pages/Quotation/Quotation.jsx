@@ -36,42 +36,108 @@ const packageOptions = {
     basePrice: 2500,
     description:
       "An affordable professional website for a startup or new business.",
+    includedFeatureIds: [
+      "domain-hosting",
+      "responsive-design",
+      "contact-form",
+      "whatsapp-integration",
+      "basic-seo",
+    ],
   },
 
   silver: {
     id: "silver",
     name: "Business Website",
-    displayPrice: "From R8,500",
-    basePrice: 8500,
+    displayPrice: "From R6,500",
+    basePrice: 6500,
     description:
       "A stronger digital presence for a growing small or medium-sized business.",
+    includedFeatureIds: [
+      "domain-hosting",
+      "responsive-design",
+      "contact-form",
+      "whatsapp-integration",
+      "blog",
+      "basic-seo",
+      "analytics",
+    ],
   },
 
   gold: {
     id: "gold",
     name: "E-Commerce Solution",
-    displayPrice: "From R15,500",
-    basePrice: 15500,
+    displayPrice: "From R12,500",
+    basePrice: 12500,
     description:
       "An online selling, booking, or service platform with management functionality.",
+    includedFeatureIds: [
+      "domain-hosting",
+      "responsive-design",
+      "contact-form",
+      "whatsapp-integration",
+      "online-store",
+      "payment-gateway",
+      "shopping-cart",
+      "product-management",
+      "authentication",
+      "admin-dashboard",
+      "basic-seo",
+    ],
   },
 
   platinum: {
     id: "platinum",
     name: "Custom Business Platform",
-    displayPrice: "From R50,000",
-    basePrice: 50000,
+    displayPrice: "From R28,000",
+    basePrice: 28000,
     description:
       "A custom operational web platform with dashboards, integrations, and business workflows.",
+    includedFeatureIds: [
+      "domain-hosting",
+      "responsive-design",
+      "contact-form",
+      "authentication",
+      "user-profile",
+      "admin-dashboard",
+      "role-access",
+      "reporting",
+      "api-development",
+      "cloud-setup",
+    ],
   },
 
   premium: {
     id: "premium",
-    name: "Enterprise Platform",
-    displayPrice: "From R100,000",
-    basePrice: 100000,
+    name: "Advanced Platform",
+    displayPrice: "From R55,000",
+    basePrice: 55000,
     description:
-      "A scalable enterprise solution consisting of connected systems, applications, and integrations.",
+      "A larger phased solution consisting of connected systems, applications, and integrations.",
+    includedFeatureIds: [
+      "domain-hosting",
+      "responsive-design",
+      "contact-form",
+      "whatsapp-integration",
+      "custom-ui",
+      "authentication",
+      "user-profile",
+      "admin-dashboard",
+      "role-access",
+      "reporting",
+      "booking-system",
+      "order-management",
+      "notifications",
+      "pwa",
+      "api-development",
+      "third-party-api",
+      "cloud-setup",
+      "workflow-automation",
+      "advanced-seo",
+      "analytics",
+      "performance",
+      "security",
+      "backup",
+    ],
   },
 };
 
@@ -84,37 +150,37 @@ const featureGroups = [
       {
         id: "domain-hosting",
         name: "Custom Domain and Hosting",
-        price: 1200,
+        price: 950,
       },
       {
         id: "responsive-design",
         name: "Responsive Mobile Design",
-        price: 1500,
+        price: 800,
       },
       {
         id: "contact-form",
         name: "Contact Form and Lead Capture",
-        price: 850,
+        price: 500,
       },
       {
         id: "whatsapp-integration",
         name: "WhatsApp Integration",
-        price: 500,
+        price: 350,
       },
       {
         id: "blog",
         name: "Blog or News Section",
-        price: 1800,
+        price: 1200,
       },
       {
         id: "newsletter",
         name: "Newsletter Subscription",
-        price: 1200,
+        price: 700,
       },
       {
         id: "multi-language",
         name: "Multi-Language Support",
-        price: 3500,
+        price: 1800,
       },
     ],
   },
@@ -127,27 +193,27 @@ const featureGroups = [
       {
         id: "logo-design",
         name: "Professional Logo Design",
-        price: 1500,
+        price: 1200,
       },
       {
         id: "branding-kit",
         name: "Complete Branding Kit",
-        price: 3500,
+        price: 2500,
       },
       {
         id: "custom-ui",
         name: "Custom UI and UX Design",
-        price: 4500,
+        price: 2800,
       },
       {
         id: "content-writing",
         name: "Website Content Writing",
-        price: 2500,
+        price: 1500,
       },
       {
         id: "custom-graphics",
         name: "Custom Graphics and Visual Assets",
-        price: 2200,
+        price: 1500,
       },
     ],
   },
@@ -160,42 +226,42 @@ const featureGroups = [
       {
         id: "online-store",
         name: "Online Store",
-        price: 6500,
+        price: 4000,
       },
       {
         id: "payment-gateway",
         name: "Payment Gateway Integration",
-        price: 3500,
+        price: 1800,
       },
       {
         id: "shopping-cart",
         name: "Shopping Cart and Checkout",
-        price: 2800,
+        price: 1500,
       },
       {
         id: "product-management",
         name: "Product Management",
-        price: 2500,
+        price: 1600,
       },
       {
         id: "inventory",
         name: "Inventory Management",
-        price: 4500,
+        price: 2800,
       },
       {
         id: "discounts",
         name: "Discount and Coupon System",
-        price: 1800,
+        price: 900,
       },
       {
         id: "subscriptions",
         name: "Subscription Payments",
-        price: 5500,
+        price: 3000,
       },
       {
         id: "multi-vendor",
         name: "Multi-Vendor Marketplace",
-        price: 25000,
+        price: 12000,
       },
     ],
   },
@@ -208,37 +274,37 @@ const featureGroups = [
       {
         id: "authentication",
         name: "User Login and Registration",
-        price: 4500,
+        price: 2500,
       },
       {
         id: "user-profile",
         name: "Customer Profile System",
-        price: 2800,
+        price: 1500,
       },
       {
         id: "admin-dashboard",
         name: "Administration Dashboard",
-        price: 7500,
+        price: 4500,
       },
       {
         id: "role-access",
         name: "Role-Based Access Control",
-        price: 6500,
+        price: 2800,
       },
       {
         id: "crm",
         name: "Customer Relationship Management",
-        price: 12000,
+        price: 6500,
       },
       {
         id: "erp",
         name: "Enterprise Resource Planning",
-        price: 30000,
+        price: 15000,
       },
       {
         id: "reporting",
         name: "Reports and Business Analytics",
-        price: 6500,
+        price: 3200,
       },
     ],
   },
@@ -251,32 +317,32 @@ const featureGroups = [
       {
         id: "booking-system",
         name: "Booking and Appointment System",
-        price: 7500,
+        price: 2500,
       },
       {
         id: "order-management",
         name: "Order Management System",
-        price: 8500,
+        price: 3500,
       },
       {
         id: "project-management",
         name: "Project Management System",
-        price: 12500,
+        price: 5500,
       },
       {
         id: "delivery-tracking",
         name: "Delivery and Order Tracking",
-        price: 15000,
+        price: 7500,
       },
       {
         id: "notifications",
         name: "Email and In-App Notifications",
-        price: 4500,
+        price: 1800,
       },
       {
         id: "document-management",
         name: "Document Management",
-        price: 8500,
+        price: 3500,
       },
     ],
   },
@@ -289,42 +355,42 @@ const featureGroups = [
       {
         id: "pwa",
         name: "Progressive Web App",
-        price: 8500,
+        price: 4500,
       },
       {
         id: "android-app",
         name: "Android Mobile Application",
-        price: 25000,
+        price: 15000,
       },
       {
         id: "ios-app",
         name: "iOS Mobile Application",
-        price: 30000,
+        price: 18000,
       },
       {
         id: "api-development",
         name: "Custom API Development",
-        price: 12000,
+        price: 6500,
       },
       {
         id: "third-party-api",
         name: "Third-Party API Integration",
-        price: 5500,
+        price: 2500,
       },
       {
         id: "cloud-setup",
         name: "Cloud Infrastructure Setup",
-        price: 8500,
+        price: 3500,
       },
       {
         id: "ai-chatbot",
         name: "AI Chatbot Integration",
-        price: 9500,
+        price: 4500,
       },
       {
         id: "workflow-automation",
         name: "Workflow Automation",
-        price: 12000,
+        price: 5500,
       },
     ],
   },
@@ -337,42 +403,42 @@ const featureGroups = [
       {
         id: "basic-seo",
         name: "Basic SEO Setup",
-        price: 1800,
+        price: 900,
       },
       {
         id: "advanced-seo",
         name: "Advanced SEO Optimisation",
-        price: 5500,
+        price: 2800,
       },
       {
         id: "analytics",
         name: "Google Analytics Setup",
-        price: 1200,
+        price: 650,
       },
       {
         id: "business-profile",
         name: "Google Business Profile Setup",
-        price: 1200,
+        price: 800,
       },
       {
         id: "performance",
         name: "Speed and Performance Optimisation",
-        price: 3500,
+        price: 1800,
       },
       {
         id: "security",
         name: "Advanced Website Security",
-        price: 4500,
+        price: 2500,
       },
       {
         id: "backup",
         name: "Backup and Recovery Setup",
-        price: 2500,
+        price: 1200,
       },
       {
         id: "popia",
         name: "POPIA Compliance Preparation",
-        price: 3500,
+        price: 1800,
       },
     ],
   },
@@ -491,14 +557,30 @@ const Quotation = () => {
     []
   );
 
+  const includedFeatureIds = useMemo(
+    () => selectedPackage?.includedFeatureIds || [],
+    [selectedPackage]
+  );
+
+  const includedFeatureDetails = useMemo(
+    () =>
+      includedFeatureIds
+        .map((featureId) =>
+          allFeatures.find((feature) => feature.id === featureId)
+        )
+        .filter(Boolean),
+    [includedFeatureIds, allFeatures]
+  );
+
   const selectedFeatureDetails = useMemo(
     () =>
       selectedFeatures
         .map((featureId) =>
           allFeatures.find((feature) => feature.id === featureId)
         )
-        .filter(Boolean),
-    [selectedFeatures, allFeatures]
+        .filter(Boolean)
+        .filter((feature) => !includedFeatureIds.includes(feature.id)),
+    [selectedFeatures, allFeatures, includedFeatureIds]
   );
 
   const addOnsTotal = useMemo(
@@ -526,7 +608,23 @@ const Quotation = () => {
     description,
   };
 
+  useEffect(() => {
+    if (includedFeatureIds.length === 0) {
+      return;
+    }
+
+    setSelectedFeatures((currentFeatures) =>
+      currentFeatures.filter(
+        (featureId) => !includedFeatureIds.includes(featureId)
+      )
+    );
+  }, [includedFeatureIds]);
+
   const handleFeatureChange = (featureId) => {
+    if (includedFeatureIds.includes(featureId)) {
+      return;
+    }
+
     setSelectedFeatures((currentFeatures) => {
       if (currentFeatures.includes(featureId)) {
         return currentFeatures.filter((id) => id !== featureId);
@@ -617,12 +715,18 @@ const Quotation = () => {
       packageName: selectedPackage.name,
       packageStartingPrice: selectedPackage.basePrice,
 
-      selectedFeatureIds: selectedFeatures,
+      selectedFeatureIds: selectedFeatureDetails.map((feature) => feature.id),
+      includedFeatureIds,
 
       features: selectedFeatureDetails.map((feature) => ({
         id: feature.id,
         name: feature.name,
         estimatedPrice: feature.price,
+      })),
+
+      includedFeatures: includedFeatureDetails.map((feature) => ({
+        id: feature.id,
+        name: feature.name,
       })),
 
       addOnsEstimatedTotal: addOnsTotal,
@@ -773,6 +877,8 @@ const Quotation = () => {
                       {group.features.map((feature) => {
                         const isSelected =
                           selectedFeatures.includes(feature.id);
+                        const isIncluded =
+                          includedFeatureIds.includes(feature.id);
 
                         return (
                           <label
@@ -780,19 +886,24 @@ const Quotation = () => {
                               isSelected
                                 ? "quotation-feature-option-selected"
                                 : ""
+                            } ${
+                              isIncluded
+                                ? "quotation-feature-option-included"
+                                : ""
                             }`}
                             key={feature.id}
                           >
                             <input
                               type="checkbox"
                               checked={isSelected}
+                              disabled={isIncluded}
                               onChange={() =>
                                 handleFeatureChange(feature.id)
                               }
                             />
 
                             <span className="quotation-checkbox">
-                              {isSelected && (
+                              {(isSelected || isIncluded) && (
                                 <FiCheck aria-hidden="true" />
                               )}
                             </span>
@@ -802,7 +913,9 @@ const Quotation = () => {
                             </span>
 
                             <span className="quotation-feature-price">
-                              +{formatCurrency(feature.price)}
+                              {isIncluded
+                                ? "Included"
+                                : `+${formatCurrency(feature.price)}`}
                             </span>
                           </label>
                         );
@@ -1076,13 +1189,36 @@ const Quotation = () => {
 
               <div className="quotation-summary-features">
                 <div className="quotation-summary-features-heading">
-                  <span>Additional features</span>
+                  <span>Included in package</span>
+                  <strong>{includedFeatureDetails.length}</strong>
+                </div>
+
+                {!selectedPackage ? (
+                  <p className="quotation-summary-empty">
+                    Select a package to see included features.
+                  </p>
+                ) : (
+                  <ul>
+                    {includedFeatureDetails.map((feature) => (
+                      <li key={feature.id}>
+                        <span>{feature.name}</span>
+
+                        <strong>Included</strong>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
+              <div className="quotation-summary-features">
+                <div className="quotation-summary-features-heading">
+                  <span>Paid add-ons</span>
                   <strong>{selectedFeatureDetails.length}</strong>
                 </div>
 
                 {selectedFeatureDetails.length === 0 ? (
                   <p className="quotation-summary-empty">
-                    No additional features selected.
+                    No paid add-ons selected.
                   </p>
                 ) : (
                   <ul>

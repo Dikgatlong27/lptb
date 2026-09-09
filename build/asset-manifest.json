@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e2b1843.css",
-    "main.js": "/static/js/main.0b7e2cae.js",
-    "static/media/2363.jpg": "/static/media/2363.eaf7f98bea23d93b69e7.jpg",
-    "static/media/svs-bg-large.jpg": "/static/media/svs-bg-large.1d712e20f7c221ab03d1.jpg",
-    "static/media/mobile-hero-bg.jpg": "/static/media/mobile-hero-bg.23864c676358f49263f9.jpg",
+    "main.css": "/static/css/main.2350b2dc.css",
+    "main.js": "/static/js/main.d6049fa3.js",
     "index.html": "/index.html",
-    "main.4e2b1843.css.map": "/static/css/main.4e2b1843.css.map",
-    "main.0b7e2cae.js.map": "/static/js/main.0b7e2cae.js.map"
+    "main.2350b2dc.css.map": "/static/css/main.2350b2dc.css.map",
+    "main.d6049fa3.js.map": "/static/js/main.d6049fa3.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e2b1843.css",
-    "static/js/main.0b7e2cae.js"
+    "static/css/main.2350b2dc.css",
+    "static/js/main.d6049fa3.js"
   ]
 }

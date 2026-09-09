@@ -4,22 +4,35 @@
   align-items: center;
   min-height: min(760px, 100svh);
   background:
-    linear-gradient(90deg, rgba(8, 15, 28, 0.86) 0%, rgba(8, 15, 28, 0.54) 52%, rgba(8, 15, 28, 0.22) 100%),
-    url('../../assets/2363.jpg') center/cover no-repeat;
+    linear-gradient(135deg, rgba(244, 185, 66, 0.14) 0 1px, transparent 1px 100%),
+    linear-gradient(90deg, rgba(8, 15, 28, 0.96) 0%, rgba(10, 109, 112, 0.86) 58%, rgba(15, 139, 141, 0.72) 100%),
+    var(--color-dark);
+  background-size: 34px 34px, auto, auto;
   color: #ffffff;
   padding: clamp(7rem, 12vw, 10rem) clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
   overflow: hidden;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 36%;
+  background: linear-gradient(180deg, transparent, rgba(8, 15, 28, 0.46));
+  pointer-events: none;
+}
+
 .hero::after {
   content: "";
   position: absolute;
-  right: clamp(1rem, 8vw, 8rem);
-  bottom: clamp(1rem, 5vw, 4rem);
-  width: min(30vw, 320px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 50%;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 96px 96px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 78%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 78%, transparent);
+  opacity: 0.45;
   pointer-events: none;
 }
 
@@ -75,8 +88,10 @@
   .hero {
     align-items: flex-end;
     background:
-      linear-gradient(180deg, rgba(8, 15, 28, 0.56) 0%, rgba(8, 15, 28, 0.88) 72%),
-      url('../../assets/mobile-hero-bg.jpg') center/cover no-repeat;
+      linear-gradient(135deg, rgba(244, 185, 66, 0.13) 0 1px, transparent 1px 100%),
+      linear-gradient(180deg, rgba(8, 15, 28, 0.9) 0%, rgba(10, 109, 112, 0.86) 100%),
+      var(--color-dark);
+    background-size: 28px 28px, auto, auto;
     padding-bottom: 3rem;
   }
 

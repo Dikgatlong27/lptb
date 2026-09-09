@@ -17,7 +17,7 @@ const packages = [
     className: "bronze",
     name: "Startup Website",
     price: "From R2,500",
-    fit: "A practical and affordable starting point for new businesses.",
+    fit: "A practical starting point for founders and small businesses.",
     features: [
       "Up to 5 essential website pages",
       "Mobile-responsive design",
@@ -31,8 +31,8 @@ const packages = [
     id: "silver",
     className: "silver",
     name: "Business Website",
-    price: "From R8,500",
-    fit: "For growing businesses requiring a stronger online presence.",
+    price: "From R6,500",
+    fit: "For growing businesses that need a stronger online presence.",
     features: [
       "Professional multi-page website",
       "Custom UI and UX design",
@@ -47,7 +47,7 @@ const packages = [
     id: "gold",
     className: "gold",
     name: "E-Commerce Solution",
-    price: "From R15,500",
+    price: "From R12,500",
     fit: "For businesses selling products, bookings, or services online.",
     features: [
       "Online store or booking functionality",
@@ -63,7 +63,7 @@ const packages = [
     id: "platinum",
     className: "platinum",
     name: "Custom Business Platform",
-    price: "From R50,000",
+    price: "From R28,000",
     fit: "For businesses requiring custom operational software.",
     features: [
       "Custom web application development",
@@ -79,14 +79,14 @@ const packages = [
   {
     id: "premium",
     className: "premium",
-    name: "Enterprise Platform",
-    price: "From R100,000",
-    fit: "For complex, scalable, and multi-application business systems.",
+    name: "Advanced Platform",
+    price: "From R55,000",
+    fit: "For complex, scalable, and multi-application business systems built in phases.",
     features: [
       "Complete product planning and strategy",
       "Connected web and mobile applications",
       "Advanced workflow automation",
-      "Scalable enterprise architecture",
+      "Scalable architecture planning",
       "Advanced reporting and analytics",
       "Security and deployment planning",
       "Third-party system integrations",
@@ -122,23 +122,24 @@ const Dev = () => {
       <section className="webdev-hero">
         <div className="webdev-hero-content">
           <p className="webdev-kicker">
-            Affordable. Professional. Scalable.
+            Founder-led. Practical. Growing.
           </p>
 
           <h1 className="webdev-title">
-            Websites and applications built around your business.
+            Websites and applications built close to the people using them.
           </h1>
 
           <p className="webdev-intro">
-            LPTB Solutions develops modern websites, web applications, and
-            mobile applications for startups, growing businesses, and
-            established organisations.
+            LPTB Solutions is a founder-led software studio directed by Tebogo
+            Patrick Dikgatlong. We build websites, web applications, and
+            mobile-ready platforms for founders, small businesses, and growing
+            organisations.
           </p>
 
           <p className="webdev-intro">
-            Whether you need your first professional website or a complete
-            digital platform, we help you start at the right level and scale as
-            your business grows.
+            Each project is approached with clear planning, direct communication,
+            and the right technical support for the scope, from simple websites
+            to larger platform builds.
           </p>
 
           <div className="webdev-hero-actions">
@@ -154,7 +155,7 @@ const Dev = () => {
               className="webdev-secondary-button links"
               to="/contact"
             >
-              Talk to Our Team
+              Talk to Tebogo
             </Link>
           </div>
         </div>
@@ -168,8 +169,8 @@ const Dev = () => {
 
           <p>
             Provide your company information, services, contact details, and
-            branding material. We will prepare and launch your professional
-            website.
+            branding material. We will prepare a clean, useful website and keep
+            the process clear from the beginning.
           </p>
 
           <ul>
@@ -274,7 +275,8 @@ const Dev = () => {
 
         <p>
           Select your preferred package, add the features you require, and
-          submit your project request through your LPTB Solutions account.
+          submit your project request. We will review the details and recommend
+          the best first phase.
         </p>
 
         <Link className="contact-button links" to="/quotation">

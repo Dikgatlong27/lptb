@@ -27,7 +27,7 @@ const Clients = () => {
     <section className="testimonials-section">
       <div className="testimonials-container">
         <h2 className="testimonials-title">What Our Clients Say</h2>
-        <p className="testimonials-subtext">Hear from businesses that trust LPTB Solutions.</p>
+        <p className="testimonials-subtext">A few relationships helping LPTB Solutions grow through real work.</p>
         <div className="testimonials-grid">
           {testimonials.map((testimonial, index) => (
             <div className="testimonial-card" key={index}>

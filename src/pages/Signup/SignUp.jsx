@@ -8,7 +8,7 @@ const SignUp = () => {
     <div id='signup'>
       <div className="signup-info">
         <h2>Welcome to LPTB Solutions</h2>
-        <p>Create your account and start building with us! We provide high-quality web and mobile solutions tailored to your business needs.</p>
+        <p>Create your account to build a quote and start a practical conversation about your website, app, or business system.</p>
       </div>
       <SignupForm />
     </div>

@@ -8,69 +8,74 @@ const About = () => {
       <div className="about-container">
         {/* Founder Section */}
         <section className="founder-section">
-          <h2>Meet the Founder</h2>
+          <h2>Meet the Director</h2>
           <p>
-            <strong>Tebogo Patrick Dikgatlong</strong> is the visionary behind
-            LPTB Solutions, a self-driven entrepreneur with a deep passion for
-            technology and innovation. Born and raised in{" "}
-            <strong>Bohlokong, Bethlehem, Free State, South Africa</strong>, he
-            has built LPTB Solutions from the ground up, handling multiple aspects
-            of the company. As the <strong>Founder and Team Leader</strong>, he
-            has assembled a group of experienced developers to drive the company
-            forward.
+            <strong>Tebogo Patrick Dikgatlong</strong> is the Director and
+            founder of LPTB Solutions. Born and raised in{" "}
+            <strong>Bohlokong, Bethlehem, Free State, South Africa</strong>, he leads
+            the company's client relationships, planning, product direction, and
+            delivery approach.
+          </p>
+          <p>
+            LPTB Solutions is growing through practical client work, digital
+            partnerships, and platform development, with trusted technical
+            collaborators supporting larger builds where needed.
           </p>
         </section>
 
         {/* Vision & Mission Section */}
         <section className="vision-section">
-          <h2>Our Vision & Mission</h2>
+          <h2>Where We Are Going</h2>
           <p>
-            LPTB Solutions was founded with a clear vision:{" "}
+            LPTB Solutions was founded with a clear, practical vision:{" "}
             <strong>
-              to empower businesses with cutting-edge web and mobile solutions
+              to help local businesses, founders, and growing organisations move
+              into digital systems with solutions that match their stage of growth
             </strong>{" "}
-            that drive growth, efficiency, and success.
+            .
           </p>
           <ul>
             <li>
-              <strong>Bridging the Digital Gap:</strong> Helping startups, SMEs,
-              and enterprises embrace technology.
+              <strong>Build clearly:</strong> Define scope, timelines, budget,
+              and the right first phase before development starts.
             </li>
             <li>
-              <strong>Scalable & Impactful Solutions:</strong> Delivering
-              high-quality, future-proof digital products.
+              <strong>Grow through real work:</strong> Active projects like
+              YaBatho, The Chairman Group platforms, and client websites continue
+              to strengthen our delivery capacity.
             </li>
             <li>
-              <strong>Expanding Across Africa:</strong> From{" "}
-              <strong>Pretoria, South Africa</strong>, to the{" "}
-              <strong>SADC region</strong>, LPTB Solutions aims to be a leader in
-              digital transformation.
+              <strong>Build for long-term partnerships:</strong> Work with clients
+              and partners who want steady improvement, not just a once-off website.
             </li>
           </ul>
         </section>
 
         {/* Team & Expertise Section */}
         <section className="team-section">
-          <h2>Our Team & Expertise</h2>
+          <h2>How We Work</h2>
           <p>
-            While Tebogo leads the way, he has brought together a skilled team
-            specializing in:
+            LPTB Solutions is founder-led, with Tebogo staying closely involved in
+            project planning and delivery while trusted developers support
+            backend, full-stack, database, API, and mobile requirements where needed.
           </p>
           <ul>
             <li>
-              <strong>Web & Mobile Development:</strong> Building scalable,
-              high-performance applications.
+              <strong>Web and mobile development:</strong> Websites, customer apps,
+              dashboards, and platform interfaces.
             </li>
             <li>
-              <strong>UI/UX Design:</strong> Crafting seamless user experiences.
+              <strong>Product and UI thinking:</strong> Structuring features,
+              screens, and user flows around real business needs.
             </li>
             <li>
-              <strong>Cloud Solutions & System Integration:</strong> Helping
-              businesses modernize and scale.
+              <strong>Backend and integrations:</strong> Delivering APIs,
+              databases, authentication, payments, and operational tools with the
+              right technical support.
             </li>
             <li>
-              <strong>Digital Branding & Consulting:</strong> Strengthening online
-              presence.
+              <strong>Partnership growth:</strong> Building with partners like
+              C-Digital and The Chairman Group on practical digital products.
             </li>
           </ul>
         </section>

@@ -169,6 +169,12 @@
   background: rgba(15, 139, 141, 0.06);
 }
 
+.quotation-feature-option-included {
+  border-color: rgba(15, 139, 141, 0.2);
+  background: rgba(15, 139, 141, 0.06);
+  cursor: default;
+}
+
 .quotation-package-option input {
   position: absolute;
   width: 1px;
@@ -291,6 +297,11 @@
   background: var(--color-primary);
 }
 
+.quotation-feature-option-included .quotation-checkbox {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
 .quotation-feature-name {
   color: var(--color-ink);
   font-size: 0.88rem;
@@ -302,6 +313,10 @@
   font-size: 0.78rem;
   font-weight: 900;
   white-space: nowrap;
+}
+
+.quotation-feature-option-included .quotation-feature-price {
+  color: #166534;
 }
 
 .quotation-field-grid {
@@ -447,15 +462,35 @@
 .quotation-summary {
   position: sticky;
   top: 110px;
+  min-width: 0;
 }
 
 .quotation-summary-card {
+  max-height: calc(100svh - 130px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: clamp(1.25rem, 4vw, 1.8rem);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background: var(--color-dark);
   color: #ffffff;
   box-shadow: 0 22px 50px rgba(15, 23, 42, 0.2);
+  scrollbar-color: rgba(244, 185, 66, 0.65) rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+}
+
+.quotation-summary-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.quotation-summary-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.quotation-summary-card::-webkit-scrollbar-thumb {
+  background: rgba(244, 185, 66, 0.65);
+  border-radius: 999px;
 }
 
 .quotation-summary-card h2 {
@@ -518,9 +553,8 @@
 .quotation-summary-features ul {
   display: grid;
   gap: 0.55rem;
-  max-height: 280px;
+  max-height: none;
   padding: 0;
-  overflow-y: auto;
   list-style: none;
 }
 
@@ -614,6 +648,10 @@
   .quotation-summary {
     position: static;
     order: -1;
+  }
+
+  .quotation-summary-card {
+    max-height: 72svh;
   }
 }
 

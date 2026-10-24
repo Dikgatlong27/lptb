@@ -661,6 +661,13 @@ const Quotation = () => {
       return "Please enter a phone number or email address.";
     }
 
+    const contactValue = contact.trim();
+    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
+    const validPhone = /^\+?[\d\s().-]+$/.test(contactValue) && contactValue.replace(/\D/g, '').length >= 7 && contactValue.replace(/\D/g, '').length <= 15;
+    if (!validEmail && !validPhone) {
+      return "Please enter a valid email address or phone number.";
+    }
+
     if (!projectType) {
       return "Please select the type of project you need.";
     }

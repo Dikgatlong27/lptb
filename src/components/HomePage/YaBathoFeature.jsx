@@ -1,6 +1,6 @@
 import React from 'react'
-import { FaAndroid, FaMotorcycle, FaStore } from 'react-icons/fa'
-import { FiExternalLink, FiMonitor, FiSmartphone, FiUsers } from 'react-icons/fi'
+import { FaMotorcycle, FaStore } from 'react-icons/fa'
+import { FiExternalLink, FiMonitor, FiUsers } from 'react-icons/fi'
 
 import './YaBathoFeature.css'
 
@@ -35,17 +35,11 @@ const YaBathoFeature = () => {
       <div className="yabatho-container">
         <div className="yabatho-copy">
           <p className="yabatho-kicker">Live Platform</p>
-          <h2>YaBatho Delivery Platform is now live.</h2>
+          <h2>Explore YaBatho in action.</h2>
           <p>
-            LPTB Solutions helped build YaBatho, a people-first delivery ecosystem made for
-            local customers, restaurants, riders, and administrators. The project reflects our
-            hands-on development approach, combining product direction, front-end delivery,
-            backend support, and ongoing platform improvements.
-          </p>
-          <p>
-            The platform was developed in partnership with C-Digital, a division of The Chairman
-            Group, and is shaped around local growth: helping restaurants go digital, improving
-            order handling, and giving communities a clearer delivery experience.
+            Open the app to discover the ordering experience, or speak to us about
+            partnering with the platform. Developed with C-Digital, a division of
+            The Chairman Group.
           </p>
 
           <div className="yabatho-actions">
@@ -60,26 +54,7 @@ const YaBathoFeature = () => {
             <a href="/contact" className="yabatho-secondary">Partner with us</a>
           </div>
 
-          <div className="yabatho-device-links" aria-label="YaBatho app links by device">
-            <a
-              href={yabathoAppUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="yabatho-device-link"
-            >
-              <FaAndroid aria-hidden="true" />
-              Android users
-            </a>
-            <a
-              href={yabathoAppUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="yabatho-device-link"
-            >
-              <FiSmartphone aria-hidden="true" />
-              iOS, desktop & other OS
-            </a>
-          </div>
+          <p className="yabatho-availability">Available on Android, iOS, and desktop through your browser.</p>
         </div>
 
         <div className="yabatho-panel" aria-label="YaBatho platform areas">

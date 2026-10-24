@@ -45,3 +45,6 @@
   flex-direction: column;
   text-align: left;
 }
+
+.contact-us-form .form-submit-btn:disabled { opacity: .65; cursor: wait; }
+@media (max-width: 600px) { .contact-us-form .form-input { font-size: 16px; } }

@@ -88,3 +88,15 @@ img {
     width: 100%;
   }
 }
+
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid #f4b942;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 2px #0b1220;
+}
+.skip-navigation { position: fixed; top: 1rem; left: 1rem; z-index: 100; padding: .8rem 1rem; color: #0b1220; background: #f4b942; border-radius: 8px; transform: translateY(-180%); text-decoration: none; font-weight: 700; }
+.skip-navigation:focus { transform: translateY(0); }
+#page-content:focus { outline: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

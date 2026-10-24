@@ -35,16 +35,22 @@ const WhyChooseUs = () => {
   return (
     <section className="why-choose-section">
       <div className="why-choose-container">
+        <div className="why-choose-intro">
+        <p className="section-eyebrow">03 / WHY LPTB</p>
         <h2 className="why-choose-title">Why Work With LPTB Solutions?</h2>
         <p className="why-choose-subtext">
           We stay close to the work, communicate clearly, and build practical solutions that can grow over time.
         </p>
+        </div>
         <div className="why-choose-grid">
           {reasons.map((reason, index) => (
             <div className="why-choose-card" key={index}>
+              <span className="reason-index">0{index + 1}</span>
+              <div className="reason-copy">
               <span className="why-choose-icon" aria-hidden="true">{reason.icon}</span>
               <h3 className="why-choose-heading">{reason.title}</h3>
               <p className="why-choose-description">{reason.description}</p>
+              </div>
             </div>
           ))}
         </div>

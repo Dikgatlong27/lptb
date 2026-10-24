@@ -58,12 +58,14 @@ const Services = () => {
     <div className="service-container">
       <section className="services-section service-hero">
         <div className="services-container">
+          <div className="services-page-intro"><p className="section-eyebrow">OUR EXPERTISE</p><h2>Choose the support your business needs.</h2><p>From your first website to more connected operations, we help you plan a practical next step.</p></div>
           <h2 className="services-title service-tittle-top">Our Services</h2>
           <p className="services-subtext">Founder-led web, mobile, product design, and business technology support for teams that want to grow properly.</p>
 
           <div className="services-grid">
-            {coreServices.map((service) => (
+            {coreServices.map((service, index) => (
               <div className="service-card" key={service.title}>
+                <span className="service-page-number">0{index + 1}</span>
                 <div className="service-icon" aria-hidden="true">{service.icon}</div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
@@ -75,6 +77,7 @@ const Services = () => {
 
       <section className="services-lists services-section">
         <div className="services-container">
+          <p className="section-eyebrow">CONNECTED OPERATIONS</p>
           <h2 className='services-title'>Business Systems & Advanced Tech</h2>
           <p className="services-subtext">We start with the system your business needs now, then build toward stronger operations over time.</p>
 

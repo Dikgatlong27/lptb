@@ -1,46 +1,48 @@
-import React from "react";
-import "./Clients.css";
+import React from 'react';
+import './Clients.css';
 
-const testimonials = [
-  {
-    name: "Abraham Mofokeng",
-    position: "Founder, NNGA Holdings",
-    feedback: "LPTB Solutions played a crucial role in launching NNGA Holdings. From business registration to branding, logo design, and essential certifications, they provided a strong foundation for our company to grow. Their expertise made the entire process seamless and efficient.",
-    image: "NNGA logo 4.png",
-  },
-  {
-    name: "Tlotlo Ngwenya",
-    position: "Founder & Language Practitioner, Twinkle Dells Florist | The Buzz Mic | Lebone Consultants",
-    feedback: "LPTB Solutions has been instrumental in bringing my ideas to life. They developed a custom web app for Twinkle Dells and designed all the branding elements for my businesses. Their graphic design work, from social media content to business logos, has helped elevate my brand identity.",
-    image: "tlotlo.svg",
-  },
-  {
-    name: "Nkululeko Maphanga",
-    position: "Founder & Group Leader, The Chairman Group | C-Digital | Fortress Restaurant",
-    feedback: "LPTB Solutions supported The Chairman Group's digital presence with a professional platform that reflects its governance-led focus on structured growth, leadership, hospitality, technology, and strategic partnerships. Their work continues to support our broader digital transformation journey through C-Digital and our operating divisions.",
-    image: "nkuli.svg",
-  },
+const clients = [
+  { name: 'The Chairman Group', logo: 'chairman.png' },
+  { name: 'Fortress Restaurant', logo: 'fortress.png' },
+  { name: 'LVSIFT', logo: 'lvsift-full.png' },
+  { name: 'YaBatho', logo: 'yabatho-official.png' },
+  { name: 'Gaza Tech', logo: 'gaza-tech.png' },
+  { name: 'Axe Projects Consultants', logo: 'axe-projects.png' },
+  { name: 'C-Digital', logo: 'c-digital.png' },
+  { name: 'Vipro Trading', logo: 'vipro.png' },
+  { name: 'NNGA Holdings', logo: 'nnga.png' },
+  { name: 'Quick Compass Trading', logo: 'quick-compass.png' },
+  { name: 'Mofokeng Works', logo: 'mofokeng.png' },
+  { name: 'JoThMa Trading', logo: 'jothma.png' },
+  { name: 'Lekapa Farming', logo: 'lekapa.png' },
+  // Name cards preserve the client list until verified logo artwork is available.
+  { name: 'Aquawatt Trading' },
+  { name: 'Scepter Group', logo: 'scepter-group.jpg' },
 ];
 
-const Clients = () => {
-  return (
-    <section className="testimonials-section">
-      <div className="testimonials-container">
-        <h2 className="testimonials-title">What Our Clients Say</h2>
-        <p className="testimonials-subtext">A few relationships helping LPTB Solutions grow through real work.</p>
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div className="testimonial-card" key={index}>
-              <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
-              <h3 className="testimonial-name">{testimonial.name}</h3>
-              <p className="testimonial-position">{testimonial.position}</p>
-              <p className="testimonial-feedback">"{testimonial.feedback}"</p>
-            </div>
-          ))}
+const ClientCard = ({ client }) => (
+  <li className="client-logo">
+    <div className="client-artwork">
+    {client.logo ? (
+      client.name === 'LVSIFT' ? (
+        <div className="client-logo-crop">
+          <img src={`/clients/${client.logo}`} alt={client.name} loading="eager" draggable={false} />
         </div>
-      </div>
-    </section>
-  );
-};
+      ) : <img src={`/clients/${client.logo}`} alt={client.name} loading="eager" draggable={false} />
+    ) : <span className="client-name">{client.name}</span>}
+    </div>
+    {client.logo && <span className="client-caption">{client.name}</span>}
+  </li>
+);
 
+const Clients = () => (
+  <section className="clients-section" aria-labelledby="clients-title">
+    <div className="clients-container">
+      <div className="clients-heading"><div><p className="section-eyebrow">04 / PEOPLE WE WORK WITH</p><h2 id="clients-title">Our Clients</h2></div><p>Different businesses.<br />A shared ambition to grow.</p></div>
+      <ul className="clients-grid">
+        {clients.map(client => <ClientCard key={client.name} client={client} />)}
+      </ul>
+    </div>
+  </section>
+);
 export default Clients;

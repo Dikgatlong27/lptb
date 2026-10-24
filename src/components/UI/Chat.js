@@ -8,6 +8,7 @@ const Chat = () => {
       target="_blank" 
       rel="noopener noreferrer" 
       className="chat-container"
+      aria-label="Chat with LPTB Solutions on WhatsApp (opens in a new tab)"
     >
       <IoLogoWhatsapp />
     </a>

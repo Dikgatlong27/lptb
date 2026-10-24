@@ -10,54 +10,57 @@ import "./FeaturedProjects.css";
 
 const projects = [
   {
-    name: "YaBatho Delivery Platform",
-    category: "Multi-App Delivery Ecosystem",
-    description:
-      "A live food delivery platform with customer, restaurant, rider, and administration applications. LPTB Solutions supports product implementation, front-end delivery, integrations, and ongoing improvements in partnership with C-Digital, a division of The Chairman Group.",
-    features: [
-      "Customer ordering app",
-      "Restaurant management app",
-      "Rider delivery app",
-      "Administration dashboard",
-      "Online payments",
-      "Real-time order tracking",
-    ],
+    name: "YaBatho",
+    category: "Local Delivery",
+    description: "A people-first delivery ecosystem connecting local customers, restaurants, riders, and administrators through one digital platform.",
+    features: ["Customer ordering", "Restaurant preparation", "Delivery coordination"],
     icon: <FiLayers />,
     website: "https://yabathoplatform.co.za/",
   },
   {
-    name: "LVSIFT Digital Platform",
-    category: "Education and Future Technologies",
-    description:
-      "A growing education technology platform for the Lourens Van Staden Institute for Future Technologies. LVSIFT is moving beyond a public website into a structured digital system for programme discovery, learner registrations, secure access, and future administration tools.",
-    features: [
-      "Institutional website and platform foundation",
-      "Programme discovery and access flow",
-      "Learner registration journey",
-      "Secure authentication structure",
-      "Administration tools roadmap",
-      "Future integration readiness",
-    ],
+    name: "LVSIFT",
+    category: "Short Learning Programmes",
+    description: "A marketplace connecting learning institutions and learners through future-focused short learning programmes, supported by technology, marketing, and payment infrastructure.",
+    features: ["Programme discovery", "Learning delivery", "E-commerce infrastructure"],
     icon: <FiCode />,
+    website: "https://lvsift.africa/",
   },
   {
     name: "The Chairman Group",
-    category: "Hospitality and Business Technology",
-    description:
-      "LPTB Solutions works with The Chairman Group on websites, digital platforms, operational systems, and technical services across its growing business portfolio.",
-    features: [
-      "The Chairman Fortaleza de Sol website",
-      "Fortress Restaurant website",
-      "Hospitality digital solutions",
-      "Operational system development",
-      "Technical maintenance and support",
-      "Digital growth strategy",
-    ],
+    category: "Corporate Group",
+    description: "A governance-led corporate group focused on structured growth, leadership, hospitality, technology, and strategic partnerships.",
+    features: ["Hospitality", "Technology", "Strategic partnerships"],
     icon: <FiBriefcase />,
+    website: "https://www.thechairmangroup.co.za/",
+  },
+  {
+    name: "Axe Projects Consultants",
+    category: "Accounting, Taxation & Compliance",
+    description: "A Polokwane-based accounting, taxation, and business compliance firm helping SMEs manage financial obligations and support sustainable growth.",
+    features: ["Accounting", "Tax advisory", "Business compliance"],
+    icon: <FiBriefcase />,
+    website: "https://axeprojectsconsultants.co.za/",
+  },
+  {
+    name: "GazaTech",
+    category: "Cloud & DevOps",
+    description: "Cloud infrastructure and DevOps services helping businesses build secure, scalable environments and automate software delivery.",
+    features: ["Cloud infrastructure", "DevOps engineering", "Data platforms"],
+    icon: <FiCode />,
+    website: "https://gazatech.co.za/",
+  },
+  {
+    name: "Fortress Restaurant",
+    category: "Dining & Hospitality",
+    description: "Founded by Mr. and Mrs. Maphanga, Fortress combines modern dining with the heritage of The Chairman Fortaleza de Sol.",
+    features: ["Modern dining", "Culinary artistry", "Hospitality"],
+    icon: <FiBriefcase />,
+    website: "https://fortressmenlynmaine.co.za/",
   },
 ];
 
 const FeaturedProjects = () => {
+  const logos = { 'YaBatho': 'yabatho-official.png', 'LVSIFT': 'lvsift-full.png', 'The Chairman Group': 'chairman.png', 'Axe Projects Consultants': 'axe-projects.png', 'GazaTech': 'gaza-tech.png', 'Fortress Restaurant': 'fortress.png' };
   return (
     <section className="featured-projects-section">
       <div className="featured-projects-container">
@@ -78,7 +81,7 @@ const FeaturedProjects = () => {
           {projects.map((project) => (
             <article className="featured-project-card" key={project.name}>
               <span className="featured-project-icon" aria-hidden="true">
-                {project.icon}
+                <img src={`/clients/${logos[project.name]}`} alt="" />
               </span>
 
               <p className="featured-project-category">
@@ -103,8 +106,9 @@ const FeaturedProjects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="featured-project-link"
+                  aria-label={`View Project: ${project.name} (opens in a new tab)`}
                 >
-                  Visit Project
+                  View Project
                   <FiArrowUpRight aria-hidden="true" />
                 </a>
               )}

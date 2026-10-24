@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FaMobileAlt, FaPaintBrush, FaShoppingCart } from 'react-icons/fa'
 import { FiGlobe, FiSettings } from 'react-icons/fi'
 import "./Svc.css"
@@ -38,18 +39,21 @@ const servicesData = [
 
 const Svc = () => {
   return (
-    <section className="services-section">
+    <section className="services-section home-services">
       <div className="services-container">
-        <h2 className="services-title">Our Services</h2>
+        <p className="section-eyebrow">02 / WHAT WE BUILD</p>
+        <h2 className="services-title">Built for the way you do business.</h2>
         <p className="services-subtext">
           Practical web, mobile, and product design support with clear communication from start to launch.
         </p>
         <div className="services-grid">
           {servicesData.map((service, index) => (
             <div className="service-card" key={index}>
+              <span className="service-index">0{index + 1}</span>
               <span className="service-icon" aria-hidden="true">{service.icon}</span>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
+              <Link to="/services" className="studio-text-link" aria-label={`Explore ${service.title}`}>Explore service ↗</Link>
             </div>
           ))}
         </div>

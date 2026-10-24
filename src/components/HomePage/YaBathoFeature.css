@@ -215,3 +215,5 @@
     flex-direction: column;
   }
 }
+
+.yabatho-availability { margin-top: 1rem; font-size: .85rem; color: rgba(255,255,255,.7); }

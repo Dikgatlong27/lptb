@@ -1,0 +1,31 @@
+.hero.page-header { min-height: 480px; padding-top: 150px; padding-bottom: 56px; }
+.page-header p { max-width: 680px; margin-bottom: 0; }
+.page-header .hero-capabilities { max-width: 680px; margin-top: 2rem; }
+.has-page-header .about-page,
+.has-page-header .service-hero,
+.has-page-header .contact-us-section,
+.has-page-header .webdev-container,
+.has-page-header .quotation-page,
+.has-page-header #login,
+.has-page-header #signup { padding-top: clamp(2.5rem, 5vw, 4rem); }
+.has-page-header .user-profile-container,
+.has-page-header .dashboard-container,
+.has-page-header .projects-container,
+.has-page-header .invoices-container { margin-top: 3rem; }
+.has-page-header .service-hero .service-tittle-top,
+.has-page-header .service-hero .services-container > .services-subtext,
+.has-page-header .contact-us-title,
+.has-page-header .contact-us-container > .contact-us-subtext,
+.has-page-header .quotation-header,
+.has-page-header .login-info,
+.has-page-header .signup-info,
+.has-page-header .our-work-intro,
+.has-page-header .webdev-kicker,
+.has-page-header .webdev-title,
+.has-page-header .webdev-intro,
+.has-page-header .dashboard-container > h1,
+.has-page-header .projects-container > h1,
+.has-page-header .invoices-container > h1 { display: none; }
+@media (max-width: 600px) {
+  .hero.page-header { min-height: auto; padding-top: 130px; padding-bottom: 40px; }
+}

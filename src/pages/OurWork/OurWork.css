@@ -1,0 +1,8 @@
+.our-work-intro {
+  padding: 160px clamp(1rem, 4vw, 2rem) 64px;
+  background: linear-gradient(110deg, var(--color-dark), var(--color-primary-dark));
+  color: #fff;
+}
+.our-work-intro > div { max-width: var(--container); margin: 0 auto; }
+.our-work-intro h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 1rem; }
+.our-work-intro p { max-width: 620px; color: rgba(255,255,255,.8); margin: 0; }

@@ -136,6 +136,7 @@ lptb/
 │   ├── SectionMakeover.css       Shared section refinements
 │   ├── LptbButtons.css           Branded buttons and logo animation
 │   ├── AuthContext.js            Authentication state/actions
+│   ├── Firestore.js              Database initialized with account/quotation pages
 │   └── Firebase.js               Firebase initialization
 ├── .cpanel.yml                   cPanel deployment tasks
 ├── .prettierrc.json               Shared formatting conventions
@@ -169,6 +170,8 @@ Unknown paths display a not-found page. Apache configuration returns an HTTP 404
 ## Authentication and data
 
 `AuthProvider` listens for Firebase authentication changes and exposes `currentUser`, `signup`, `login` and `logout`. `PrivateRoute` redirects signed-out visitors to `/login`.
+
+Public pages render while authentication resolves. Protected pages wait for the `loading` state before showing account content or redirecting. Secondary routes use `React.lazy` and a shared loading fallback; database code loads with the routes that need it. Client logos are sized for display and lazy-loaded below the fold.
 
 Signup saves the entered name as the Firebase authentication `displayName`. The dashboard prefers `users/{uid}.name`, then `displayName`, then “Welcome back”. It does not greet users with their email address. Older accounts may have no saved name.
 
@@ -247,7 +250,7 @@ npm run test:seo
 
 The SEO checks cover unique public titles, descriptions, canonicals, social tags, indexing rules, JSON-LD, breadcrumbs, sitemap entries, image dimensions and Apache configuration presence. They read `build/`: rebuild after source changes.
 
-The CRA test runner is available, but there is no comprehensive automated end-to-end suite. A successful build does not prove authentication, database rules or deployed integrations work.
+The CRA test runner includes focused protected-route tests for loading, signed-out and signed-in states, but there is no comprehensive automated end-to-end suite. Run them with `npm test -- --watch=false --runInBand src/pages/PrivateRoute/PrivateRoute.test.js`. A successful build does not prove database rules or deployed integrations work.
 
 Before release, manually check desktop/mobile navigation, keyboard focus, contact success/errors, signup/login/logout, quote drafts and resumption, submission/listing/deletion and profile editing. Use a suitable test account. Verify two quote cards per row on wider screens and one on narrow screens.
 

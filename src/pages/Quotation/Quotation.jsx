@@ -7,7 +7,7 @@ import { FiArrowLeft, FiCheck, FiChevronRight, FiInfo, FiSave } from 'react-icon
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
 import { useAuth } from '../../AuthContext';
-import { db } from '../../Firebase';
+import { db } from '../../Firestore';
 
 import './Quotation.css';
 

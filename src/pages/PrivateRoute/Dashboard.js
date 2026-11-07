@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../../Firebase';
+import { db } from '../../Firestore';
 import { useAuth } from '../../AuthContext';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';

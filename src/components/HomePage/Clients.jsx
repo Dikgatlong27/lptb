@@ -29,7 +29,8 @@ const ClientCard = ({ client }) => (
             <img
               src={`/clients/${client.logo}`}
               alt={client.name}
-              loading="eager"
+              loading="lazy"
+              decoding="async"
               draggable={false}
             />
           </div>
@@ -37,7 +38,8 @@ const ClientCard = ({ client }) => (
           <img
             src={`/clients/${client.logo}`}
             alt={client.name}
-            loading="eager"
+            loading="lazy"
+            decoding="async"
             draggable={false}
           />
         )

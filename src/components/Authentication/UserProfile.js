@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { db } from '../../Firebase'; // Firestore & Storage
+import { db } from '../../Firestore'; // Firestore & Storage
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import './UserProfile.css';
 

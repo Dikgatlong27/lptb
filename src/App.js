@@ -1,28 +1,31 @@
 import React from 'react';
-import { Navbar, Footer, UserProfile, Chat } from './components';
-import {
-  Home,
-  About,
-  Services,
-  Dev,
-  Contact,
-  Quotation,
-  Login,
-  SignUp,
-  PrivateRoute,
-  Dashboard,
-  Projects,
-  Invoices,
-} from './pages';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Chat from './components/UI/Chat';
+import Home from './pages/Home/Home';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
 import './App.css';
-import OurWork from './pages/OurWork/OurWork';
+
 import PageHeader, { pageHeaders } from './components/PageHeader/PageHeader';
 import './SectionMakeover.css';
 import './LptbButtons.css';
 import { applyMetadata } from './seo/metadata';
+
+const About = React.lazy(() => import('./pages/About/About'));
+const Services = React.lazy(() => import('./pages/Services/Services'));
+const Dev = React.lazy(() => import('./pages/WebDev/Dev'));
+const Contact = React.lazy(() => import('./pages/Contact/Contact'));
+const Quotation = React.lazy(() => import('./pages/Quotation/Quotation'));
+const Login = React.lazy(() => import('./pages/Login/Login'));
+const SignUp = React.lazy(() => import('./pages/Signup/SignUp'));
+const Dashboard = React.lazy(() => import('./pages/PrivateRoute/Dashboard'));
+const Projects = React.lazy(() => import('./pages/PrivateRoute/Projects'));
+const Invoices = React.lazy(() => import('./pages/PrivateRoute/Invoices'));
+const UserProfile = React.lazy(() => import('./components/Authentication/UserProfile'));
+const OurWork = React.lazy(() => import('./pages/OurWork/OurWork'));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -69,54 +72,62 @@ function App() {
       <Navbar />
       <div id="page-content" tabIndex={-1}>
         <PageHeader />
-        <Routes>
-          <Route path="*" element={<NotFound />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/our-work" element={<OurWork />} />
-          <Route path="/dev" element={<Dev />} />
-          <Route path="/quotation" element={<Quotation />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+        <React.Suspense
+          fallback={
+            <p className="route-loading" role="status">
+              Loading page…
+            </p>
+          }
+        >
+          <Routes>
+            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/our-work" element={<OurWork />} />
+            <Route path="/dev" element={<Dev />} />
+            <Route path="/quotation" element={<Quotation />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
 
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <Dashboard />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
 
-          <Route
-            path="/profile"
-            element={
-              <PrivateRoute>
-                <UserProfile />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute>
+                  <UserProfile />
+                </PrivateRoute>
+              }
+            />
 
-          <Route
-            path="/projects"
-            element={
-              <PrivateRoute>
-                <Projects />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/projects"
+              element={
+                <PrivateRoute>
+                  <Projects />
+                </PrivateRoute>
+              }
+            />
 
-          <Route
-            path="/invoices"
-            element={
-              <PrivateRoute>
-                <Invoices />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
+            <Route
+              path="/invoices"
+              element={
+                <PrivateRoute>
+                  <Invoices />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </React.Suspense>
       </div>
       <Chat />
       <Footer />

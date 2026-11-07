@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunklptb=self.webpackChunklptb||[]).push([[320],{6320:(s,e,r)=>{r.r(e),r.d(e,{default:()=>l});r(5043);var c=r(3216),t=(r(6981),r(579));const l=()=>{const s=(0,c.Zp)();return(0,t.jsxs)("div",{className:"projects-container",children:[(0,t.jsx)("h2",{children:"My Projects"}),(0,t.jsx)("p",{children:"Your list of projects will go here."}),(0,t.jsx)("button",{onClick:()=>s("/dashboard"),children:"Back to Dashboard"})]})}},6981:()=>{}}]);
+//# sourceMappingURL=320.cd619b2c.chunk.js.map

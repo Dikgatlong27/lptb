@@ -60,6 +60,8 @@ const AbtLPTB = () => (
             alt="Tebogo Patrick Dikgatlong"
             width="48"
             height="48"
+            loading="lazy"
+            decoding="async"
           />
           <div>
             <strong>Tebogo Patrick Dikgatlong</strong>

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  FiArrowRight,
   FiCheckCircle,
   FiCode,
   FiMessageCircle,
@@ -24,7 +23,6 @@ const packages = [
       "Contact or enquiry form",
       "Social media integration",
       "Basic search-engine setup",
-      "12 months hosting included",
     ],
   },
   {
@@ -34,13 +32,11 @@ const packages = [
     price: "From R6,500",
     fit: "For growing businesses that need a stronger online presence.",
     features: [
-      "Professional multi-page website",
-      "Custom UI and UX design",
-      "Google Analytics setup",
-      "Search-engine optimisation foundations",
+      "Multi-page website with custom UI/UX",
+      "Google Analytics and SEO foundations",
       "Blog or news section",
-      "WhatsApp and social media integration",
-      "12 months hosting included",
+      "WhatsApp and social integration",
+      "Responsive layouts across devices",
     ],
   },
   {
@@ -51,12 +47,10 @@ const packages = [
     fit: "For businesses selling products, bookings, or services online.",
     features: [
       "Online store or booking functionality",
-      "Secure payment gateway integration",
-      "Customer accounts and authentication",
+      "Secure payments and customer accounts",
+      "Product and service management",
       "Business management dashboard",
-      "Product or service management",
       "Performance optimisation",
-      "12 months hosting and support",
     ],
   },
   {
@@ -66,14 +60,11 @@ const packages = [
     price: "From R28,000",
     fit: "For businesses requiring custom operational software.",
     features: [
-      "Custom web application development",
-      "Mobile application option",
-      "Role-based user access",
-      "Cloud database setup",
+      "Custom web app with mobile option",
+      "Role-based access and cloud database",
       "Custom APIs and integrations",
-      "Workflow automation",
-      "Dashboards and business reporting",
-      "Structured maintenance support",
+      "Automated workflows and reporting",
+      "Deployment planning and handover",
     ],
   },
   {
@@ -81,16 +72,13 @@ const packages = [
     className: "premium",
     name: "Advanced Platform",
     price: "From R55,000",
-    fit: "For complex, scalable, and multi-application business systems built in phases.",
+    fit: "For connected business systems planned and built in phases.",
     features: [
-      "Complete product planning and strategy",
+      "Product strategy and scalable architecture",
       "Connected web and mobile applications",
-      "Advanced workflow automation",
-      "Scalable architecture planning",
-      "Advanced reporting and analytics",
-      "Security and deployment planning",
-      "Third-party system integrations",
-      "Ongoing development and technical support",
+      "Advanced workflows and integrations",
+      "Reporting, analytics and security",
+      "Deployment documentation and handover",
     ],
   },
 ];
@@ -119,81 +107,20 @@ const developmentSteps = [
 const Dev = () => {
   return (
     <main className="webdev-container">
-      <section className="webdev-hero">
-        <div className="webdev-hero-content">
-          <p className="webdev-kicker">
-            Founder-led. Practical. Growing.
-          </p>
-
-          <h1 className="webdev-title">
-            Websites and applications built close to the people using them.
-          </h1>
-
-          <p className="webdev-intro">
-            LPTB Solutions is a founder-led software studio directed by Tebogo
-            Patrick Dikgatlong. We build websites, web applications, and
-            mobile-ready platforms for founders, small businesses, and growing
-            organisations.
-          </p>
-
-          <p className="webdev-intro">
-            Each project is approached with clear planning, direct communication,
-            and the right technical support for the scope, from simple websites
-            to larger platform builds.
-          </p>
-
+      <section className="webdev-start-strip" aria-labelledby="website-start-heading">
+        <div className="webdev-start-copy">
+          <p className="webdev-start-label"><FiSmartphone aria-hidden="true" /> A PRACTICAL STARTING POINT</p>
+          <h2 id="website-start-heading">Your business website, from R2,500.</h2>
+          <p>Bring your business details and branding. We’ll build a clear, mobile-friendly website with a defined scope and a straightforward handover.</p>
           <div className="webdev-hero-actions">
-            <Link
-              className="contact-button links"
-              to="/quotation"
-            >
-              Build Your Quote
-              <FiArrowRight aria-hidden="true" />
-            </Link>
-
-            <Link
-              className="webdev-secondary-button links"
-              to="/contact"
-            >
-              Talk to Tebogo
-            </Link>
+            <Link className="contact-button links" to="/quotation">Build Your Quote</Link>
+            <Link className="webdev-secondary-button links" to="/contact">Talk to Tebogo</Link>
           </div>
         </div>
-
-        <div className="webdev-hero-panel">
-          <span className="webdev-panel-icon" aria-hidden="true">
-            <FiSmartphone />
-          </span>
-
-          <h2>Start your business website from R2,500</h2>
-
-          <p>
-            Provide your company information, services, contact details, and
-            branding material. We will prepare a clean, useful website and keep
-            the process clear from the beginning.
-          </p>
-
-          <ul>
-            <li>
-              <FiCheckCircle aria-hidden="true" />
-              Up to 5 essential pages
-            </li>
-
-            <li>
-              <FiCheckCircle aria-hidden="true" />
-              Mobile-responsive design
-            </li>
-
-            <li>
-              <FiCheckCircle aria-hidden="true" />
-              12 months hosting included
-            </li>
-
-            <li>
-              <FiCheckCircle aria-hidden="true" />
-              Contact and social media integration
-            </li>
-          </ul>
+        <div className="webdev-start-inclusions">
+          <span>THE ESSENTIALS, COVERED</span>
+          <ul>{['Up to 5 essential pages', 'Mobile-responsive design', 'Contact and social integration', 'Launch preparation and handover'].map(feature => <li key={feature}><FiCheckCircle aria-hidden="true" />{feature}</li>)}</ul>
+          <p>Hosting, domains, and ongoing services are quoted separately.</p>
         </div>
       </section>
 
@@ -227,7 +154,7 @@ const Dev = () => {
           <p>
             Package prices provide a realistic starting point. Your final
             quotation will depend on the required features, integrations,
-            content, design, and overall system complexity.
+            content, design, and overall system complexity. Package prices cover the agreed development scope. Domains, hosting, cloud usage, paid third-party services, maintenance, and ongoing support are quoted separately.
           </p>
         </div>
 
@@ -239,7 +166,7 @@ const Dev = () => {
             >
               <div className="package-head">
                 <div>
-                  <p className="package-label">{plan.name}</p>
+                  <p className="package-label">Development package</p>
                   <h2>{plan.name}</h2>
                 </div>
 
@@ -256,12 +183,12 @@ const Dev = () => {
                 ))}
               </ul>
 
+              <p className="package-cost-note">Development only. Hosting and ongoing services are quoted separately.</p>
               <Link
                 className="package-link"
                 to={`/quotation?package=${plan.id}`}
               >
                 Choose This Package
-                <FiArrowRight aria-hidden="true" />
               </Link>
             </article>
           ))}
@@ -281,7 +208,6 @@ const Dev = () => {
 
         <Link className="contact-button links" to="/quotation">
           Build a Free Quote
-          <FiArrowRight aria-hidden="true" />
         </Link>
       </section>
     </main>

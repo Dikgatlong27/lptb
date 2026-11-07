@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowUpRight, FiGlobe, FiLayers, FiCode, FiUsers } from 'react-icons/fi';
+import { FiGlobe, FiLayers, FiCode, FiUsers } from 'react-icons/fi';
 import './About.css';
 
 const principles = [
@@ -23,10 +23,10 @@ const About = () => (
           <h2 id="director-heading">Meet the Director.</h2>
           <p><strong>Tebogo Patrick Dikgatlong</strong> founded LPTB Solutions with a hands-on approach to building useful digital products.</p>
           <p>Born and raised in Bohlokong, Bethlehem, Free State, he leads client relationships, planning, product direction, and delivery. Trusted development collaborators support larger builds where needed.</p>
-          <Link className="studio-text-link" to="/contact">Start a conversation <FiArrowUpRight aria-hidden="true" /></Link>
+          <Link className="studio-text-link" to="/contact">Start a conversation</Link>
         </div>
         <div className="about-director-card">
-          <div className="about-director-monogram" aria-hidden="true">TD<span>↗</span></div>
+          <img className="about-director-photo" src="/tebogo-headshot-cutout.png" alt="Tebogo Patrick Dikgatlong, Founder and Director of LPTB Solutions" width="180" height="210" />
           <h3>Tebogo Patrick Dikgatlong</h3>
           <p>Founder & Director</p>
           <div className="about-director-location">Bohlokong roots. A practical digital vision.</div>
@@ -40,7 +40,7 @@ const About = () => (
       <section className="about-expertise" aria-labelledby="expertise-heading">
         <div className="about-section-intro"><div><p className="section-eyebrow">HOW WE WORK</p><h2 id="expertise-heading">Close to the work.<br/>Connected to the right people.</h2></div><p>Tebogo stays involved from planning to delivery, supported by trusted developers for specialist requirements.</p></div>
         <div className="about-expertise-grid">{expertise.map(item=><article key={item.title}><span aria-hidden="true">{item.icon}</span><div><h3>{item.title}</h3><p>{item.text}</p></div></article>)}</div>
-        <Link className="studio-text-link" to="/our-work">See our work <FiArrowUpRight aria-hidden="true" /></Link>
+        <Link className="studio-text-link" to="/our-work">See our work</Link>
       </section>
     </div>
   </main>

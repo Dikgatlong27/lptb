@@ -53,7 +53,7 @@ const Svc = () => {
               <span className="service-icon" aria-hidden="true">{service.icon}</span>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
-              <Link to="/services" className="studio-text-link" aria-label={`Explore ${service.title}`}>Explore service ↗</Link>
+              <Link to="/services" className="studio-text-link" aria-label={`Explore ${service.title}`}>Explore service</Link>
             </div>
           ))}
         </div>

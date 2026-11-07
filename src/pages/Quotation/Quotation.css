@@ -697,3 +697,5 @@
     flex-direction: column;
   }
 }
+
+.package-cost-note { font-size: .85rem; line-height: 1.7; color: var(--color-muted); margin: 0 0 1.5rem; }

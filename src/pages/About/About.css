@@ -6,6 +6,7 @@
 .about-redesign p { font-size:14px; line-height:1.85; color:#607381; }
 .about-director-copy strong { color:#172c3b; }
 .about-director-card { padding:30px; border:1px solid #dde7eb; border-radius:18px; background:#fff; }
+.about-director-photo { display:block; width:180px; max-width:100%; height:auto; aspect-ratio:1; object-fit:cover; object-position:center 18%; border-radius:50%; margin:0 auto 24px; border:3px solid var(--color-primary); padding:5px; background:#edf7f7; box-shadow:0 0 0 5px #0f8b8d12; }
 .about-director-monogram { width:100%; height:135px; border-radius:12px; background:linear-gradient(120deg,#0b202d,#0a656b); display:flex; align-items:center; justify-content:center; color:#75d1d1; font-size:48px; font-weight:600; letter-spacing:-3px; margin-bottom:24px; position:relative; }
 .about-director-monogram span { position:absolute; top:14px; right:18px; color:#f4b942; font-size:22px; }
 .about-director-card h3 { font-size:18px; line-height:1.35; margin-bottom:6px; }

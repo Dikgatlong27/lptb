@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../HomePage/Hero.css';
 import './PageHeader.css';
 
@@ -135,7 +135,7 @@ const PageHeader = () => {
   return (
     <header className="hero page-header">
       <div className="hero-content">
-        <div className="hero-kicker"><span /> LPTB SOLUTIONS · {content.name.toUpperCase()}</div>
+        <div className="hero-kicker"><span aria-hidden="true" /><Link to="/">LPTB SOLUTIONS</Link><span className="hero-kicker-divider" aria-hidden="true">·</span><Link to={pathname} aria-current="page">{content.name.toUpperCase()}</Link></div>
         <h1>{content.title}</h1>
         <p>{content.description}</p>
         <div className="hero-capabilities" aria-label={`${content.name} highlights`}>

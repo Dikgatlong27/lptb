@@ -18,6 +18,7 @@
 .studio-founder { display:flex; align-items:center; gap:12px; margin-top:14px; padding-top:20px; border-top:1px solid #ffffff13; }
 .studio-founder > span { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:#f4b94216; color:#f4b942; font-size:12px; }
 .studio-founder strong { display:block; font-size:12px; font-weight:600; }
+.studio-founder-photo { width:48px; height:48px; flex-shrink:0; border-radius:50%; object-fit:cover; object-position:50% 18%; border:2px solid #61c7ca; padding:2px; background:#16313d; box-shadow:0 0 0 3px #61c7ca15; }
 .studio-founder small { display:block; font-size:10px; color:#8aa6b5; margin-top:4px; }
 .home-services { text-align:left; background:#f6f9fa; }
 .home-services .services-title { max-width: 650px; font-size:clamp(28px,3.3vw,43px); letter-spacing:-.04em; }

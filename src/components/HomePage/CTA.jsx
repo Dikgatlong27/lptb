@@ -16,7 +16,7 @@ const CTA = () => {
         </p>
         </div>
         <button className="contact-cta-button btn-outline slide-bottom" onClick={() => navigate("/contact")}>
-          Let’s talk about it ↗
+          Let’s talk about it
         </button>
       </div>
     </section>

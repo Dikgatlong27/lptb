@@ -21,6 +21,7 @@ import './App.css';
 import OurWork from './pages/OurWork/OurWork';
 import PageHeader, { pageHeaders } from './components/PageHeader/PageHeader';
 import './SectionMakeover.css';
+import './LptbButtons.css';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();

@@ -10,7 +10,7 @@ const Hero = () => {
     <section className="hero home-hero">
       <div className="hero-content home-hero-layout">
         <div className="home-hero-copy">
-        <div className="hero-kicker"><span /> LPTB SOLUTIONS · HOME</div>
+        <div className="hero-kicker"><span aria-hidden="true" /><Link to="/">LPTB SOLUTIONS</Link><span className="hero-kicker-divider" aria-hidden="true">·</span><Link to="/" aria-current="page">HOME</Link></div>
         <h1>Founder-led software solutions for growing businesses.</h1>
         <p>
           LPTB Solutions builds websites, apps, and digital platforms with a
@@ -35,11 +35,11 @@ const Hero = () => {
               <img className="hero-gallery-screen" src={`/previews/${project.image}`} alt={`${project.name} website preview`} width="1143" height="649" />
               <div className="hero-gallery-details">
                 <div className="hero-gallery-brand"><img src={`/clients/${project.logo}`} alt="" /><div><strong>{project.name}</strong><small>{project.category}</small></div></div>
-                <span className="hero-gallery-action">View project ↗</span>
+                <span className="hero-gallery-action">View project</span>
               </div>
             </Link>
           ))}
-          <Link className="hero-gallery-caption" to="/our-work">A few ideas we brought to life. <span>Explore our work ↗</span></Link>
+          <Link className="hero-gallery-caption" to="/our-work">A few ideas we brought to life. <span>Explore our work</span></Link>
         </div>
       </div>
     </section>

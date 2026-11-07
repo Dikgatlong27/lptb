@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  FiArrowUpRight,
   FiBriefcase,
   FiCode,
   FiLayers,
@@ -109,7 +108,6 @@ const FeaturedProjects = () => {
                   aria-label={`View Project: ${project.name} (opens in a new tab)`}
                 >
                   View Project
-                  <FiArrowUpRight aria-hidden="true" />
                 </a>
               )}
             </article>

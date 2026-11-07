@@ -18,9 +18,9 @@ const Contact = () => {
               <p className="section-eyebrow">LET’S CONNECT</p>
               <h2>A conversation is a good place to start.</h2>
               <p>Share your idea, where your business is now, and what you’d like to achieve.</p>
-              <a href="mailto:info@lptbsolutions.co.za"><small>EMAIL</small>info@lptbsolutions.co.za ↗</a>
-              <a href="tel:+27676228529"><small>CALL</small>+27 67 622 8529 ↗</a>
-              <a href="https://wa.me/27676228529" target="_blank" rel="noopener noreferrer"><small>WHATSAPP</small>Start a conversation ↗</a>
+              <a href="mailto:info@lptbsolutions.co.za"><small>EMAIL</small>info@lptbsolutions.co.za</a>
+              <a href="tel:+27676228529"><small>CALL</small>+27 67 622 8529</a>
+              <a href="https://wa.me/27676228529" target="_blank" rel="noopener noreferrer"><small>WHATSAPP</small>Start a conversation</a>
             </aside>
             <div className="contact-page-form-area">
           <h2 className="contact-us-title">Get in Touch</h2>

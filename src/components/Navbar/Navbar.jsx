@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FiArrowUpRight, FiMenu, FiX, FiUser } from 'react-icons/fi';
+import { FiMenu, FiX, FiUser } from 'react-icons/fi';
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../AuthContext';
 import './Navbar.css';
@@ -36,7 +36,7 @@ const Navbar = () => {
   };
   const accountLinks = <>
     <NavLink className="navbar-account-link" to={currentUser ? '/dashboard' : '/login'} onClick={() => setOpen(false)}><FiUser aria-hidden="true" />{currentUser ? 'Dashboard' : 'Log In'}</NavLink>
-    {currentUser ? <button className="navbar-cta" disabled={loggingOut} onClick={handleLogout}>{loggingOut ? 'Logging out…' : 'Log Out'}</button> : <Link className="navbar-cta" to="/signup" onClick={() => setOpen(false)}>Sign Up <FiArrowUpRight aria-hidden="true" /></Link>}
+    {currentUser ? <button className="navbar-cta" disabled={loggingOut} onClick={handleLogout}>{loggingOut ? 'Logging out…' : 'Log Out'}</button> : <Link className="navbar-cta" to="/signup" onClick={() => setOpen(false)}>Sign Up</Link>}
   </>;
   return (
     <nav className={`navbar${scrolled ? ' navbar-scrolled' : ''}`} aria-label="Main navigation">
@@ -57,7 +57,7 @@ const Navbar = () => {
           }
         }}>
           <div className="navbar-mobile-heading"><span>Explore LPTB</span><button ref={closeButton} aria-label="Close navigation" onClick={() => setOpen(false)}><FiX aria-hidden="true" /></button></div>
-          <ul className="navbar-mobile-links">{navigation.map(([url, title], index) => <li key={url}><NavLink to={url} end={url === '/'} onClick={() => setOpen(false)} className={({isActive}) => isActive ? 'is-active' : ''}><span className="navbar-link-number">0{index + 1}</span>{title}<FiArrowUpRight aria-hidden="true" /></NavLink></li>)}</ul>
+          <ul className="navbar-mobile-links">{navigation.map(([url, title], index) => <li key={url}><NavLink to={url} end={url === '/'} onClick={() => setOpen(false)} className={({isActive}) => isActive ? 'is-active' : ''}><span className="navbar-link-number">0{index + 1}</span>{title}</NavLink></li>)}</ul>
           <div className="navbar-mobile-account">{accountLinks}</div>
           <p className="navbar-mobile-note">Founder-led. Built around your business.</p>
         </div>

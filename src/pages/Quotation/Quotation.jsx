@@ -37,7 +37,7 @@ const packageOptions = {
     description:
       "An affordable professional website for a startup or new business.",
     includedFeatureIds: [
-      "domain-hosting",
+
       "responsive-design",
       "contact-form",
       "whatsapp-integration",
@@ -53,7 +53,7 @@ const packageOptions = {
     description:
       "A stronger digital presence for a growing small or medium-sized business.",
     includedFeatureIds: [
-      "domain-hosting",
+
       "responsive-design",
       "contact-form",
       "whatsapp-integration",
@@ -71,7 +71,7 @@ const packageOptions = {
     description:
       "An online selling, booking, or service platform with management functionality.",
     includedFeatureIds: [
-      "domain-hosting",
+
       "responsive-design",
       "contact-form",
       "whatsapp-integration",
@@ -93,7 +93,7 @@ const packageOptions = {
     description:
       "A custom operational web platform with dashboards, integrations, and business workflows.",
     includedFeatureIds: [
-      "domain-hosting",
+
       "responsive-design",
       "contact-form",
       "authentication",
@@ -114,7 +114,7 @@ const packageOptions = {
     description:
       "A larger phased solution consisting of connected systems, applications, and integrations.",
     includedFeatureIds: [
-      "domain-hosting",
+
       "responsive-design",
       "contact-form",
       "whatsapp-integration",
@@ -147,11 +147,6 @@ const featureGroups = [
     description:
       "Core features for business websites and customer communication.",
     features: [
-      {
-        id: "domain-hosting",
-        name: "Custom Domain and Hosting",
-        price: 950,
-      },
       {
         id: "responsive-design",
         name: "Responsive Mobile Design",
@@ -803,6 +798,7 @@ const Quotation = () => {
           </p>
         </section>
 
+        <p className="package-cost-note">Development estimates exclude domains, hosting, cloud usage, paid third-party services, maintenance, and ongoing support. These are quoted separately.</p>
         <form className="quotation-layout" onSubmit={handleSubmit}>
           <div className="quotation-form-column">
             <section className="quotation-form-section">

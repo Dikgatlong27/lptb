@@ -56,7 +56,7 @@ const AbtLPTB = () => (
         <div className="studio-founder">
           <img
             className="studio-founder-photo"
-            src="/tebogo-headshot-cutout.png"
+            src="/tebogo-headshot-144.png"
             alt="Tebogo Patrick Dikgatlong"
             width="48"
             height="48"

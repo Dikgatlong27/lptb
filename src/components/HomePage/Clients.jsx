@@ -28,7 +28,7 @@ const ClientCard = ({ client }) => (
           <div className="client-logo-crop">
             <img
               src={`/clients/${client.logo}`}
-              alt={client.name}
+              alt=""
               loading="lazy"
               decoding="async"
               draggable={false}
@@ -37,7 +37,7 @@ const ClientCard = ({ client }) => (
         ) : (
           <img
             src={`/clients/${client.logo}`}
-            alt={client.name}
+            alt=""
             loading="lazy"
             decoding="async"
             draggable={false}

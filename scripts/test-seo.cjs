@@ -67,6 +67,17 @@ for (const route of [...Object.keys(publicPages), ...privatePaths, '/404']) {
   }
 }
 const sitemap = fs.readFileSync(path.join(directory, 'sitemap.xml'), 'utf8');
+const homepage = fs.readFileSync(path.join(directory, 'index.html'), 'utf8');
+check(
+  homepage.includes('rel="preload" as="image" href="/previews/lvsift-gallery-hero.jpg"'),
+  'Homepage preloads its largest hero image',
+);
+check(
+  !fs
+    .readFileSync(path.join(directory, 'about.html'), 'utf8')
+    .includes('rel="preload" as="image"'),
+  'Other pages do not preload an unused homepage image',
+);
 check(
   (sitemap.match(/<loc>/g) || []).length === Object.keys(publicPages).length,
   'Sitemap: only public routes',

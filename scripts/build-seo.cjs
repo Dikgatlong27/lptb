@@ -16,6 +16,11 @@ for (const route of [...Object.keys(publicPages), ...privatePaths, '/404']) {
     .replace(/<title>[\s\S]*?<\/title>/i, '')
     .replace(/<meta\s+name="description"[^>]*>/i, '');
   const tags = [
+    ...(route === '/'
+      ? [
+          '<link rel="preload" as="image" href="/previews/lvsift-gallery-hero.jpg" fetchpriority="high">',
+        ]
+      : []),
     `<title>${escape(data.title)}</title>`,
     `<meta name="description" content="${escape(data.description)}">`,
     `<meta name="robots" content="${data.indexable ? 'index, follow, max-image-preview:large' : 'noindex, follow'}">`,

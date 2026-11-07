@@ -65,7 +65,7 @@ const About = () => (
         <div className="about-director-card">
           <img
             className="about-director-photo"
-            src="/tebogo-headshot-cutout.png"
+            src="/tebogo-headshot-420.png"
             alt="Tebogo Patrick Dikgatlong, Founder and Director of LPTB Solutions"
             width="180"
             height="210"

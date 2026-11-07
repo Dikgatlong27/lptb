@@ -47,26 +47,26 @@ const Hero = () => {
           {[
             {
               name: 'LVSIFT',
-              image: 'lvsift-gallery.png',
+              image: 'lvsift-gallery-hero.jpg',
               logo: 'lvsift-full.png',
               category: 'Learning & technology',
               className: 'gallery-lvsift',
             },
             {
               name: 'GazaTech',
-              image: 'gazatech.png',
+              image: 'gazatech-hero.jpg',
               logo: 'gaza-tech.png',
               category: 'Cloud & DevOps',
               className: 'gallery-gazatech',
             },
             {
               name: 'Fortress',
-              image: 'fortress.png',
+              image: 'fortress-hero.jpg',
               logo: 'fortress.png',
               category: 'Dining & hospitality',
               className: 'gallery-fortress',
             },
-          ].map((project) => (
+          ].map((project, index) => (
             <Link
               to="/our-work"
               className={`hero-gallery-card ${project.className}`}
@@ -77,12 +77,20 @@ const Hero = () => {
                 className="hero-gallery-screen"
                 src={`/previews/${project.image}`}
                 alt={`${project.name} website preview`}
-                width="1143"
-                height="649"
+                width="768"
+                height="432"
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                decoding="async"
               />
               <div className="hero-gallery-details">
                 <div className="hero-gallery-brand">
-                  <img src={`/clients/${project.logo}`} alt="" />
+                  <img
+                    src={`/clients/${project.logo}`}
+                    alt=""
+                    width="28"
+                    height="28"
+                    decoding="async"
+                  />
                   <div>
                     <strong>{project.name}</strong>
                     <small>{project.category}</small>

@@ -1,1 +1,13 @@
-/*      /index.html     200
+/about /about.html 200
+/services /services.html 200
+/our-work /our-work.html 200
+/dev /dev.html 200
+/contact /contact.html 200
+/quotation /quotation.html 200
+/login /login.html 200
+/signup /signup.html 200
+/dashboard /dashboard.html 200
+/projects /projects.html 200
+/invoices /invoices.html 200
+/profile /profile.html 200
+/* /404.html 404

@@ -1,5 +1,3 @@
-// src/components/Authentication/LoginForm.js
-
 import React, { useState } from 'react';
 import { useAuth } from '../../AuthContext';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -67,9 +65,7 @@ const LoginForm = () => {
           break;
 
         case 'auth/network-request-failed':
-          setError(
-            'Network error. Check your internet connection and try again.',
-          );
+          setError('Network error. Check your internet connection and try again.');
           break;
 
         default:

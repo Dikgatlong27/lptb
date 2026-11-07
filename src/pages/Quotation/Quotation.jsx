@@ -1,438 +1,409 @@
-import React, {
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { useEffect, useMemo, useState } from 'react';
 
-import {
-  useNavigate,
-  useSearchParams,
-} from "react-router-dom";
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
-import {
-  FiArrowLeft,
-  FiCheck,
-  FiChevronRight,
-  FiInfo,
-  FiSave,
-} from "react-icons/fi";
+import { FiArrowLeft, FiCheck, FiChevronRight, FiInfo, FiSave } from 'react-icons/fi';
 
-import {
-  addDoc,
-  collection,
-  serverTimestamp,
-} from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
-import { useAuth } from "../../AuthContext";
-import { db } from "../../Firebase";
+import { useAuth } from '../../AuthContext';
+import { db } from '../../Firebase';
 
-import "./Quotation.css";
+import './Quotation.css';
 
 const packageOptions = {
   bronze: {
-    id: "bronze",
-    name: "Startup Website",
-    displayPrice: "From R2,500",
+    id: 'bronze',
+    name: 'Startup Website',
+    displayPrice: 'From R2,500',
     basePrice: 2500,
-    description:
-      "An affordable professional website for a startup or new business.",
+    description: 'An affordable professional website for a startup or new business.',
     includedFeatureIds: [
-
-      "responsive-design",
-      "contact-form",
-      "whatsapp-integration",
-      "basic-seo",
+      'responsive-design',
+      'contact-form',
+      'whatsapp-integration',
+      'basic-seo',
     ],
   },
 
   silver: {
-    id: "silver",
-    name: "Business Website",
-    displayPrice: "From R6,500",
+    id: 'silver',
+    name: 'Business Website',
+    displayPrice: 'From R6,500',
     basePrice: 6500,
     description:
-      "A stronger digital presence for a growing small or medium-sized business.",
+      'A stronger digital presence for a growing small or medium-sized business.',
     includedFeatureIds: [
-
-      "responsive-design",
-      "contact-form",
-      "whatsapp-integration",
-      "blog",
-      "basic-seo",
-      "analytics",
+      'responsive-design',
+      'contact-form',
+      'whatsapp-integration',
+      'blog',
+      'basic-seo',
+      'analytics',
     ],
   },
 
   gold: {
-    id: "gold",
-    name: "E-Commerce Solution",
-    displayPrice: "From R12,500",
+    id: 'gold',
+    name: 'E-Commerce Solution',
+    displayPrice: 'From R12,500',
     basePrice: 12500,
     description:
-      "An online selling, booking, or service platform with management functionality.",
+      'An online selling, booking, or service platform with management functionality.',
     includedFeatureIds: [
-
-      "responsive-design",
-      "contact-form",
-      "whatsapp-integration",
-      "online-store",
-      "payment-gateway",
-      "shopping-cart",
-      "product-management",
-      "authentication",
-      "admin-dashboard",
-      "basic-seo",
+      'responsive-design',
+      'contact-form',
+      'whatsapp-integration',
+      'online-store',
+      'payment-gateway',
+      'shopping-cart',
+      'product-management',
+      'authentication',
+      'admin-dashboard',
+      'basic-seo',
     ],
   },
 
   platinum: {
-    id: "platinum",
-    name: "Custom Business Platform",
-    displayPrice: "From R28,000",
+    id: 'platinum',
+    name: 'Custom Business Platform',
+    displayPrice: 'From R28,000',
     basePrice: 28000,
     description:
-      "A custom operational web platform with dashboards, integrations, and business workflows.",
+      'A custom operational web platform with dashboards, integrations, and business workflows.',
     includedFeatureIds: [
-
-      "responsive-design",
-      "contact-form",
-      "authentication",
-      "user-profile",
-      "admin-dashboard",
-      "role-access",
-      "reporting",
-      "api-development",
-      "cloud-setup",
+      'responsive-design',
+      'contact-form',
+      'authentication',
+      'user-profile',
+      'admin-dashboard',
+      'role-access',
+      'reporting',
+      'api-development',
+      'cloud-setup',
     ],
   },
 
   premium: {
-    id: "premium",
-    name: "Advanced Platform",
-    displayPrice: "From R55,000",
+    id: 'premium',
+    name: 'Advanced Platform',
+    displayPrice: 'From R55,000',
     basePrice: 55000,
     description:
-      "A larger phased solution consisting of connected systems, applications, and integrations.",
+      'A larger phased solution consisting of connected systems, applications, and integrations.',
     includedFeatureIds: [
-
-      "responsive-design",
-      "contact-form",
-      "whatsapp-integration",
-      "custom-ui",
-      "authentication",
-      "user-profile",
-      "admin-dashboard",
-      "role-access",
-      "reporting",
-      "booking-system",
-      "order-management",
-      "notifications",
-      "pwa",
-      "api-development",
-      "third-party-api",
-      "cloud-setup",
-      "workflow-automation",
-      "advanced-seo",
-      "analytics",
-      "performance",
-      "security",
-      "backup",
+      'responsive-design',
+      'contact-form',
+      'whatsapp-integration',
+      'custom-ui',
+      'authentication',
+      'user-profile',
+      'admin-dashboard',
+      'role-access',
+      'reporting',
+      'booking-system',
+      'order-management',
+      'notifications',
+      'pwa',
+      'api-development',
+      'third-party-api',
+      'cloud-setup',
+      'workflow-automation',
+      'advanced-seo',
+      'analytics',
+      'performance',
+      'security',
+      'backup',
     ],
   },
 };
 
 const featureGroups = [
   {
-    title: "Website Essentials",
-    description:
-      "Core features for business websites and customer communication.",
+    title: 'Website Essentials',
+    description: 'Core features for business websites and customer communication.',
     features: [
       {
-        id: "responsive-design",
-        name: "Responsive Mobile Design",
+        id: 'responsive-design',
+        name: 'Responsive Mobile Design',
         price: 800,
       },
       {
-        id: "contact-form",
-        name: "Contact Form and Lead Capture",
+        id: 'contact-form',
+        name: 'Contact Form and Lead Capture',
         price: 500,
       },
       {
-        id: "whatsapp-integration",
-        name: "WhatsApp Integration",
+        id: 'whatsapp-integration',
+        name: 'WhatsApp Integration',
         price: 350,
       },
       {
-        id: "blog",
-        name: "Blog or News Section",
+        id: 'blog',
+        name: 'Blog or News Section',
         price: 1200,
       },
       {
-        id: "newsletter",
-        name: "Newsletter Subscription",
+        id: 'newsletter',
+        name: 'Newsletter Subscription',
         price: 700,
       },
       {
-        id: "multi-language",
-        name: "Multi-Language Support",
+        id: 'multi-language',
+        name: 'Multi-Language Support',
         price: 1800,
       },
     ],
   },
 
   {
-    title: "Branding and Design",
-    description:
-      "Visual identity and customised user-experience services.",
+    title: 'Branding and Design',
+    description: 'Visual identity and customised user-experience services.',
     features: [
       {
-        id: "logo-design",
-        name: "Professional Logo Design",
+        id: 'logo-design',
+        name: 'Professional Logo Design',
         price: 1200,
       },
       {
-        id: "branding-kit",
-        name: "Complete Branding Kit",
+        id: 'branding-kit',
+        name: 'Complete Branding Kit',
         price: 2500,
       },
       {
-        id: "custom-ui",
-        name: "Custom UI and UX Design",
+        id: 'custom-ui',
+        name: 'Custom UI and UX Design',
         price: 2800,
       },
       {
-        id: "content-writing",
-        name: "Website Content Writing",
+        id: 'content-writing',
+        name: 'Website Content Writing',
         price: 1500,
       },
       {
-        id: "custom-graphics",
-        name: "Custom Graphics and Visual Assets",
+        id: 'custom-graphics',
+        name: 'Custom Graphics and Visual Assets',
         price: 1500,
       },
     ],
   },
 
   {
-    title: "E-Commerce and Payments",
-    description:
-      "Tools for selling products, services, subscriptions, or bookings.",
+    title: 'E-Commerce and Payments',
+    description: 'Tools for selling products, services, subscriptions, or bookings.',
     features: [
       {
-        id: "online-store",
-        name: "Online Store",
+        id: 'online-store',
+        name: 'Online Store',
         price: 4000,
       },
       {
-        id: "payment-gateway",
-        name: "Payment Gateway Integration",
+        id: 'payment-gateway',
+        name: 'Payment Gateway Integration',
         price: 1800,
       },
       {
-        id: "shopping-cart",
-        name: "Shopping Cart and Checkout",
+        id: 'shopping-cart',
+        name: 'Shopping Cart and Checkout',
         price: 1500,
       },
       {
-        id: "product-management",
-        name: "Product Management",
+        id: 'product-management',
+        name: 'Product Management',
         price: 1600,
       },
       {
-        id: "inventory",
-        name: "Inventory Management",
+        id: 'inventory',
+        name: 'Inventory Management',
         price: 2800,
       },
       {
-        id: "discounts",
-        name: "Discount and Coupon System",
+        id: 'discounts',
+        name: 'Discount and Coupon System',
         price: 900,
       },
       {
-        id: "subscriptions",
-        name: "Subscription Payments",
+        id: 'subscriptions',
+        name: 'Subscription Payments',
         price: 3000,
       },
       {
-        id: "multi-vendor",
-        name: "Multi-Vendor Marketplace",
+        id: 'multi-vendor',
+        name: 'Multi-Vendor Marketplace',
         price: 12000,
       },
     ],
   },
 
   {
-    title: "Accounts and Business Management",
-    description:
-      "Secure user accounts and tools for managing business activity.",
+    title: 'Accounts and Business Management',
+    description: 'Secure user accounts and tools for managing business activity.',
     features: [
       {
-        id: "authentication",
-        name: "User Login and Registration",
+        id: 'authentication',
+        name: 'User Login and Registration',
         price: 2500,
       },
       {
-        id: "user-profile",
-        name: "Customer Profile System",
+        id: 'user-profile',
+        name: 'Customer Profile System',
         price: 1500,
       },
       {
-        id: "admin-dashboard",
-        name: "Administration Dashboard",
+        id: 'admin-dashboard',
+        name: 'Administration Dashboard',
         price: 4500,
       },
       {
-        id: "role-access",
-        name: "Role-Based Access Control",
+        id: 'role-access',
+        name: 'Role-Based Access Control',
         price: 2800,
       },
       {
-        id: "crm",
-        name: "Customer Relationship Management",
+        id: 'crm',
+        name: 'Customer Relationship Management',
         price: 6500,
       },
       {
-        id: "erp",
-        name: "Enterprise Resource Planning",
+        id: 'erp',
+        name: 'Enterprise Resource Planning',
         price: 15000,
       },
       {
-        id: "reporting",
-        name: "Reports and Business Analytics",
+        id: 'reporting',
+        name: 'Reports and Business Analytics',
         price: 3200,
       },
     ],
   },
 
   {
-    title: "Bookings and Operational Systems",
-    description:
-      "Custom workflows for appointments, operations, and service delivery.",
+    title: 'Bookings and Operational Systems',
+    description: 'Custom workflows for appointments, operations, and service delivery.',
     features: [
       {
-        id: "booking-system",
-        name: "Booking and Appointment System",
+        id: 'booking-system',
+        name: 'Booking and Appointment System',
         price: 2500,
       },
       {
-        id: "order-management",
-        name: "Order Management System",
+        id: 'order-management',
+        name: 'Order Management System',
         price: 3500,
       },
       {
-        id: "project-management",
-        name: "Project Management System",
+        id: 'project-management',
+        name: 'Project Management System',
         price: 5500,
       },
       {
-        id: "delivery-tracking",
-        name: "Delivery and Order Tracking",
+        id: 'delivery-tracking',
+        name: 'Delivery and Order Tracking',
         price: 7500,
       },
       {
-        id: "notifications",
-        name: "Email and In-App Notifications",
+        id: 'notifications',
+        name: 'Email and In-App Notifications',
         price: 1800,
       },
       {
-        id: "document-management",
-        name: "Document Management",
+        id: 'document-management',
+        name: 'Document Management',
         price: 3500,
       },
     ],
   },
 
   {
-    title: "Mobile and Advanced Technology",
+    title: 'Mobile and Advanced Technology',
     description:
-      "Mobile applications, integrations, cloud infrastructure, and automation.",
+      'Mobile applications, integrations, cloud infrastructure, and automation.',
     features: [
       {
-        id: "pwa",
-        name: "Progressive Web App",
+        id: 'pwa',
+        name: 'Progressive Web App',
         price: 4500,
       },
       {
-        id: "android-app",
-        name: "Android Mobile Application",
+        id: 'android-app',
+        name: 'Android Mobile Application',
         price: 15000,
       },
       {
-        id: "ios-app",
-        name: "iOS Mobile Application",
+        id: 'ios-app',
+        name: 'iOS Mobile Application',
         price: 18000,
       },
       {
-        id: "api-development",
-        name: "Custom API Development",
+        id: 'api-development',
+        name: 'Custom API Development',
         price: 6500,
       },
       {
-        id: "third-party-api",
-        name: "Third-Party API Integration",
+        id: 'third-party-api',
+        name: 'Third-Party API Integration',
         price: 2500,
       },
       {
-        id: "cloud-setup",
-        name: "Cloud Infrastructure Setup",
+        id: 'cloud-setup',
+        name: 'Cloud Infrastructure Setup',
         price: 3500,
       },
       {
-        id: "ai-chatbot",
-        name: "AI Chatbot Integration",
+        id: 'ai-chatbot',
+        name: 'AI Chatbot Integration',
         price: 4500,
       },
       {
-        id: "workflow-automation",
-        name: "Workflow Automation",
+        id: 'workflow-automation',
+        name: 'Workflow Automation',
         price: 5500,
       },
     ],
   },
 
   {
-    title: "SEO, Security and Performance",
-    description:
-      "Improve visibility, reliability, compliance, and platform speed.",
+    title: 'SEO, Security and Performance',
+    description: 'Improve visibility, reliability, compliance, and platform speed.',
     features: [
       {
-        id: "basic-seo",
-        name: "Basic SEO Setup",
+        id: 'basic-seo',
+        name: 'Basic SEO Setup',
         price: 900,
       },
       {
-        id: "advanced-seo",
-        name: "Advanced SEO Optimisation",
+        id: 'advanced-seo',
+        name: 'Advanced SEO Optimisation',
         price: 2800,
       },
       {
-        id: "analytics",
-        name: "Google Analytics Setup",
+        id: 'analytics',
+        name: 'Google Analytics Setup',
         price: 650,
       },
       {
-        id: "business-profile",
-        name: "Google Business Profile Setup",
+        id: 'business-profile',
+        name: 'Google Business Profile Setup',
         price: 800,
       },
       {
-        id: "performance",
-        name: "Speed and Performance Optimisation",
+        id: 'performance',
+        name: 'Speed and Performance Optimisation',
         price: 1800,
       },
       {
-        id: "security",
-        name: "Advanced Website Security",
+        id: 'security',
+        name: 'Advanced Website Security',
         price: 2500,
       },
       {
-        id: "backup",
-        name: "Backup and Recovery Setup",
+        id: 'backup',
+        name: 'Backup and Recovery Setup',
         price: 1200,
       },
       {
-        id: "popia",
-        name: "POPIA Compliance Preparation",
+        id: 'popia',
+        name: 'POPIA Compliance Preparation',
         price: 1800,
       },
     ],
@@ -440,39 +411,39 @@ const featureGroups = [
 ];
 
 const budgetOptions = [
-  "Below R5,000",
-  "R5,000 – R15,000",
-  "R15,000 – R30,000",
-  "R30,000 – R50,000",
-  "R50,000 – R100,000",
-  "R100,000+",
-  "I need guidance",
+  'Below R5,000',
+  'R5,000 – R15,000',
+  'R15,000 – R30,000',
+  'R30,000 – R50,000',
+  'R50,000 – R100,000',
+  'R100,000+',
+  'I need guidance',
 ];
 
 const timelineOptions = [
-  "As soon as possible",
-  "Within 2–4 weeks",
-  "Within 1–2 months",
-  "Within 3–6 months",
-  "More than 6 months",
-  "No fixed deadline",
+  'As soon as possible',
+  'Within 2–4 weeks',
+  'Within 1–2 months',
+  'Within 3–6 months',
+  'More than 6 months',
+  'No fixed deadline',
 ];
 
 const projectTypeOptions = [
-  "Business Website",
-  "E-Commerce Website",
-  "Web Application",
-  "Android Application",
-  "iOS Application",
-  "Web and Mobile Platform",
-  "Business Management System",
-  "Other",
+  'Business Website',
+  'E-Commerce Website',
+  'Web Application',
+  'Android Application',
+  'iOS Application',
+  'Web and Mobile Platform',
+  'Business Management System',
+  'Other',
 ];
 
 const formatCurrency = (value) =>
-  new Intl.NumberFormat("en-ZA", {
-    style: "currency",
-    currency: "ZAR",
+  new Intl.NumberFormat('en-ZA', {
+    style: 'currency',
+    currency: 'ZAR',
     maximumFractionDigits: 0,
   }).format(value);
 
@@ -482,31 +453,29 @@ const Quotation = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
-  const packageFromUrl = searchParams.get("package");
+  const packageFromUrl = searchParams.get('package');
 
   const validInitialPackage =
-    packageFromUrl && packageOptions[packageFromUrl]
-      ? packageFromUrl
-      : "";
+    packageFromUrl && packageOptions[packageFromUrl] ? packageFromUrl : '';
 
   const [packageType, setPackageType] = useState(validInitialPackage);
   const [selectedFeatures, setSelectedFeatures] = useState([]);
 
-  const [businessName, setBusinessName] = useState("");
-  const [contactName, setContactName] = useState("");
-  const [contact, setContact] = useState("");
-  const [projectType, setProjectType] = useState("");
-  const [budget, setBudget] = useState("");
-  const [timeline, setTimeline] = useState("");
-  const [website, setWebsite] = useState("");
-  const [description, setDescription] = useState("");
+  const [businessName, setBusinessName] = useState('');
+  const [contactName, setContactName] = useState('');
+  const [contact, setContact] = useState('');
+  const [projectType, setProjectType] = useState('');
+  const [budget, setBudget] = useState('');
+  const [timeline, setTimeline] = useState('');
+  const [website, setWebsite] = useState('');
+  const [description, setDescription] = useState('');
 
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
-    const savedDraft = localStorage.getItem("pendingQuote");
+    const savedDraft = localStorage.getItem('pendingQuote');
 
     if (!savedDraft) {
       return;
@@ -515,25 +484,22 @@ const Quotation = () => {
     try {
       const parsedDraft = JSON.parse(savedDraft);
 
-      if (
-        parsedDraft.packageType &&
-        packageOptions[parsedDraft.packageType]
-      ) {
+      if (parsedDraft.packageType && packageOptions[parsedDraft.packageType]) {
         setPackageType(parsedDraft.packageType);
       }
 
       setSelectedFeatures(parsedDraft.selectedFeatures || []);
-      setBusinessName(parsedDraft.businessName || "");
-      setContactName(parsedDraft.contactName || "");
-      setContact(parsedDraft.contact || "");
-      setProjectType(parsedDraft.projectType || "");
-      setBudget(parsedDraft.budget || "");
-      setTimeline(parsedDraft.timeline || "");
-      setWebsite(parsedDraft.website || "");
-      setDescription(parsedDraft.description || "");
+      setBusinessName(parsedDraft.businessName || '');
+      setContactName(parsedDraft.contactName || '');
+      setContact(parsedDraft.contact || '');
+      setProjectType(parsedDraft.projectType || '');
+      setBudget(parsedDraft.budget || '');
+      setTimeline(parsedDraft.timeline || '');
+      setWebsite(parsedDraft.website || '');
+      setDescription(parsedDraft.description || '');
     } catch (draftError) {
-      console.error("Failed to restore quotation draft:", draftError);
-      localStorage.removeItem("pendingQuote");
+      console.error('Failed to restore quotation draft:', draftError);
+      localStorage.removeItem('pendingQuote');
     }
   }, []);
 
@@ -543,52 +509,38 @@ const Quotation = () => {
     }
   }, [validInitialPackage]);
 
-  const selectedPackage = packageType
-    ? packageOptions[packageType]
-    : null;
+  const selectedPackage = packageType ? packageOptions[packageType] : null;
 
-  const allFeatures = useMemo(
-    () => featureGroups.flatMap((group) => group.features),
-    []
-  );
+  const allFeatures = useMemo(() => featureGroups.flatMap((group) => group.features), []);
 
   const includedFeatureIds = useMemo(
     () => selectedPackage?.includedFeatureIds || [],
-    [selectedPackage]
+    [selectedPackage],
   );
 
   const includedFeatureDetails = useMemo(
     () =>
       includedFeatureIds
-        .map((featureId) =>
-          allFeatures.find((feature) => feature.id === featureId)
-        )
+        .map((featureId) => allFeatures.find((feature) => feature.id === featureId))
         .filter(Boolean),
-    [includedFeatureIds, allFeatures]
+    [includedFeatureIds, allFeatures],
   );
 
   const selectedFeatureDetails = useMemo(
     () =>
       selectedFeatures
-        .map((featureId) =>
-          allFeatures.find((feature) => feature.id === featureId)
-        )
+        .map((featureId) => allFeatures.find((feature) => feature.id === featureId))
         .filter(Boolean)
         .filter((feature) => !includedFeatureIds.includes(feature.id)),
-    [selectedFeatures, allFeatures, includedFeatureIds]
+    [selectedFeatures, allFeatures, includedFeatureIds],
   );
 
   const addOnsTotal = useMemo(
-    () =>
-      selectedFeatureDetails.reduce(
-        (total, feature) => total + feature.price,
-        0
-      ),
-    [selectedFeatureDetails]
+    () => selectedFeatureDetails.reduce((total, feature) => total + feature.price, 0),
+    [selectedFeatureDetails],
   );
 
-  const estimatedTotal =
-    (selectedPackage?.basePrice || 0) + addOnsTotal;
+  const estimatedTotal = (selectedPackage?.basePrice || 0) + addOnsTotal;
 
   const quotationDraft = {
     packageType,
@@ -609,9 +561,7 @@ const Quotation = () => {
     }
 
     setSelectedFeatures((currentFeatures) =>
-      currentFeatures.filter(
-        (featureId) => !includedFeatureIds.includes(featureId)
-      )
+      currentFeatures.filter((featureId) => !includedFeatureIds.includes(featureId)),
     );
   }, [includedFeatureIds]);
 
@@ -630,22 +580,19 @@ const Quotation = () => {
   };
 
   const handleSaveDraft = () => {
-    localStorage.setItem(
-      "pendingQuote",
-      JSON.stringify(quotationDraft)
-    );
+    localStorage.setItem('pendingQuote', JSON.stringify(quotationDraft));
 
-    setSuccess("Your quotation draft has been saved on this device.");
-    setError("");
+    setSuccess('Your quotation draft has been saved on this device.');
+    setError('');
   };
 
   const validateForm = () => {
     if (!packageType) {
-      return "Please select a development package.";
+      return 'Please select a development package.';
     }
 
     if (!businessName.trim()) {
-      return "Please enter your business or organisation name.";
+      return 'Please enter your business or organisation name.';
     }
 
     if (!contactName.trim()) {
@@ -653,40 +600,43 @@ const Quotation = () => {
     }
 
     if (!contact.trim()) {
-      return "Please enter a phone number or email address.";
+      return 'Please enter a phone number or email address.';
     }
 
     const contactValue = contact.trim();
     const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
-    const validPhone = /^\+?[\d\s().-]+$/.test(contactValue) && contactValue.replace(/\D/g, '').length >= 7 && contactValue.replace(/\D/g, '').length <= 15;
+    const validPhone =
+      /^\+?[\d\s().-]+$/.test(contactValue) &&
+      contactValue.replace(/\D/g, '').length >= 7 &&
+      contactValue.replace(/\D/g, '').length <= 15;
     if (!validEmail && !validPhone) {
-      return "Please enter a valid email address or phone number.";
+      return 'Please enter a valid email address or phone number.';
     }
 
     if (!projectType) {
-      return "Please select the type of project you need.";
+      return 'Please select the type of project you need.';
     }
 
     if (!budget) {
-      return "Please select your estimated budget.";
+      return 'Please select your estimated budget.';
     }
 
     if (!timeline) {
-      return "Please select your preferred project timeline.";
+      return 'Please select your preferred project timeline.';
     }
 
     if (description.trim().length < 20) {
-      return "Please provide more information about your project.";
+      return 'Please provide more information about your project.';
     }
 
-    return "";
+    return '';
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    setError("");
-    setSuccess("");
+    setError('');
+    setSuccess('');
 
     const validationError = validateForm();
 
@@ -695,17 +645,13 @@ const Quotation = () => {
       return;
     }
 
-    localStorage.setItem(
-      "pendingQuote",
-      JSON.stringify(quotationDraft)
-    );
+    localStorage.setItem('pendingQuote', JSON.stringify(quotationDraft));
 
     if (!currentUser) {
-      navigate("/login", {
+      navigate('/login', {
         state: {
-          from: "/quotation",
-          message:
-            "Log in or create an account to submit and save your quotation.",
+          from: '/quotation',
+          message: 'Log in or create an account to submit and save your quotation.',
         },
       });
 
@@ -746,7 +692,7 @@ const Quotation = () => {
       userId: currentUser.uid,
       userEmail: currentUser.email,
 
-      status: "Submitted",
+      status: 'Submitted',
       createdAt: serverTimestamp(),
       createdAtISO: new Date().toISOString(),
     };
@@ -754,21 +700,17 @@ const Quotation = () => {
     try {
       setSubmitting(true);
 
-      await addDoc(collection(db, "quotes"), quoteData);
+      await addDoc(collection(db, 'quotes'), quoteData);
 
-      localStorage.removeItem("pendingQuote");
+      localStorage.removeItem('pendingQuote');
 
-      setSuccess(
-        "Your quotation request was submitted successfully."
-      );
+      setSuccess('Your quotation request was submitted successfully.');
 
-      navigate("/invoices");
+      navigate('/invoices');
     } catch (submitError) {
-      console.error("Failed to submit quotation:", submitError);
+      console.error('Failed to submit quotation:', submitError);
 
-      setError(
-        "Your quotation could not be submitted. Please try again."
-      );
+      setError('Your quotation could not be submitted. Please try again.');
     } finally {
       setSubmitting(false);
     }
@@ -780,7 +722,7 @@ const Quotation = () => {
         <button
           type="button"
           className="quotation-back-button"
-          onClick={() => navigate("/dev")}
+          onClick={() => navigate('/dev')}
         >
           <FiArrowLeft aria-hidden="true" />
           Back to Packages
@@ -792,13 +734,16 @@ const Quotation = () => {
           <h1>Build a quotation around your actual business needs.</h1>
 
           <p>
-            Choose a package, add the functionality you need, and tell
-            us about your business. The amount shown is an initial
-            estimate and not the final formal quotation.
+            Choose a package, add the functionality you need, and tell us about your
+            business. The amount shown is an initial estimate and not the final formal
+            quotation.
           </p>
         </section>
 
-        <p className="package-cost-note">Development estimates exclude domains, hosting, cloud usage, paid third-party services, maintenance, and ongoing support. These are quoted separately.</p>
+        <p className="package-cost-note">
+          Development estimates exclude domains, hosting, cloud usage, paid third-party
+          services, maintenance, and ongoing support. These are quoted separately.
+        </p>
         <form className="quotation-layout" onSubmit={handleSubmit}>
           <div className="quotation-form-column">
             <section className="quotation-form-section">
@@ -808,9 +753,7 @@ const Quotation = () => {
                 <div>
                   <h2>Select your package</h2>
 
-                  <p>
-                    Choose the package closest to the project you need.
-                  </p>
+                  <p>Choose the package closest to the project you need.</p>
                 </div>
               </div>
 
@@ -818,9 +761,7 @@ const Quotation = () => {
                 {Object.values(packageOptions).map((plan) => (
                   <label
                     className={`quotation-package-option ${
-                      packageType === plan.id
-                        ? "quotation-package-option-selected"
-                        : ""
+                      packageType === plan.id ? 'quotation-package-option-selected' : ''
                     }`}
                     key={plan.id}
                   >
@@ -829,9 +770,7 @@ const Quotation = () => {
                       name="packageType"
                       value={plan.id}
                       checked={packageType === plan.id}
-                      onChange={(event) =>
-                        setPackageType(event.target.value)
-                      }
+                      onChange={(event) => setPackageType(event.target.value)}
                     />
 
                     <div>
@@ -841,10 +780,7 @@ const Quotation = () => {
                     </div>
 
                     {packageType === plan.id && (
-                      <FiCheck
-                        className="quotation-selected-icon"
-                        aria-hidden="true"
-                      />
+                      <FiCheck className="quotation-selected-icon" aria-hidden="true" />
                     )}
                   </label>
                 ))}
@@ -858,19 +794,13 @@ const Quotation = () => {
                 <div>
                   <h2>Add project features</h2>
 
-                  <p>
-                    Select all the additional functions relevant to your
-                    project.
-                  </p>
+                  <p>Select all the additional functions relevant to your project.</p>
                 </div>
               </div>
 
               <div className="quotation-feature-groups">
                 {featureGroups.map((group) => (
-                  <div
-                    className="quotation-feature-group"
-                    key={group.title}
-                  >
+                  <div className="quotation-feature-group" key={group.title}>
                     <div className="quotation-feature-group-heading">
                       <h3>{group.title}</h3>
                       <p>{group.description}</p>
@@ -878,31 +808,21 @@ const Quotation = () => {
 
                     <div className="quotation-feature-list">
                       {group.features.map((feature) => {
-                        const isSelected =
-                          selectedFeatures.includes(feature.id);
-                        const isIncluded =
-                          includedFeatureIds.includes(feature.id);
+                        const isSelected = selectedFeatures.includes(feature.id);
+                        const isIncluded = includedFeatureIds.includes(feature.id);
 
                         return (
                           <label
                             className={`quotation-feature-option ${
-                              isSelected
-                                ? "quotation-feature-option-selected"
-                                : ""
-                            } ${
-                              isIncluded
-                                ? "quotation-feature-option-included"
-                                : ""
-                            }`}
+                              isSelected ? 'quotation-feature-option-selected' : ''
+                            } ${isIncluded ? 'quotation-feature-option-included' : ''}`}
                             key={feature.id}
                           >
                             <input
                               type="checkbox"
                               checked={isSelected}
                               disabled={isIncluded}
-                              onChange={() =>
-                                handleFeatureChange(feature.id)
-                              }
+                              onChange={() => handleFeatureChange(feature.id)}
                             />
 
                             <span className="quotation-checkbox">
@@ -911,13 +831,11 @@ const Quotation = () => {
                               )}
                             </span>
 
-                            <span className="quotation-feature-name">
-                              {feature.name}
-                            </span>
+                            <span className="quotation-feature-name">{feature.name}</span>
 
                             <span className="quotation-feature-price">
                               {isIncluded
-                                ? "Included"
+                                ? 'Included'
                                 : `+${formatCurrency(feature.price)}`}
                             </span>
                           </label>
@@ -937,57 +855,44 @@ const Quotation = () => {
                   <h2>Tell us about the business</h2>
 
                   <p>
-                    Provide the basic information needed to understand
-                    your organisation.
+                    Provide the basic information needed to understand your organisation.
                   </p>
                 </div>
               </div>
 
               <div className="quotation-field-grid">
                 <div className="quotation-field quotation-field-full">
-                  <label htmlFor="businessName">
-                    Business or organisation name
-                  </label>
+                  <label htmlFor="businessName">Business or organisation name</label>
 
                   <input
                     id="businessName"
                     type="text"
                     value={businessName}
-                    onChange={(event) =>
-                      setBusinessName(event.target.value)
-                    }
+                    onChange={(event) => setBusinessName(event.target.value)}
                     placeholder="Example: LPTB Solutions Pty Ltd"
                   />
                 </div>
 
                 <div className="quotation-field">
-                  <label htmlFor="contactName">
-                    Contact person's name
-                  </label>
+                  <label htmlFor="contactName">Contact person's name</label>
 
                   <input
                     id="contactName"
                     type="text"
                     value={contactName}
-                    onChange={(event) =>
-                      setContactName(event.target.value)
-                    }
+                    onChange={(event) => setContactName(event.target.value)}
                     placeholder="Full name"
                   />
                 </div>
 
                 <div className="quotation-field">
-                  <label htmlFor="contact">
-                    Phone number or email
-                  </label>
+                  <label htmlFor="contact">Phone number or email</label>
 
                   <input
                     id="contact"
                     type="text"
                     value={contact}
-                    onChange={(event) =>
-                      setContact(event.target.value)
-                    }
+                    onChange={(event) => setContact(event.target.value)}
                     placeholder="Your preferred contact details"
                   />
                 </div>
@@ -1002,9 +907,7 @@ const Quotation = () => {
                     id="website"
                     type="text"
                     value={website}
-                    onChange={(event) =>
-                      setWebsite(event.target.value)
-                    }
+                    onChange={(event) => setWebsite(event.target.value)}
                     placeholder="https://yourbusiness.co.za"
                   />
                 </div>
@@ -1019,8 +922,7 @@ const Quotation = () => {
                   <h2>Project requirements</h2>
 
                   <p>
-                    Help us understand the type, budget, and expected
-                    delivery period.
+                    Help us understand the type, budget, and expected delivery period.
                   </p>
                 </div>
               </div>
@@ -1032,9 +934,7 @@ const Quotation = () => {
                   <select
                     id="projectType"
                     value={projectType}
-                    onChange={(event) =>
-                      setProjectType(event.target.value)
-                    }
+                    onChange={(event) => setProjectType(event.target.value)}
                   >
                     <option value="">Select project type</option>
 
@@ -1052,9 +952,7 @@ const Quotation = () => {
                   <select
                     id="budget"
                     value={budget}
-                    onChange={(event) =>
-                      setBudget(event.target.value)
-                    }
+                    onChange={(event) => setBudget(event.target.value)}
                   >
                     <option value="">Select budget range</option>
 
@@ -1067,16 +965,12 @@ const Quotation = () => {
                 </div>
 
                 <div className="quotation-field quotation-field-full">
-                  <label htmlFor="timeline">
-                    Preferred completion timeline
-                  </label>
+                  <label htmlFor="timeline">Preferred completion timeline</label>
 
                   <select
                     id="timeline"
                     value={timeline}
-                    onChange={(event) =>
-                      setTimeline(event.target.value)
-                    }
+                    onChange={(event) => setTimeline(event.target.value)}
                   >
                     <option value="">Select timeline</option>
 
@@ -1089,23 +983,17 @@ const Quotation = () => {
                 </div>
 
                 <div className="quotation-field quotation-field-full">
-                  <label htmlFor="description">
-                    Describe the project
-                  </label>
+                  <label htmlFor="description">Describe the project</label>
 
                   <textarea
                     id="description"
                     value={description}
-                    onChange={(event) =>
-                      setDescription(event.target.value)
-                    }
+                    onChange={(event) => setDescription(event.target.value)}
                     placeholder="Tell us what your business does, the problem you want to solve, the users of the system, and the main functionality you need."
                     rows="8"
                   />
 
-                  <small>
-                    Include as much relevant information as possible.
-                  </small>
+                  <small>Include as much relevant information as possible.</small>
                 </div>
               </div>
             </section>
@@ -1145,14 +1033,12 @@ const Quotation = () => {
                   disabled={submitting}
                 >
                   {submitting
-                    ? "Submitting Quote..."
+                    ? 'Submitting Quote...'
                     : currentUser
-                      ? "Submit Quote"
-                      : "Log In and Submit Quote"}
+                      ? 'Submit Quote'
+                      : 'Log In and Submit Quote'}
 
-                  {!submitting && (
-                    <FiChevronRight aria-hidden="true" />
-                  )}
+                  {!submitting && <FiChevronRight aria-hidden="true" />}
                 </button>
               </div>
             </div>
@@ -1160,15 +1046,9 @@ const Quotation = () => {
 
           <aside className="quotation-summary">
             <div className="quotation-summary-card">
-              <p className="quotation-summary-kicker">
-                Quote Summary
-              </p>
+              <p className="quotation-summary-kicker">Quote Summary</p>
 
-              <h2>
-                {selectedPackage
-                  ? selectedPackage.name
-                  : "No package selected"}
-              </h2>
+              <h2>{selectedPackage ? selectedPackage.name : 'No package selected'}</h2>
 
               {selectedPackage ? (
                 <>
@@ -1179,9 +1059,7 @@ const Quotation = () => {
                   <div className="quotation-summary-row">
                     <span>Package starting price</span>
 
-                    <strong>
-                      {formatCurrency(selectedPackage.basePrice)}
-                    </strong>
+                    <strong>{formatCurrency(selectedPackage.basePrice)}</strong>
                   </div>
                 </>
               ) : (
@@ -1220,18 +1098,14 @@ const Quotation = () => {
                 </div>
 
                 {selectedFeatureDetails.length === 0 ? (
-                  <p className="quotation-summary-empty">
-                    No paid add-ons selected.
-                  </p>
+                  <p className="quotation-summary-empty">No paid add-ons selected.</p>
                 ) : (
                   <ul>
                     {selectedFeatureDetails.map((feature) => (
                       <li key={feature.id}>
                         <span>{feature.name}</span>
 
-                        <strong>
-                          {formatCurrency(feature.price)}
-                        </strong>
+                        <strong>{formatCurrency(feature.price)}</strong>
                       </li>
                     ))}
                   </ul>
@@ -1252,9 +1126,8 @@ const Quotation = () => {
                 <FiInfo aria-hidden="true" />
 
                 <p>
-                  This is an initial estimate only. LPTB Solutions will
-                  review the requirements and issue a formal quotation
-                  after consultation.
+                  This is an initial estimate only. LPTB Solutions will review the
+                  requirements and issue a formal quotation after consultation.
                 </p>
               </div>
 
@@ -1263,9 +1136,8 @@ const Quotation = () => {
                   <strong>Account required for submission</strong>
 
                   <p>
-                    You may build and save your quote before logging in.
-                    Your selected information will remain available when
-                    you proceed to login.
+                    You may build and save your quote before logging in. Your selected
+                    information will remain available when you proceed to login.
                   </p>
                 </div>
               )}

@@ -2,10 +2,13 @@
   min-height: 76vh;
   padding: clamp(8rem, 13vw, 11rem) clamp(1rem, 4vw, 2rem) 4rem;
   background:
-    linear-gradient(135deg, rgba(244, 185, 66, 0.12) 0 1px, transparent 1px 100%),
+    linear-gradient(135deg, rgba(32, 196, 212, 0.12) 0 1px, transparent 1px 100%),
     linear-gradient(120deg, rgba(8, 15, 28, 0.96), rgba(10, 109, 112, 0.82)),
     var(--color-dark);
-  background-size: 32px 32px, auto, auto;
+  background-size:
+    32px 32px,
+    auto,
+    auto;
 }
 
 .login-container {
@@ -45,8 +48,8 @@
   gap: 1rem;
 }
 
-.login-container input[type="email"],
-.login-container input[type="password"] {
+.login-container input[type='email'],
+.login-container input[type='password'] {
   padding: 0.9rem 1rem;
   border: 1px solid var(--color-line);
   background-color: #ffffff;
@@ -55,8 +58,8 @@
   font-size: 1rem;
 }
 
-.login-container input[type="email"]:focus,
-.login-container input[type="password"]:focus {
+.login-container input[type='email']:focus,
+.login-container input[type='password']:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 4px rgba(15, 139, 141, 0.14);

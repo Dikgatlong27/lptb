@@ -19,6 +19,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "node scripts/build-seo.cjs",
+    "test:seo": "node scripts/test-seo.cjs",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,json}\" \"scripts/**/*.cjs\" \"public/*.{html,json,txt}\" \"*.{json,md,yml}\" --ignore-unknown",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,css,json}\" \"scripts/**/*.cjs\" \"public/*.{html,json,txt}\" \"*.{json,md,yml}\" --ignore-unknown",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -39,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
   }
 }

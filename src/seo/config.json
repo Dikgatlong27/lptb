@@ -1,0 +1,44 @@
+{
+  "origin": "https://lptbsolutions.co.za",
+  "pages": {
+    "/": {
+      "name": "Home",
+      "title": "LPTB Solutions | Web & Software Development South Africa",
+      "description": "Build your business with LPTB Solutions: a founder-led South African studio for websites, mobile apps and custom software. Explore our work and request a quote."
+    },
+    "/about": {
+      "name": "About",
+      "title": "About Our Software Studio | LPTB Solutions",
+      "description": "Meet Tebogo Patrick Dikgatlong and LPTB Solutions, a founder-led South African software studio focused on practical websites, apps and business platforms."
+    },
+    "/services": {
+      "name": "Services",
+      "title": "Website, App & Software Development Services | LPTB Solutions",
+      "description": "Explore website development, mobile apps, product design, branding and business systems from LPTB Solutions. Plan a practical digital solution for your business."
+    },
+    "/our-work": {
+      "name": "Our Work",
+      "title": "Website & Software Project Portfolio | LPTB Solutions",
+      "description": "Explore LPTB Solutions client websites and digital platforms, including YaBatho, LVSIFT, GazaTech, Axe Projects and Fortress. Visit the projects we have worked on."
+    },
+    "/dev": {
+      "name": "Development Packages",
+      "title": "Website Development Packages from R2,500 | LPTB Solutions",
+      "description": "Compare LPTB Solutions website development packages from R2,500. Explore included features and build a quote. Hosting and ongoing services are quoted separately."
+    },
+    "/contact": {
+      "name": "Contact",
+      "title": "Contact LPTB Solutions | Discuss Your Website or App",
+      "description": "Talk to LPTB Solutions about your website, app or custom software project. Email info@lptbsolutions.co.za or call +27 67 622 8529 to discuss your next step."
+    }
+  },
+  "privatePaths": [
+    "/quotation",
+    "/login",
+    "/signup",
+    "/dashboard",
+    "/projects",
+    "/invoices",
+    "/profile"
+  ]
+}

@@ -5,9 +5,17 @@
 .contact-us-section {
   background:
     linear-gradient(90deg, rgba(15, 139, 141, 0.05) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 185, 66, 0.08) 48%, rgba(245, 247, 251, 0.98)),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(32, 196, 212, 0.08) 48%,
+      rgba(245, 247, 251, 0.98)
+    ),
     #f7f9fb;
-  background-size: 72px 72px, auto, auto;
+  background-size:
+    72px 72px,
+    auto,
+    auto;
   padding: clamp(8rem, 13vw, 11rem) clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
   text-align: center;
   min-height: 76vh;
@@ -46,5 +54,12 @@
   text-align: left;
 }
 
-.contact-us-form .form-submit-btn:disabled { opacity: .65; cursor: wait; }
-@media (max-width: 600px) { .contact-us-form .form-input { font-size: 16px; } }
+.contact-us-form .form-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+@media (max-width: 600px) {
+  .contact-us-form .form-input {
+    font-size: 16px;
+  }
+}

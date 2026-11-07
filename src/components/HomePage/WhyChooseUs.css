@@ -34,13 +34,16 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   text-align: left;
-  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .why-choose-card:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(244, 185, 66, 0.38);
+  border-color: rgba(32, 196, 212, 0.38);
 }
 
 .why-choose-icon {
@@ -51,7 +54,7 @@
   height: 48px;
   margin-bottom: 1rem;
   border-radius: var(--radius-sm);
-  background: rgba(244, 185, 66, 0.12);
+  background: rgba(32, 196, 212, 0.12);
   color: var(--color-accent);
   font-size: 1.45rem;
 }

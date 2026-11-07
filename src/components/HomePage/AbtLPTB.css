@@ -21,7 +21,7 @@
   color: rgba(255, 255, 255, 0.74);
   margin-bottom: 1rem;
 }
-  
+
 .highlight {
   font-weight: 800;
   color: #ffffff;
@@ -42,12 +42,14 @@
   border-radius: var(--radius-sm);
   text-decoration: none;
   font-weight: 800;
-  transition: transform 0.25s ease, background-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
 }
 
 .about-btn:hover {
   transform: translateY(-2px);
-  background-color: #f8c861;
+  background-color: #6edee7;
 }
 
 @media screen and (max-width: 520px) {

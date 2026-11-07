@@ -1,25 +1,25 @@
-import React, { useState } from "react";
-import { useAuth } from "../../AuthContext";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useAuth } from '../../AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const SignupForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const { signup } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setError('');
 
     try {
-      await signup( email, password);
-      navigate("/dashboard"); // Redirect on success
+      await signup(email, password, name);
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message);
-      console.error('signup error', err)
+      console.error('signup error', err);
     }
   };
 
@@ -29,7 +29,8 @@ const SignupForm = () => {
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
         <input
-          type="name"
+          type="text"
+          autoComplete="name"
           placeholder="Enter Your Full Names"
           value={name}
           onChange={(e) => setName(e.target.value)}

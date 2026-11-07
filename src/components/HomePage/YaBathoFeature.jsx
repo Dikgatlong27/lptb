@@ -1,8 +1,8 @@
-import React from 'react'
-import { FaMotorcycle, FaStore } from 'react-icons/fa'
-import { FiExternalLink, FiMonitor, FiUsers } from 'react-icons/fi'
+import React from 'react';
+import { FaMotorcycle, FaStore } from 'react-icons/fa';
+import { FiExternalLink, FiMonitor, FiUsers } from 'react-icons/fi';
 
-import './YaBathoFeature.css'
+import './YaBathoFeature.css';
 
 const platformPoints = [
   {
@@ -25,9 +25,9 @@ const platformPoints = [
     title: 'Admin',
     text: 'Oversight for managing outlets, platform activity, and growth as the rollout expands.',
   },
-]
+];
 
-const yabathoAppUrl = 'https://app.yabathoplatform.co.za/'
+const yabathoAppUrl = 'https://app.yabathoplatform.co.za/';
 
 const YaBathoFeature = () => {
   return (
@@ -38,8 +38,8 @@ const YaBathoFeature = () => {
           <h2>Explore YaBatho in action.</h2>
           <p>
             Open the app to discover the ordering experience, or speak to us about
-            partnering with the platform. Developed with C-Digital, a division of
-            The Chairman Group.
+            partnering with the platform. Developed with C-Digital, a division of The
+            Chairman Group.
           </p>
 
           <div className="yabatho-actions">
@@ -51,10 +51,14 @@ const YaBathoFeature = () => {
             >
               Open YaBatho App <FiExternalLink aria-hidden="true" />
             </a>
-            <a href="/contact" className="yabatho-secondary">Partner with us</a>
+            <a href="/contact" className="yabatho-secondary">
+              Partner with us
+            </a>
           </div>
 
-          <p className="yabatho-availability">Available on Android, iOS, and desktop through your browser.</p>
+          <p className="yabatho-availability">
+            Available on Android, iOS, and desktop through your browser.
+          </p>
         </div>
 
         <div className="yabatho-panel" aria-label="YaBatho platform areas">
@@ -66,7 +70,9 @@ const YaBathoFeature = () => {
           <div className="yabatho-grid">
             {platformPoints.map((point) => (
               <div className="yabatho-card" key={point.title}>
-                <span className="yabatho-icon" aria-hidden="true">{point.icon}</span>
+                <span className="yabatho-icon" aria-hidden="true">
+                  {point.icon}
+                </span>
                 <h3>{point.title}</h3>
                 <p>{point.text}</p>
               </div>
@@ -75,7 +81,7 @@ const YaBathoFeature = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default YaBathoFeature
+export default YaBathoFeature;

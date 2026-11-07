@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useAuth } from "../../AuthContext";
-import { useNavigate } from "react-router-dom";
-import { db } from "../../Firebase"; // Firestore & Storage
-import { doc, getDoc, updateDoc } from "firebase/firestore";
-import "./UserProfile.css";
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '../../AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { db } from '../../Firebase'; // Firestore & Storage
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import './UserProfile.css';
 
 const UserProfile = () => {
   const { currentUser } = useAuth();
   const navigate = useNavigate();
 
   const [profileData, setProfileData] = useState({
-    name: "",
-    contact: "",
+    name: '',
+    contact: '',
   });
 
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ const UserProfile = () => {
     const fetchProfile = async () => {
       if (!currentUser) return;
 
-      const userRef = doc(db, "users", currentUser.uid);
+      const userRef = doc(db, 'users', currentUser.uid);
       const userSnap = await getDoc(userRef);
 
       if (userSnap.exists()) {
@@ -39,10 +39,10 @@ const UserProfile = () => {
     e.preventDefault();
     if (!currentUser) return;
 
-    const userRef = doc(db, "users", currentUser.uid);
+    const userRef = doc(db, 'users', currentUser.uid);
     await updateDoc(userRef, profileData);
 
-    alert("Profile updated successfully!");
+    alert('Profile updated successfully!');
   };
 
   return (
@@ -53,7 +53,6 @@ const UserProfile = () => {
         <p>Loading profile...</p>
       ) : (
         <form onSubmit={handleProfileUpdate}>
-          
           <label>Name:</label>
           <input
             type="text"
@@ -74,7 +73,7 @@ const UserProfile = () => {
         </form>
       )}
 
-      <button className="back-to-dashboard" onClick={() => navigate("/dashboard")}>
+      <button className="back-to-dashboard" onClick={() => navigate('/dashboard')}>
         Back to Dashboard
       </button>
     </div>

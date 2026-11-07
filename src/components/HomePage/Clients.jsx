@@ -23,13 +23,27 @@ const clients = [
 const ClientCard = ({ client }) => (
   <li className="client-logo">
     <div className="client-artwork">
-    {client.logo ? (
-      client.name === 'LVSIFT' ? (
-        <div className="client-logo-crop">
-          <img src={`/clients/${client.logo}`} alt={client.name} loading="eager" draggable={false} />
-        </div>
-      ) : <img src={`/clients/${client.logo}`} alt={client.name} loading="eager" draggable={false} />
-    ) : <span className="client-name">{client.name}</span>}
+      {client.logo ? (
+        client.name === 'LVSIFT' ? (
+          <div className="client-logo-crop">
+            <img
+              src={`/clients/${client.logo}`}
+              alt={client.name}
+              loading="eager"
+              draggable={false}
+            />
+          </div>
+        ) : (
+          <img
+            src={`/clients/${client.logo}`}
+            alt={client.name}
+            loading="eager"
+            draggable={false}
+          />
+        )
+      ) : (
+        <span className="client-name">{client.name}</span>
+      )}
     </div>
     {client.logo && <span className="client-caption">{client.name}</span>}
   </li>
@@ -38,9 +52,20 @@ const ClientCard = ({ client }) => (
 const Clients = () => (
   <section className="clients-section" aria-labelledby="clients-title">
     <div className="clients-container">
-      <div className="clients-heading"><div><p className="section-eyebrow">04 / PEOPLE WE WORK WITH</p><h2 id="clients-title">Our Clients</h2></div><p>Different businesses.<br />A shared ambition to grow.</p></div>
+      <div className="clients-heading">
+        <div>
+          <p className="section-eyebrow">04 / PEOPLE WE WORK WITH</p>
+          <h2 id="clients-title">Our Clients</h2>
+        </div>
+        <p>
+          Different businesses.
+          <br />A shared ambition to grow.
+        </p>
+      </div>
       <ul className="clients-grid">
-        {clients.map(client => <ClientCard key={client.name} client={client} />)}
+        {clients.map((client) => (
+          <ClientCard key={client.name} client={client} />
+        ))}
       </ul>
     </div>
   </section>

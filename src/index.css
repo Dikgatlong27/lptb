@@ -27,7 +27,7 @@ img {
   margin-bottom: 0.45rem;
   font-weight: 700;
 }
-  
+
 .form-input {
   padding: 0.9rem 1rem;
   font-size: 1rem;
@@ -37,7 +37,10 @@ img {
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.92);
   color: var(--color-ink);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .form-input:focus {
@@ -55,7 +58,9 @@ img {
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.25s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.25s ease;
 }
 
 .form-submit-btn:hover {
@@ -63,10 +68,10 @@ img {
 }
 
 .slide-bottom {
-  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-  
+
 @keyframes slide-bottom {
   0% {
     -webkit-transform: translateY(-25%);
@@ -90,13 +95,36 @@ img {
 }
 
 :where(a, button, input, select, textarea):focus-visible {
-  outline: 3px solid #f4b942;
+  outline: 3px solid #20c4d4;
   outline-offset: 4px;
   box-shadow: 0 0 0 2px #0b1220;
 }
-.skip-navigation { position: fixed; top: 1rem; left: 1rem; z-index: 100; padding: .8rem 1rem; color: #0b1220; background: #f4b942; border-radius: 8px; transform: translateY(-180%); text-decoration: none; font-weight: 700; }
-.skip-navigation:focus { transform: translateY(0); }
-#page-content:focus { outline: none; }
+.skip-navigation {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.8rem 1rem;
+  color: #0b1220;
+  background: #20c4d4;
+  border-radius: 8px;
+  transform: translateY(-180%);
+  text-decoration: none;
+  font-weight: 700;
+}
+.skip-navigation:focus {
+  transform: translateY(0);
+}
+#page-content:focus {
+  outline: none;
+}
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

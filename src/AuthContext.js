@@ -1,12 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { auth } from './Firebase';
-import {
-  onAuthStateChanged,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  updateProfile,
-} from 'firebase/auth';
 
 const AuthContext = React.createContext();
 
@@ -16,29 +8,33 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const signup = async (email, password, name) => {
-    const credential = await createUserWithEmailAndPassword(auth, email, password);
-    if (name?.trim()) {
-      await updateProfile(credential.user, { displayName: name.trim() });
-    }
-    return credential;
-  };
+  const signup = async (...args) => (await import('./authClient')).signup(...args);
 
-  const login = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
-  };
+  const login = async (...args) => (await import('./authClient')).login(...args);
 
-  const logout = () => {
-    return signOut(auth);
-  };
+  const logout = async () => (await import('./authClient')).logout();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-      setLoading(false);
-    });
+    let active = true;
+    let unsubscribe;
+    import('./authClient')
+      .then((client) => {
+        if (!active) return;
+        unsubscribe = client.subscribe((user) => {
+          setCurrentUser(user);
+          setLoading(false);
+        });
+      })
+      .catch((error) => {
+        if (!active) return;
+        console.error('Unable to initialize authentication:', error);
+        setLoading(false);
+      });
 
-    return unsubscribe;
+    return () => {
+      active = false;
+      unsubscribe?.();
+    };
   }, []);
 
   const value = {

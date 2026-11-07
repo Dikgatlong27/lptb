@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useForm, ValidationError } from '@formspree/react';
 import './Contact.css';
 
@@ -6,7 +7,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm('mnqypade');
   if (state.succeeded) {
     return (
-      <section className="contact-us-section">
+      <main className="contact-us-section">
         <div className="contact-us-container" role="status">
           <h2>Message sent!</h2>
           <p>
@@ -14,12 +15,12 @@ const Contact = () => {
             can.
           </p>
         </div>
-      </section>
+      </main>
     );
   }
 
   return (
-    <div className="contact-us-page">
+    <main className="contact-us-page">
       <section className="contact-us-section">
         <div className="contact-us-container">
           <div className="contact-page-layout">
@@ -112,6 +113,11 @@ const Contact = () => {
                 <div role="alert">
                   <ValidationError errors={state.errors} />
                 </div>
+                <p className="account-legal">
+                  We use these details to respond to your enquiry. Read our{' '}
+                  <Link to="/privacy">privacy notice</Link>. Please do not include
+                  passwords or sensitive documents.
+                </p>
                 <button
                   type="submit"
                   disabled={state.submitting}
@@ -124,7 +130,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 

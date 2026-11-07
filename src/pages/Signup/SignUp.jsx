@@ -5,7 +5,7 @@ import './SignUp.css';
 
 const SignUp = () => {
   return (
-    <div id="signup">
+    <main id="signup">
       <div className="signup-info">
         <h2>Welcome to LPTB Solutions</h2>
         <p>
@@ -14,7 +14,7 @@ const SignUp = () => {
         </p>
       </div>
       <SignupForm />
-    </div>
+    </main>
   );
 };
 

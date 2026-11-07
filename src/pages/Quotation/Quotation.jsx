@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 
 import { FiArrowLeft, FiCheck, FiChevronRight, FiInfo, FiSave } from 'react-icons/fi';
 
@@ -1041,6 +1041,12 @@ const Quotation = () => {
                   {!submitting && <FiChevronRight aria-hidden="true" />}
                 </button>
               </div>
+              <p className="account-legal">
+                Saved drafts stay in this browser. Submitted requests are linked to your
+                account so we can prepare your quotation. Read our{' '}
+                <Link to="/privacy">privacy notice</Link>. Avoid including sensitive
+                documents or passwords.
+              </p>
             </div>
           </div>
 

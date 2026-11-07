@@ -79,7 +79,7 @@ const Hero = () => {
                 alt={`${project.name} website preview`}
                 width="768"
                 height="432"
-                fetchPriority={index === 0 ? 'high' : 'auto'}
+                fetchpriority={index === 0 ? 'high' : 'auto'}
                 decoding="async"
               />
               <div className="hero-gallery-details">

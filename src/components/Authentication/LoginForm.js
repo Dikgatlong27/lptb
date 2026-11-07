@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../AuthContext';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -90,6 +90,7 @@ const LoginForm = () => {
         <input
           type="email"
           placeholder="Email"
+          aria-label="Email address"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           autoComplete="email"
@@ -99,6 +100,7 @@ const LoginForm = () => {
         <input
           type="password"
           placeholder="Password"
+          aria-label="Password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           autoComplete="current-password"
@@ -109,6 +111,12 @@ const LoginForm = () => {
           {loading ? 'Logging In...' : 'Log In'}
         </button>
       </form>
+      <p className="account-legal">
+        Your account information is handled under our{' '}
+        <Link to="/privacy">privacy notice</Link>. See the{' '}
+        <Link to="/terms">website terms</Link> or <Link to="/cookies">cookie policy</Link>
+        .
+      </p>
     </div>
   );
 };

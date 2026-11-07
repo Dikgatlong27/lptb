@@ -30,6 +30,21 @@
       "name": "Contact",
       "title": "Contact LPTB Solutions | Discuss Your Website or App",
       "description": "Talk to LPTB Solutions about your website, app or custom software project. Email info@lptbsolutions.co.za or call +27 67 622 8529 to discuss your next step."
+    },
+    "/cookies": {
+      "description": "Understand essential account storage, saved quotation drafts and optional Google Analytics on LPTB Solutions. Manage your cookie choices and privacy preferences.",
+      "name": "Cookie Policy",
+      "title": "Cookies & Browser Storage | LPTB Solutions"
+    },
+    "/privacy": {
+      "description": "Learn how LPTB Solutions handles account details, quotation requests and enquiries, and how to exercise your privacy rights or contact us about personal information.",
+      "name": "Privacy Notice",
+      "title": "Privacy Notice | LPTB Solutions"
+    },
+    "/terms": {
+      "description": "Read the terms for using the LPTB Solutions website, creating an account and requesting quotations, including pricing estimates, acceptable use and your legal rights.",
+      "name": "Website Terms",
+      "title": "Website Terms | LPTB Solutions"
     }
   },
   "privatePaths": [

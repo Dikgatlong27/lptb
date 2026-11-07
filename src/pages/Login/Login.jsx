@@ -13,7 +13,7 @@ const Login = () => {
   };
 
   return (
-    <div id="login">
+    <main id="login">
       <div className="login-info">
         <h2>Welcome!</h2>
         <p>
@@ -38,7 +38,7 @@ const Login = () => {
           </div>
         </>
       )}
-    </div>
+    </main>
   );
 };
 

@@ -13,6 +13,7 @@ import PageHeader, { pageHeaders } from './components/PageHeader/PageHeader';
 import './SectionMakeover.css';
 import './LptbButtons.css';
 import { applyMetadata } from './seo/metadata';
+import CookieConsent from './privacy/CookieConsent';
 
 const About = React.lazy(() => import('./pages/About/About'));
 const Services = React.lazy(() => import('./pages/Services/Services'));
@@ -26,6 +27,7 @@ const Projects = React.lazy(() => import('./pages/PrivateRoute/Projects'));
 const Invoices = React.lazy(() => import('./pages/PrivateRoute/Invoices'));
 const UserProfile = React.lazy(() => import('./components/Authentication/UserProfile'));
 const OurWork = React.lazy(() => import('./pages/OurWork/OurWork'));
+const LegalPage = React.lazy(() => import('./privacy/LegalPage'));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -90,6 +92,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/privacy" element={<LegalPage kind="privacy" />} />
+            <Route path="/cookies" element={<LegalPage kind="cookies" />} />
+            <Route path="/terms" element={<LegalPage kind="terms" />} />
 
             <Route
               path="/dashboard"
@@ -131,6 +136,7 @@ function App() {
       </div>
       <Chat />
       <Footer />
+      <CookieConsent />
     </div>
   );
 }

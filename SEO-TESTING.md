@@ -4,7 +4,7 @@
 
 Run `npm run build`, then `npm run test:seo`. The build generates separate HTML metadata for each route, JSON-LD, social previews and a public sitemap. Upload the entire build including its hidden `.htaccess` file. cPanel deployment copies that file explicitly.
 
-The public pages are `/`, `/about`, `/services`, `/our-work`, `/dev` and `/contact`. Account pages and the quote builder are noindex and excluded from the sitemap. They remain crawlable so crawlers can read the noindex instruction. No robots.txt rule should block them.
+The public pages are `/`, `/about`, `/services`, `/our-work`, `/dev`, `/contact`, `/privacy`, `/cookies` and `/terms`. Account pages and the quote builder are noindex and excluded from the sitemap. They remain crawlable so crawlers can read the noindex instruction. No robots.txt rule should block them.
 
 ## After deployment
 
@@ -22,6 +22,6 @@ Monitor Search Console indexing, search queries, clicks and impressions over tim
 
 ## Current limitation
 
-Initial HTML includes route-specific metadata, but the main page content still requires React and JavaScript. Google can render JavaScript; simpler crawlers and some preview tools may not. Fully prerendering or server-rendering the public page content is a separate improvement. No local test can guarantee a Google ranking or indexing date.
+The homepage includes prerendered body content and React hydrates it for interaction. Other routes include initial metadata but still render their body content with JavaScript. Google can render JavaScript; simpler crawlers and some preview tools may not. No local test can guarantee a Google ranking or indexing date. Use `npm run preview` to check the production build at `http://127.0.0.1:3002`; the development server does not run prerendering.
 
 References: https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics and https://support.google.com/webmasters/answer/9012289

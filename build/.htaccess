@@ -9,7 +9,7 @@ ErrorDocument 404 /404.html
   RewriteRule ^ https://lptbsolutions.co.za%{REQUEST_URI} [R=301,L]
 
   # Serve each React route with its own metadata, without a directory redirect.
-  RewriteRule ^(about|services|our-work|dev|contact|quotation|login|signup|dashboard|projects|invoices|profile)/?$ $1.html [END]
+  RewriteRule ^(about|services|our-work|dev|contact|privacy|cookies|terms|quotation|login|signup|dashboard|projects|invoices|profile)/?$ $1.html [END]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ - [R=404,L]

@@ -4,6 +4,7 @@ import { FiArrowUp, FiMail, FiPhone } from 'react-icons/fi';
 import { TiSocialFacebook, TiSocialLinkedin } from 'react-icons/ti';
 import { FaWhatsapp, FaGithub, FaYoutube } from 'react-icons/fa';
 import './Footer.css';
+import { openCookieSettings } from '../../privacy/consent';
 
 const socials = [
   ['Facebook', 'https://www.facebook.com/lptbsolutions/', <TiSocialFacebook />],
@@ -68,6 +69,17 @@ const Footer = () => (
           </div>
         </div>
       </div>
+      <nav className="footer-legal-links" aria-label="Privacy and legal information">
+        <Link to="/privacy">Privacy notice</Link>
+        <Link to="/cookies">Cookie policy</Link>
+        <Link to="/terms">Website terms</Link>
+        <button type="button" onClick={openCookieSettings}>
+          Cookie settings
+        </button>
+        <a href="mailto:info@lptbsolutions.co.za?subject=Privacy%20or%20account%20deletion%20request">
+          Privacy & account requests
+        </a>
+      </nav>
       <div className="footer-bottom-row">
         <p>© {new Date().getFullYear()} LPTB Solution (Pty) Ltd. All rights reserved.</p>
         <button

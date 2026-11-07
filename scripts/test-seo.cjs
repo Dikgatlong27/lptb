@@ -69,6 +69,27 @@ for (const route of [...Object.keys(publicPages), ...privatePaths, '/404']) {
 const sitemap = fs.readFileSync(path.join(directory, 'sitemap.xml'), 'utf8');
 const homepage = fs.readFileSync(path.join(directory, 'index.html'), 'utf8');
 check(
+  !homepage.includes('src="https://www.googletagmanager.com/gtag/js'),
+  'Analytics is not loaded before a privacy choice',
+);
+check(
+  homepage.includes('data-prerendered="true"'),
+  'Homepage uses hydration for prerendered content',
+);
+check(
+  homepage.includes('<main>') &&
+    homepage.includes('Founder-led software solutions for growing businesses.'),
+  'Homepage content is present before JavaScript',
+);
+check(
+  homepage.includes('class="hero-gallery-screen"'),
+  'Largest hero image is in initial HTML',
+);
+check(
+  !homepage.includes('fonts.googleapis.com'),
+  'Font loading does not depend on Google Fonts',
+);
+check(
   homepage.includes('rel="preload" as="image" href="/previews/lvsift-gallery-hero.jpg"'),
   'Homepage preloads its largest hero image',
 );

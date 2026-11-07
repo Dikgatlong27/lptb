@@ -2,8 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const { getMetadata, publicPages, siteOrigin } = require('../src/seo/metadata');
 const { privatePaths } = require('../src/seo/config.json');
+const { renderHomepage } = require('./prerender-home.cjs');
 const directory = path.resolve(__dirname, '../build');
 const template = fs.readFileSync(path.join(directory, 'index.html'), 'utf8');
+const homepageMarkup = renderHomepage();
 const escape = (value) =>
   String(value)
     .replace(/&/g, '&amp;')
@@ -44,6 +46,12 @@ for (const route of [...Object.keys(publicPages), ...privatePaths, '/404']) {
     `<script id="lptb-schema" type="application/ld+json">${JSON.stringify(data.schema).replace(/</g, '\\u003c')}</script>`,
   ];
   html = html.replace('</head>', `${tags.join('\n')}</head>`);
+  if (route === '/') {
+    html = html.replace(
+      '<div id="root"></div>',
+      `<div id="root" data-prerendered="true">${homepageMarkup}</div>`,
+    );
+  }
   fs.writeFileSync(
     path.join(directory, route === '/' ? 'index.html' : `${route.slice(1)}.html`),
     html,

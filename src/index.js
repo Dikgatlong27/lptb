@@ -6,13 +6,19 @@ import App from './App';
 
 import { AuthProvider } from './AuthContext';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const application = (
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
         <App />
       </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
+
+const container = document.getElementById('root');
+if (container.dataset.prerendered === 'true' && window.location.pathname === '/') {
+  ReactDOM.hydrateRoot(container, application);
+} else {
+  ReactDOM.createRoot(container).render(application);
+}

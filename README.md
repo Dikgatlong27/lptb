@@ -157,6 +157,9 @@ lptb/
 | `/dev`       | Development packages                       | Public                        | Index    |
 | `/our-work`  | Portfolio and project website links        | Public                        | Index    |
 | `/contact`   | Enquiry form and contact details           | Public                        | Index    |
+| `/privacy`   | Privacy notice and data-subject rights     | Public                        | Index    |
+| `/cookies`   | Cookie/storage notice and preferences      | Public                        | Index    |
+| `/terms`     | Website/account/quotation terms            | Public                        | Index    |
 | `/quotation` | Quote builder                              | Public draft; login to submit | Noindex  |
 | `/login`     | Sign in                                    | Public                        | Noindex  |
 | `/signup`    | Register                                   | Public                        | Noindex  |
@@ -172,6 +175,8 @@ Unknown paths display a not-found page. Apache configuration returns an HTTP 404
 `AuthProvider` listens for Firebase authentication changes and exposes `currentUser`, `signup`, `login` and `logout`. `PrivateRoute` redirects signed-out visitors to `/login`.
 
 Public pages render while authentication resolves. Protected pages wait for the `loading` state before showing account content or redirecting. Secondary routes use `React.lazy` and a shared loading fallback; database code loads with the routes that need it. Client logos are sized for display and lazy-loaded below the fold.
+
+Firebase authentication is loaded through `src/authClient.js` after the public interface mounts. The production build prerenders the homepage from the real React components using `scripts/prerender-home.cjs`; the browser hydrates that HTML rather than rebuilding an empty page. Montserrat is served from `public/fonts/`, with its OFL license included.
 
 Signup saves the entered name as the Firebase authentication `displayName`. The dashboard prefers `users/{uid}.name`, then `displayName`, then “Welcome back”. It does not greet users with their email address. Older accounts may have no saved name.
 
@@ -223,7 +228,7 @@ Use two-space indentation, single quotes in JavaScript and the shared Prettier c
 
 `src/seo/metadata.js` supplies titles, descriptions, canonical URLs, Open Graph/Twitter tags and JSON-LD. `App.js` applies them during client navigation. Structured data describes the organization, website, public pages and breadcrumbs without invented ratings or reviews.
 
-After bundling, `scripts/build-seo.cjs` generates route HTML files such as `about.html` and `dev.html`. Hosting rules serve these at their route URLs. It also generates `build/sitemap.xml` containing the six public pages. Account/utility pages are `noindex, follow` and excluded from the sitemap. Robots.txt leaves them crawlable so search engines can read the noindex instruction.
+After bundling, `scripts/build-seo.cjs` generates route HTML files such as `about.html` and `dev.html`. Hosting rules serve these at their route URLs. It also generates `build/sitemap.xml` containing the public pages, including the legal notices. Account/utility pages are `noindex, follow` and excluded from the sitemap. Robots.txt leaves them crawlable so search engines can read the noindex instruction.
 
 The preview image is `public/social-preview.png` at 1200 × 630. Canonicals use HTTPS and the non-www production domain.
 
@@ -237,7 +242,7 @@ For the complete procedure, see [SEO-TESTING.md](SEO-TESTING.md). After deployme
 4. Use [Rich Results Test](https://search.google.com/test/rich-results) and [Schema Markup Validator](https://validator.schema.org/).
 5. Verify canonical redirects, 200 responses for real pages and a genuine 404 for an unknown URL.
 
-Local checks validate implementation, not search rankings. Main body content still requires JavaScript: generated HTML includes metadata, not a fully prerendered React page.
+Local checks validate implementation, not search rankings. The homepage body is prerendered and can display before JavaScript. Other pages have route-specific initial metadata and still render their body content on the client. Interactions require JavaScript.
 
 ## Testing
 
@@ -299,7 +304,13 @@ Building does not publish the site. A Git commit or push does not establish that
 - The account projects page is a placeholder.
 - `/invoices` lists quote requests, not accounting invoices.
 - Signup does not create Firestore profile documents; deployed database rules are outside this repository.
-- Public body content is client-rendered; full prerendering/server rendering remains a future improvement.
+- Pages other than the homepage still render their body content on the client.
 - Package definitions are duplicated between presentation and quote configuration.
 - The existing CRA toolchain emits dependency maintenance warnings.
 - Live indexing, Core Web Vitals and external integration permissions require production checks.
+
+## Privacy and consent
+
+Privacy, cookie and website terms pages live in `src/privacy/LegalPage.jsx`. Footer settings open the consent panel on every route. Google Analytics is absent from the static HTML and loads only after an explicit analytics choice on public routes. Rejecting analytics does not disable account access or quote drafts. Preferences are stored for 180 days; change `CONSENT_VERSION` when a material change requires a new choice.
+
+Signup requires agreement to the website terms and links to the privacy notice; analytics remains a separate opt-in. This checkbox is not a server-side audit record. Before publishing, confirm company address/contact details and the operational matters in [LEGAL-OPERATIONS.md](LEGAL-OPERATIONS.md), including database permissions, provider arrangements, retention and privacy requests.
